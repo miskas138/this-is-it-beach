@@ -1,11 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>PARE T ARXIDIA MOU MOUNOPANO POU THES K LOGIN!!!</h1>
+{% extends 'account/base.html' %}
 
-</body>
-</html>
+{% block content %}
+    <div id="login" class="container text-center">
+<h1>Log In!!!</h1>
+    {% if form.errors %}
+        <p>Your username and password didn\'t match.
+        Please try again</p>
+    {% else %}
+        <p>Please use the following form to log in</p>
+    {% endif %}
+
+<div class="login-form">
+    <form action="{% url 'login' %}" method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ next }}" />
+        <p><input type="submit" value="log-in"></p>
+    </form>
+<!--<p><a href="{#% url "password_reset" %#}">Forgotten your password???</a></p>-->
+</div>
+    </div>
+
+
+{% endblock %}
