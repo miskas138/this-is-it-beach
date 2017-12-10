@@ -19,6 +19,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 AUTH_USER_MODEL = 'auth.User'
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'miskas138@gmail.com'
+EMAIL_HOST_PASSWORD = 'koimamaitora138!'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -131,6 +137,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
 LOGIN_URL = reverse_lazy('login')
+LOGOUT_URL = reverse_lazy('logout')
 
 
 

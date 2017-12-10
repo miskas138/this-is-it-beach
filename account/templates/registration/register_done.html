@@ -1,0 +1,8 @@
+{% extends "account/base.html" %}
+
+{% block content %}
+    <h1>Hello {{ new_user.first_name }}!!!</h1>
+    <p>{{ new_user }} Your {{ new_user.groups.all }} account has been successfully created!!!</p>
+
+{% endblock %}
+
