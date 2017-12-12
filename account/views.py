@@ -21,7 +21,7 @@ def register(request):
             group = Group.objects.get(name='simple_user')
             group.user_set.add(new_user)
             cd = profile_form.cleaned_data
-            profile = Profile.objects.create(user=new_user, date_of_birth=cd['date_of_birth'],
+            profile = Profile.objects.create(user=new_user, date_of_birth=request.POST.get('bday',''),
                                              photo=cd['photo'])
 
             return render(request, 'registration/register_done.html', {'new_user': new_user, 'profile': profile})
