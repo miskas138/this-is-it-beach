@@ -2,84 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30dca8e3-21a5-48c9-bbd1-26fa6411c221" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/css/bootstrap-datepicker3.standalone.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/css/bootstrap-datepicker3.standalone.min.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/bootstrap-datepicker.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.ar.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.az.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.bg.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.bs.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.ca.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.cs.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.cy.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.da.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.de.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.el.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.en-AU.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.en-GB.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.eo.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.es.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.et.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.eu.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.fa.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.fi.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.fo.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.fr-CH.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.fr.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.gl.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.he.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.hr.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.hu.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.hy.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.id.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.is.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.it-CH.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.it.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.ja.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.ka.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.kh.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.kk.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.ko.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.kr.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.lt.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.lv.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.me.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.mk.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.mn.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.ms.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.nb.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.nl-BE.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.nl.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.no.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.pl.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.pt-BR.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.pt.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.ro.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.rs-latin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.rs.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.ru.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.sk.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.sl.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.sq.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.sr-latin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.sr.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.sv.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.sw.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.th.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.tr.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.uk.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.vi.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.zh-CN.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/static/js/locales/bootstrap-datepicker.zh-TW.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/bootstrap_datepicker/widgets.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/django_bootstrap_datepicker-1.2.3.dist-info/DESCRIPTION.rst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/django_bootstrap_datepicker-1.2.3.dist-info/INSTALLER" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/django_bootstrap_datepicker-1.2.3.dist-info/METADATA" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/django_bootstrap_datepicker-1.2.3.dist-info/RECORD" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/django_bootstrap_datepicker-1.2.3.dist-info/WHEEL" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/django_bootstrap_datepicker-1.2.3.dist-info/metadata.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/django_bootstrap_datepicker-1.2.3.dist-info/top_level.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/account/forms.py" afterPath="$PROJECT_DIR$/account/forms.py" />
+      <change beforePath="$PROJECT_DIR$/account/templates/registration/register.html" afterPath="$PROJECT_DIR$/account/templates/registration/register.html" />
+      <change beforePath="$PROJECT_DIR$/account/views.py" afterPath="$PROJECT_DIR$/account/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -96,31 +22,11 @@
       <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/account/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="22" column="26" lean-forward="false" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+            <state relative-caret-position="315">
+              <caret line="30" column="53" lean-forward="true" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/account/templates/account/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/THIS_IS_IT/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -140,8 +46,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/account/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="10" column="58" lean-forward="false" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="58" />
+            <state relative-caret-position="170">
+              <caret line="12" column="66" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="86" />
               <folding />
             </state>
           </provider>
@@ -150,9 +56,11 @@
       <file leaf-file-name="register.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/account/templates/registration/register.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="36" lean-forward="false" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-              <folding />
+            <state relative-caret-position="213">
+              <caret line="49" column="47" lean-forward="false" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
+              <folding>
+                <element signature="e#100#124#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -160,9 +68,11 @@
       <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/account/templates/registration/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="67" lean-forward="false" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="79" />
-              <folding />
+            <state relative-caret-position="170">
+              <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+              <folding>
+                <element signature="e#111#135#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -190,8 +100,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/account/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+            <state relative-caret-position="247">
+              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -226,7 +136,6 @@
         <option value="$PROJECT_DIR$/account/templates/registration/password_reset_done.html" />
         <option value="$PROJECT_DIR$/account/templates/registration/password_reset_confirm.html" />
         <option value="$PROJECT_DIR$/account/templates/registration/password_reset_complete.html" />
-        <option value="$PROJECT_DIR$/account/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/account/templates/registration/password_change_done.html" />
         <option value="$PROJECT_DIR$/account/templates/registration/password_change_form.html" />
         <option value="$PROJECT_DIR$/account/urls.py" />
@@ -234,8 +143,9 @@
         <option value="$PROJECT_DIR$/THIS_IS_IT/settings.py" />
         <option value="$PROJECT_DIR$/account/templates/account/base.html" />
         <option value="$PROJECT_DIR$/account/models.py" />
-        <option value="$PROJECT_DIR$/account/forms.py" />
+        <option value="$PROJECT_DIR$/account/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/account/views.py" />
+        <option value="$PROJECT_DIR$/account/forms.py" />
         <option value="$PROJECT_DIR$/account/templates/registration/register.html" />
       </list>
     </option>
@@ -268,6 +178,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -316,14 +228,38 @@
             <path>
               <item name="THIS_IS_IT" type="b2602c69:ProjectViewProjectNode" />
               <item name="THIS_IS_IT" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="THIS_IS_IT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="THIS_IS_IT" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
+              <item name="profile_photos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="THIS_IS_IT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="THIS_IS_IT" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
+              <item name="profile_photos" type="462c0819:PsiDirectoryNode" />
+              <item name="17" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="THIS_IS_IT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="THIS_IS_IT" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
+              <item name="profile_photos" type="462c0819:PsiDirectoryNode" />
+              <item name="17" type="462c0819:PsiDirectoryNode" />
+              <item name="12" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="THIS_IS_IT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="THIS_IS_IT" type="462c0819:PsiDirectoryNode" />
               <item name="THIS_IS_IT" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -394,20 +330,21 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23549488" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27609682" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23549488" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2806354" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -478,7 +415,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-          <folding />
+          <folding>
+            <element signature="e#111#135#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -550,7 +489,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="10" lean-forward="false" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-          <folding />
+          <folding>
+            <element signature="e#111#135#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -642,7 +583,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="57" lean-forward="true" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
-          <folding />
+          <folding>
+            <element signature="e#111#135#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -811,14 +754,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/THIS_IS_IT/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/THIS_IS_IT/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="833">
@@ -827,19 +762,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/account/templates/account/base.html">
+    <entry file="file://$PROJECT_DIR$/account/templates/registration/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="170">
+          <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+          <folding>
+            <element signature="e#111#135#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/account/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="58" lean-forward="false" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="58" />
+        <state relative-caret-position="170">
+          <caret line="12" column="66" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="86" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/THIS_IS_IT/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account/templates/account/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="30" column="53" lean-forward="true" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -851,39 +824,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/account/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/account/templates/registration/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="67" lean-forward="false" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/account/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="22" column="26" lean-forward="false" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/account/templates/registration/register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="36" lean-forward="false" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-          <folding />
+        <state relative-caret-position="213">
+          <caret line="49" column="47" lean-forward="false" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
+          <folding>
+            <element signature="e#100#124#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
