@@ -39,7 +39,7 @@
        </div>
        <div class="form-group">
            <label class="control-label col-sm-6">{{ profile_form.gender.label }}</label>
-           <div class="col-sm-6">{{ profile_form.gender }}</div>
+           <div class="control-text col-sm-6">{{ profile_form.gender }}</div>
        </div>
        <div class="form-group">
            <label class="control-label col-sm-6">{{ profile_form.date_of_birth.label }}</label>
@@ -47,7 +47,9 @@
        </div>
        <div class="form-group">
            <label class="control-label col-sm-6">{{ profile_form.photo.label }}</label>
-           <div class="col-sm-3">{{ profile_form.photo }}</div>
+               <span class="col-sm-2 btn btn-primary"><div class="file" style="fill-opacity: 0;opacity: 0;
+  position: absolute;">{{ profile_form.photo }}</div>Eπιλέξτε φωτογραφία
+    </span>
        </div>
 
        <!--{#  #}{ profile_form.as_p }}
