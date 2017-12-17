@@ -35,7 +35,7 @@ class ProfileEditForm(forms.ModelForm):
 class AdvancedProfileEditForm(forms.ModelForm):
     class Meta:
         model = Advanced_Profile
-        fields = ('organization_name','photo','address', 'city', 'phone_number','user_type')
+        fields = ('organization_name','photo','address', 'city', 'phone_number')
 
 
 
