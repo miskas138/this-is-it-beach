@@ -12,7 +12,9 @@ urlpatterns = [
     url(r'^password-change/done/$', DjangoViews.password_change_done, name='password_change_done'),
 
     # register
+    url(r'^register/$', views.register_type, name='register_type'),
     url(r'^register/simple-user/$', views.register, name='register'),
+    url(r'^register/advanced/$', views.advanced_register, name='advanced_register'),
 
     # reset password
     url(r'^password-reset/$', DjangoViews.password_reset, name='password_reset'),

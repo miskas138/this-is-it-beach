@@ -1,6 +1,6 @@
 {% load  staticfiles %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:color="http://www.w3.org/1999/xhtml">
 <head>
   <!-- Theme Made By www.w3schools.com - No Copyright -->
   <title>This is it!!!</title>
@@ -138,7 +138,7 @@
       background-color: #555 !important;
   }
   .dropdown-menu li a {
-      color: #000 !important;
+      color: #e1e1e1 !important;
   }
   .dropdown-menu li a:hover {
       background-color: red !important;
@@ -161,6 +161,22 @@
   textarea {
       resize: none;
   }
+      .fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
   </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -186,7 +202,7 @@
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="{% url 'password_change' %}">Αλλαγή κωδικού πρόσβασης</a></li>
-            <li><a href="{% url 'register' %}">Δημιουργία λογαριασμού</a></li>
+            <li><a href="{% url 'register_type' %}">Δημιουργία λογαριασμού</a></li>
             <li><a href="#">Media</a></li>
           </ul>
         </li>

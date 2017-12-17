@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.utils import timezone
 
-from .models import Profile, USER_TYPE_CHOISES
+from .models import *
 
 class UserRegistrationForm(forms.ModelForm):
     password = forms.CharField(label='Κωδικός Πρόσβασης', widget=forms.PasswordInput)
@@ -25,10 +25,19 @@ YEARS= [x for x in range(1950, timezone.now().year+1)]
 MONTHS = {1:'Ιανουάριος', 2:'Φεβρουάριος', 3:'Μάρτιος', 4:'Απρίλιος', 5:'Μάιος', 6:'Ιούνιος', 7:'Ιούλιος', 8:'Αύγουστος', 9:'Σεπτέμβριος',
           10:'Οκτώβριος', 11:'Νοέμβριος', 12:'Δεκέμβριος'}
 class ProfileEditForm(forms.ModelForm):
-    gender = forms.ChoiceField(label='Φύλο', choices=USER_TYPE_CHOISES)
+    gender = forms.ChoiceField(label='Φύλο', choices=USER_TYPE_CHOISES, widget=forms.Select(attrs={'class':'form-control'}))
     photo = forms.ImageField(label='Εικόνα προφίλ', widget=forms.FileInput)
-    date_of_birth = forms.DateField(label='Ημερομηνία γέννησης', widget=forms.SelectDateWidget(years=YEARS, months=MONTHS))
+    date_of_birth = forms.DateField(label='Ημερομηνία γέννησης', widget=forms.SelectDateWidget(years=YEARS, months=MONTHS, attrs={'class':'form-control'}))
     class Meta:
         model = Profile
         fields = ('gender', 'photo', 'date_of_birth')
+
+class AdvancedProfileEditForm(forms.ModelForm):
+    class Meta:
+        model = Advanced_Profile
+        fields = ('organization_name','photo','address', 'city', 'phone_number','user_type')
+
+
+
+
 

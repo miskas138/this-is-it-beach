@@ -7,10 +7,21 @@ from django.conf import settings
 
 USER_TYPE_CHOISES = (('MALE', 'male'), ('FEMALE', 'female'))
 class Profile(models.Model):
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
     date_of_birth = models.DateField(blank=True, null=True)
     photo = models.ImageField(upload_to='profile_photos/%y/%m/%d', blank=True, null=True)
     gender = models.CharField(max_length=6, choices=USER_TYPE_CHOISES, default='MALE', blank=True)
     def __str__(self):
         return 'Profile for user {}'.format(self.user.username)
+
+class Advanced_Profile(models.Model):
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    organization_name = models.CharField(max_length=50, null=True, blank=True)
+    photo = models.ImageField(upload_to='advanced_profile_photos', blank=True, null=True)
+    address = models.CharField(max_length=50, blank=True, null=True)
+    city = models.CharField(max_length=20, blank=True, null=True)
+    phone_number = models.IntegerField()
+    user_type = models.CharField(max_length=15, choices=USER_TYPE_CHOISES, default='ADVANCED_USER')
+    def __str__(self):
+        return 'Advanced Profile for user {}'.format(self.user.username)
 
