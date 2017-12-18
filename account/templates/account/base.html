@@ -201,9 +201,9 @@
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="{% url 'password_change' %}">Αλλαγή κωδικού πρόσβασης</a></li>
             <li><a href="{% url 'register_type' %}">Δημιουργία λογαριασμού</a></li>
-            <li><a href="#">Media</a></li>
+              <li><a href="{% url 'password_change' %}">Αλλαγή κωδικού πρόσβασης</a></li>
+              <li><a href="{% url 'logout' %}">Αποσύδεση</a></li>
           </ul>
         </li>
         <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>

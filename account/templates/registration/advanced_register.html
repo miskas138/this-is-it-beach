@@ -1,14 +1,14 @@
 {% extends "account/base.html" %}
 
 {% block content %}
-
-    <h1>create an account</h1>
-    <p>please sign up using the following form:</p>
+<div class="container text-center" style="margin-top: 50px">
+    <h1>Δημιουργήστε έναν νέο λογαριασμό</h1>
+    <p>Συμπληρώστε την παρακάτω φόρμα</p>
     <form action="." method="post" enctype="multipart/form-data">
         {{ user_form.as_p }}
         {{ profile_form.as_p }}
         {% csrf_token %}
-        <p><input type="submit" value="Create my account"></p>
+        <p><input type="submit" value="Δημιουργία λογαριασμού"></p>
     </form>
-
+</div>
 {% endblock %}

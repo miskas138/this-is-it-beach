@@ -1,10 +1,10 @@
 {% extends 'account/base.html' %}
 
 {% block content %}
-<div class="container">
-    <h1>Choose your user type</h1>
-    <h2><a href="{% url "register" %}">Εγγραφή χρήστη</a> </h2>
-    <h2><a href="{% url 'advanced_register' %}">Εγγραφή διοργανωτή</a> </h2>
+<div class="container text-center" style="margin-top: 50px">
+    <h1>Επιλέξτε το είδος χρήστη </h1>
+    <h2><a class="btn btn-default" href="{% url "register" %}"><b>Εγγραφή χρήστη</b></a> </h2>
+    <h2><a class="btn btn-default" href="{% url 'advanced_register' %}"><b>Εγγραφή διοργανωτή</b></a> </h2>
 </div>
 
 {% endblock %}

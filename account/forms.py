@@ -18,14 +18,14 @@ class UserRegistrationForm(forms.ModelForm):
     def clean_password2(self):
         cd = self.cleaned_data
         if cd['password'] != cd['password2']:
-            raise forms.ValidationError('Passwords dont\'t match')
+            raise forms.ValidationError('Passwords dont\'t match you fucking idiot')
         return cd['password2']
 
 YEARS= [x for x in range(1950, timezone.now().year+1)]
 MONTHS = {1:'Ιανουάριος', 2:'Φεβρουάριος', 3:'Μάρτιος', 4:'Απρίλιος', 5:'Μάιος', 6:'Ιούνιος', 7:'Ιούλιος', 8:'Αύγουστος', 9:'Σεπτέμβριος',
           10:'Οκτώβριος', 11:'Νοέμβριος', 12:'Δεκέμβριος'}
 class ProfileEditForm(forms.ModelForm):
-    gender = forms.ChoiceField(label='Φύλο', choices=USER_TYPE_CHOISES, widget=forms.Select(attrs={'class':'form-control'}))
+    gender = forms.ChoiceField(label='Φύλο', choices=USER_GENDER_CHOISES, widget=forms.Select(attrs={'class':'form-control'}))
     photo = forms.ImageField(label='Εικόνα προφίλ', widget=forms.FileInput)
     date_of_birth = forms.DateField(label='Ημερομηνία γέννησης', widget=forms.SelectDateWidget(years=YEARS, months=MONTHS, attrs={'class':'form-control'}))
     class Meta:
@@ -33,6 +33,11 @@ class ProfileEditForm(forms.ModelForm):
         fields = ('gender', 'photo', 'date_of_birth')
 
 class AdvancedProfileEditForm(forms.ModelForm):
+    organization_name = forms.CharField(label='Ονομασία οργανισμού')
+    address = forms.CharField(label='Διεύθυνση')
+    city = forms.CharField(label='Πόλη')
+    phone_number = forms.IntegerField(label='Τηλέφωνο')
+    photo = forms.ImageField(label='Εικόνα προφίλ', widget=forms.FileInput)
     class Meta:
         model = Advanced_Profile
         fields = ('organization_name','photo','address', 'city', 'phone_number')
