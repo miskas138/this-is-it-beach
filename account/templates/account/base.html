@@ -140,6 +140,11 @@
   .dropdown-menu li a {
       color: #e1e1e1 !important;
   }
+
+
+   .dropdown-menu {
+      background-color: #29292c;
+  }
   .dropdown-menu li a:hover {
       background-color: red !important;
   }
@@ -161,6 +166,9 @@
   textarea {
       resize: none;
   }
+
+
+
       .fileUpload {
     position: relative;
     overflow: hidden;
@@ -196,13 +204,14 @@
         <li><a href="{% url 'dashboard' %}">HOME</a></li>
         <li><a href="#band">BAND</a></li>
         <li><a href="#tour">TOUR</a></li>
-        <li><a href="{% url 'login' %}">Συνδεθείτε</a></li>
+        <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Συνδεθείτε</a></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="{% url 'register_type' %}">Δημιουργία λογαριασμού</a></li>
+            <li><a href="{% url 'register_type' %}"><span class="glyphicon glyphicon-user"></span> Δημιουργία λογαριασμού</a></li>
               <li><a href="{% url 'password_change' %}">Αλλαγή κωδικού πρόσβασης</a></li>
+              <li><a href="{% if request.user.is_authenticated %}{% if request.user.profile %}{% url "edit" %}{% else %}{% url 'advanced_edit' %}{% endif %}">Επεξεργασία προφίλ{% endif %}</a></li>
               <li><a href="{% url 'logout' %}">Αποσύδεση</a></li>
           </ul>
         </li>

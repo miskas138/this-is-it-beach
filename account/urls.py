@@ -23,4 +23,8 @@ urlpatterns = [
         name='password_reset_confirm'),
     url(r'^password-reset/complete/$', DjangoViews.password_reset_complete, name='password_reset_complete'),
 
+    # edit profile
+    url(r'^edit/$', views.edit, name='edit'),
+    url(r'^edit/advanced/$', views.advanced_edit, name='advanced_edit'),
+
 ]

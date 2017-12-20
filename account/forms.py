@@ -43,6 +43,13 @@ class AdvancedProfileEditForm(forms.ModelForm):
         fields = ('organization_name','photo','address', 'city', 'phone_number')
 
 
-
+class UserEditForm(forms.ModelForm):
+    username = forms.CharField(label='Όνομα χρήστη')
+    first_name = forms.CharField(label='Όνομα')
+    last_name = forms.CharField(label='Επίθετο')
+    email = forms.EmailField(label='Ηλεκτρονικό ταχυδρομείο', widget=forms.EmailInput)
+    class Meta:
+        model = User
+        fields = ('username', 'first_name', 'last_name', 'email')
 
 

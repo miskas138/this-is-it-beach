@@ -2,13 +2,81 @@
 
 {% block content %}
 <div class="container text-center" style="margin-top: 50px">
-    <h1>Δημιουργήστε έναν νέο λογαριασμό</h1>
-    <p>Συμπληρώστε την παρακάτω φόρμα</p>
-    <form action="." method="post" enctype="multipart/form-data">
-        {{ user_form.as_p }}
-        {{ profile_form.as_p }}
+   <div> <h1>create an account</h1>
+    <p>please sign up using the following form:</p>
+    {% if user_form.errors or profile_form.errors %}
+        <p>Βάλε τα καλά!!!!</p>
+    {% else %}
+        <p>Please use the following form to sign up</p>
+    {% endif %}
+</div>
+<div class="login-form">
+   <form class="form-horizontal" action="." method="post" enctype="multipart/form-data">
+       <div class="form-group">
+           <label class="control-label col-sm-6">{{ user_form.username.label }}</label>
+           <div class="col-sm-1">{{ user_form.username }}</div>
+       </div>
+       <div class="form-group">
+           <label class="control-label col-sm-6">{{ user_form.first_name.label }}</label>
+           <div class="col-sm-1">{{ user_form.first_name }}</div>
+       </div>
+       <div class="form-group">
+           <label class="control-label col-sm-6">{{ user_form.last_name.label }}</label>
+           <div class="col-sm-1">{{ user_form.last_name }}</div>
+       </div>
+       <div class="form-group">
+           <label class="control-label col-sm-6">{{ user_form.email.label }}</label>
+           <div class="col-sm-1">{{ user_form.email }}</div>
+       </div>
+       <div class="form-group">
+           <label class="control-label col-sm-6">{{ user_form.password.label }}</label>
+           <div class="col-sm-1">{{ user_form.password }}</div>
+       </div>
+       <div class="form-group">
+           <label class="control-label col-sm-6">{{ user_form.password2.label }}</label>
+           <div class="col-sm-1">{{ user_form.password2 }}</div>
+       </div>
+       <div class="form-group">
+           <label class="control-label col-sm-6">{{ profile_form.organization_name.label }}</label>
+           <div class="col-sm-1">{{ profile_form.organization_name }}</div>
+       </div>
+       <div class="form-group">
+           <label class="control-label col-sm-6">{{ profile_form.photo.label }}</label>
+               <span class="col-sm-2 fileUpload btn btn-primary"><div class="upload" style="fill-opacity: 0;opacity: 0;
+  position: absolute;">{{ profile_form.photo }}</div>Eπιλέξτε φωτογραφία
+    </span>
+       </div>
+       <div class="form-group">
+           <label class="control-label col-sm-6">{{ profile_form.address.label }}</label>
+           <div class="col-sm-2">{{ profile_form.address }}</div>
+       </div>
+
+       <div class="form-group">
+           <label class="control-label col-sm-6">{{ profile_form.city.label }}</label>
+           <div class="col-sm-2">{{ profile_form.city }}</div>
+       </div>
+        <div class="form-group">
+           <label class="control-label col-sm-6">{{ profile_form.phone_number.label }}</label>
+           <div class="col-sm-2">{{ profile_form.phone_number }}</div>
+       </div>
+
+
+       <!--{#  #}{ profile_form.as_p }}
+      <!-- <b>{#  #}{ user_form.first_name.label }}</b>-->
+      <!-- <span> <b> Εισάγετε την ημέρα γενεθλίων σας</b></span>
+      <input type="date" name="bday"
+    oninvalid="this.setCustomValidity('Παρακαλώ εισάγετε την ημερομηνία γέννησης')"
+    oninput="setCustomValidity('')"  required/>--->
         {% csrf_token %}
-        <p><input type="submit" value="Δημιουργία λογαριασμού"></p>
+<div class="form-group">
+      <div class="col-sm-offset-6 col-sm-1">
+          {% csrf_token %}
+        <button type="submit" class="btn btn-default">Εγγραφή</button>
+      </div>
+    </div>
+
     </form>
+
+</div>
 </div>
 {% endblock %}
