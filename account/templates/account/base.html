@@ -209,10 +209,10 @@
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="{% url 'register_type' %}"><span class="glyphicon glyphicon-user"></span> Δημιουργία λογαριασμού</a></li>
-              <li><a href="{% url 'password_change' %}">Αλλαγή κωδικού πρόσβασης</a></li>
-              <li><a href="{% if request.user.is_authenticated %}{% if request.user.profile %}{% url "edit" %}{% else %}{% url 'advanced_edit' %}{% endif %}">Επεξεργασία προφίλ{% endif %}</a></li>
-              <li><a href="{% url 'logout' %}">Αποσύδεση</a></li>
+            <li><a href="{% url 'register_type' %}"><span class="glyphicon glyphicon-user"></span> Δημιουργία</a></li>
+              <li><a href="{% url 'password_change' %}">Αλλαγή συνθηματικού</a></li>
+              <li><a href="{% url "edit" %}">Επεξεργασία προφίλ</a></li>
+              <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Αποσύδεση</a></li>
           </ul>
         </li>
         <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>

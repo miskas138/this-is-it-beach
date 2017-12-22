@@ -25,6 +25,6 @@ urlpatterns = [
 
     # edit profile
     url(r'^edit/$', views.edit, name='edit'),
-    url(r'^edit/advanced/$', views.advanced_edit, name='advanced_edit'),
+
 
 ]
