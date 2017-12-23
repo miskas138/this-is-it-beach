@@ -2,12 +2,12 @@
 
 {% block content %}
     <div id="login" class="container-fluid text-center" style="margin-top: 50px">
-<h1>Log In!!!</h1>
+<h1>Συνδεθείτε!!!</h1>
     {% if form.errors %}
-        <p>Your username and password didn\'t match.
-        Please try again</p>
+        <div class="col-sm-offset-5 col-sm-3"><p>Ο συνδιασμός ονόματος χρήστη και συνθηματικού που εισάγατε δεν είναι έγκυρος.</p>
+            <p>Παρακαλώ Δοκιμάστε ξανά</p></div>
     {% else %}
-        <p>Please use the following form to log in</p>
+        <p>Συμπληρώστε την παρακάτω φόρμα για να συνδεθείτε</p>
     {% endif %}
 
     <form class='form-horizontal' action="{% url 'login' %}" method="post">
@@ -32,7 +32,7 @@
 
 
     </form>
-<a class="col-sm-offset-6 col-sm-2" href="{% url "password_reset" %}">Forgotten your password???</a></p>
+<a class="col-sm-offset-6 col-sm-3 text-left" href="{% url "password_reset" %}">Ξεχάσατε το συνθηματικό σας???</a></p>
 </div>
 
 {% endblock %}

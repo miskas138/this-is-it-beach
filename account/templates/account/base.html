@@ -1,4 +1,5 @@
 {% load  staticfiles %}
+{% load account_tags %}
 <!DOCTYPE html>
 <html lang="en" xmlns:color="http://www.w3.org/1999/xhtml">
 <head>
@@ -204,15 +205,18 @@
         <li><a href="{% url 'dashboard' %}">HOME</a></li>
         <li><a href="#band">BAND</a></li>
         <li><a href="#tour">TOUR</a></li>
-        <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Συνδεθείτε</a></li>
+          {% if request.user.is_authenticated %}<li><a href="#"><img src="{% if request.user|has_group:'simple_user' %}{{ request.user.profile.photo.url }}" style="width: 15px;height: 15px;"><span> {{ request.user.username }}
+          {% else %}{{ request.user.advanced_profile.photo.url }}" style="width: 15px;height: 15px;"><span> {{ request.user.username }}{% endif %}</span></a></li>
+          {% endif %}
+          <li><a href="{% if request.user.is_authenticated %}{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Αποσύνδεση</a>{% else %}{% url 'login' %}">
+            <span class="glyphicon glyphicon-log-in"></span> Σύνδεση</a>{% endif %}</li>
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Λογαριασμός
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="{% url 'register_type' %}"><span class="glyphicon glyphicon-user"></span> Δημιουργία</a></li>
               <li><a href="{% url 'password_change' %}">Αλλαγή συνθηματικού</a></li>
               <li><a href="{% url "edit" %}">Επεξεργασία προφίλ</a></li>
-              <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Αποσύδεση</a></li>
           </ul>
         </li>
         <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
