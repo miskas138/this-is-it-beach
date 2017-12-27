@@ -1,10 +1,10 @@
 {% extends "account/base.html" %}
 
 {% block content %}
-<div class="container text-center" style="margin-top: 50px">
+<div id="login" class="container-fluid text-center" style="margin-top: 50px">
    <div> <h1>create an account</h1>
     <p>please sign up using the following form:</p>
-    {% if user_form.errors or profile_form.errors %}
+    {% if user_form.clean or profile_form.errors %}
         <p>Βάλε τα καλά!!!!</p>
     {% else %}
         <p>Please use the following form to sign up</p>

@@ -26,6 +26,9 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 
+GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyDt3jxm41PYXEQRwTfyzzK2Ngq-nMn3GO8'
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
@@ -49,7 +52,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'account',
     'django.contrib.admin',
-    'bootstrapform',
+    'Events',
+    'geoposition',
 ]
 
 MIDDLEWARE = [
