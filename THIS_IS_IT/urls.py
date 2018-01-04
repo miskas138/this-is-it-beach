@@ -21,7 +21,8 @@ from . import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'', include('account.urls'))
+    url(r'', include('account.urls')),
+    url(r'^events/', include('Events.urls')),
 
 ]
 
