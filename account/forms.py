@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.utils import timezone
+from datetimewidget.widgets import DateWidget, DateTimeWidget
 
 from .models import *
 
@@ -27,8 +28,7 @@ MONTHS = {1:'Ιανουάριος', 2:'Φεβρουάριος', 3:'Μάρτιο�
 class ProfileEditForm(forms.ModelForm):
     gender = forms.ChoiceField(label='Φύλο', choices=USER_GENDER_CHOISES, widget=forms.Select(attrs={'class':'form-control'}))
     photo = forms.ImageField(label='Εικόνα προφίλ', widget=forms.FileInput)
-    date_of_birth = forms.DateField(label='Ημερομηνία γέννησης', widget=forms.SelectDateWidget(years=YEARS, months=MONTHS,
-                                                                                               attrs={'class': 'form-control'}))
+    date_of_birth = forms.DateField(label='Ημερομηνία γέννησης', widget=DateWidget(attrs={'class': 'form-control'}, usel10n=True, bootstrap_version=3))
 
     class Meta:
         model = Profile
