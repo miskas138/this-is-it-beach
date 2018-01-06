@@ -20,7 +20,7 @@ class Event(models.Model):
 
 class Information(models.Model):
     event = models.OneToOneField(Event, on_delete=models.CASCADE)
-    dateTime = models.DateTimeField()
+    dateTime = models.DateTimeField(blank=True, null=True)
     ticket_price = models.FloatField()
     presale = models.CharField(max_length=200, blank=True, null=True)
 
@@ -30,6 +30,6 @@ class Location(models.Model):
     address = models.CharField(max_length=200)
     tel = models.IntegerField()
     city = models.CharField(max_length=20)
-    site = models.URLField(blank=True)
+    site = models.URLField(blank=True, null=True)
     position = GeopositionField()
 

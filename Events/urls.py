@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
 #post create
-    url(r'^post_create/$', views.post_create, name='post_create'),
+    url(r'^event_create/$', views.event_create, name='event_create'),
 ]

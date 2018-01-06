@@ -1,0 +1,17 @@
+{% extends 'account/base.html' %}
+
+{% block content %}
+
+<h1>Δημιουργία εκδήλωσης!!!</h1>
+    <form action="." method="post" enctype="multipart/form-data">
+        {{ event.as_p }}
+        {{ information.as_p }}
+        {{ location.media }}
+        {{ location.as_p }}
+    {% csrf_token %}
+    <input type="submit" value="Post it!!" style="color: black">
+    </form>
+
+
+
+{% endblock %}
