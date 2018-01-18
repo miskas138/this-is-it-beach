@@ -46,10 +46,12 @@
       border-color: #f1f1f1;
   }
   .carousel-inner img {
-      -webkit-filter: grayscale(90%);
-      filter: grayscale(90%); /* make all photos black and white */
+      -webkit-filter: grayscale(70%);
+      filter: grayscale(70%); /* make all photos black and white */
       width: 100%; /* Set width to 100% */
       margin: auto;
+      max-height: 600px;
+      object-fit: cover;
   }
   .carousel-caption h3 {
       color: #fff !important;
@@ -205,8 +207,8 @@
         <li><a href="{% url 'dashboard' %}">HOME</a></li>
         <li><a href="#band">BAND</a></li>
         <li><a href="#tour">TOUR</a></li>
-          {% if request.user.is_authenticated %}<li><a href="#"><img src="{% if request.user|has_group:'simple_user' %}{{ request.user.profile.photo.url }}" style="width: 15px;height: 15px;"><span> {{ request.user.username }}
-          {% else %}{{ request.user.advanced_profile.photo.url }}" style="width: 15px;height: 15px;"><span> {{ request.user.username }}{% endif %}</span></a></li>
+          {% if request.user.is_authenticated %}<li><a href="#"><img src="{% if request.user|has_group:'simple_user' %}{{ request.user.profile.photo.url }}" style="width: 20px;height: 20px;  object-fit: cover;"><span> {{ request.user.username }}
+          {% else %}{{ request.user.advanced_profile.photo.url }}" style="width: 20px;height: 20px; object-fit: cover;"><span> {{ request.user.username }}{% endif %}</span></a></li>
           {% endif %}
           <li><a href="{% if request.user.is_authenticated %}{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Αποσύνδεση</a>{% else %}{% url 'login' %}">
             <span class="glyphicon glyphicon-log-in"></span> Σύνδεση</a>{% endif %}</li>
