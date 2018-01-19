@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.views.decorators.cache import cache_control
+
+from Events.models import Event
 from .forms import *
 from django import template
 from django.contrib.auth.models import Group
@@ -10,7 +12,8 @@ from django.contrib.auth.models import Group
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)  # απενεργοποίηση του back button στον browser
 @login_required
 def dashboard(request):
-    return render(request, 'account/dashboard.html', {'section': 'dashboard'})
+    events = Event.objects.all()
+    return render(request, 'account/dashboard.html', {'section': 'dashboard', 'events': events})
 
 
 def register(request):
