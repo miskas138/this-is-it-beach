@@ -59,7 +59,7 @@
   @media (max-width: 600px) {
     .carousel-caption {
       display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
-    }.carousel-inner img{max-height: 200px; min-height: 200px; object-fit: cover}
+    }.carousel-inner img{max-height: 200px; min-height: 200px;}
   }
   .bg-1 {
       background: #2d2d30;
@@ -204,7 +204,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="{% url 'dashboard' %}">HOME</a></li>
+        <li><a href="{% url 'home_page' %}">HOME</a></li>
         <li><a href="#band">BAND</a></li>
         <li><a href="#tour">TOUR</a></li>
           {% if request.user.is_authenticated %}<li><a href="#"><img src="{% if request.user|has_group:'simple_user' %}{{ request.user.profile.photo.url }}" style="width: 20px;height: 20px;  object-fit: cover;"><span> {{ request.user.username }}

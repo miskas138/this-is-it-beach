@@ -15,7 +15,7 @@
     <div class="carousel-inner" role="listbox">
       {% for event in events %}
         <div class="item {% if forloop.counter0 == 0 %}active{% endif %}">
-        <img src="{{ event.image.url }}" alt="New York" height="500px" width="700px">
+        <img src="{{ event.image.url }}" alt="New York" style="width: 100%; height: 700px; object-fit: cover;" >
         <div class="carousel-caption">
           <h3>{{ event.title }}</h3>
           <p>{{ event.description }}</p>
@@ -81,7 +81,7 @@
 
 <!-- Container (TOUR Section) -->
 <div id="tour" class="bg-1">
-  <div class="container-fluid">
+  <div class="container">
     <h3 class="text-center">TOUR DATES</h3>
     <p class="text-center">Lorem ipsum we'll play you some music.<br> Remember to book your tickets!</p>
     <ul class="list-group">
@@ -93,7 +93,7 @@
     <div class="row text-center">
       <div class="col-sm-4">
         <div class="thumbnail">
-          <img src="paris.jpg" alt="Paris" width="400" height="300">
+          <img src="media/images/2018/01/06/δδδδ.jpg" alt="Paris" style="width: 400px; height: 300px; object-fit: cover;">
           <p><strong>Paris</strong></p>
           <p>Friday 27 November 2015</p>
           <button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
@@ -101,7 +101,7 @@
       </div>
       <div class="col-sm-4">
         <div class="thumbnail">
-          <img src="/media/miskas.jpg" alt="New York" style="width: 400px; height: 300px; object-fit: cover;" >
+          <img src="/media/miskas.jpg" alt="New York" style="width: 400px; height: 300px; object-fit: cover;">
           <p><strong>New York</strong></p>
           <p>Saturday 28 November 2015</p>
           <button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
@@ -109,7 +109,7 @@
       </div>
       <div class="col-sm-4">
         <div class="thumbnail">
-          <img src="sanfran.jpg" alt="San Francisco" width="400" height="300">
+          <img src="/media/advanced_profile_photos/miskas-advance-profile.jpg" alt="San Francisco" style="width: 400px; height: 300px; object-fit: cover;">
           <p><strong>San Francisco</strong></p>
           <p>Sunday 29 November 2015</p>
           <button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>

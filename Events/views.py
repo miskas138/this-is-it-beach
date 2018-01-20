@@ -1,8 +1,18 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.views.decorators.cache import cache_control
 
 from account.views import dashboard
 from .forms import *
+
+
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)  # απενεργοποίηση του back button στον browser
+@login_required
+def home_page(request):
+    events = Event.objects.all()
+    return render(request, 'home.html', {'section': 'home', 'events': events})
+
+
 
 @login_required
 @user_passes_test(lambda u: u.groups.filter(name='advanced_user'), dashboard)
