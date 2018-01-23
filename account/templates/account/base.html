@@ -61,6 +61,7 @@
       display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
     }.carousel-inner img{max-height: 200px; min-height: 200px;}
      .thumbnail img{max-height: 200px}
+     .thumbnail small{text-end-overflow: 10}
   }
   .bg-1 {
      background: #2d2d30;
@@ -78,15 +79,21 @@
   }
   .thumbnail {
       padding: 5px 5px 5px 5px;
-      border-radius: 10px;
+      border-radius: 5px;
       background-color: #141414;
       border-color: #e1e1e1;
 
-
   }
   .thumbnail p {
-      margin-top: 15px;
+      margin-top: 0;
       color: #555;
+  }
+  .thumbnail strong, i{
+      color: #e1e1e1;
+  }
+  .thumbnail h3{
+       margin: 10px 0 10px 0;
+      letter-spacing: 5px;
   }
   .btn {
       padding: 10px 20px;

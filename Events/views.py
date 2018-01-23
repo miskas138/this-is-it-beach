@@ -9,7 +9,7 @@ from .forms import *
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)  # απενεργοποίηση του back button στον browser
 @login_required
 def home_page(request):
-    events = Event.objects.all()
+    events = Event.objects.all().order_by('information__dateTime')
     return render(request, 'home.html', {'section': 'home', 'events': events})
 
 

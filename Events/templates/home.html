@@ -13,12 +13,12 @@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-      {% for event in events %}
+      {% for event in events|slice:":10" %}
         <div class="item {% if forloop.counter0 == 0 %}active{% endif %}">
         <img src="{{ event.image.url }}" alt="New York">
         <div class="carousel-caption">
           <h3>{{ event.title }}</h3>
-          <p>{{ event.description }}</p>
+          <p>{{ event.description|truncatewords:30|linebreaks }}</p>
             <p><i>{{ event.created }}</i></p>
         </div>
       </div>
@@ -55,15 +55,18 @@
 
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
-      <h2>Mike Ross, Manager</h2>
-      <p>Man, we've been on the road for some time now. Looking forward to lorem ipsum.</p>
+      <h2>Προβολή όλων των εκδηλώσεων</h2>
+      <p>Σκρολλάρετε προς τα κάτω για να δείτε όλες τις εκδηλώσεις!!!</p>
         <div class="col-sm-8 col-sm-offset-2">
+            {% for event in events %}
         <div class="thumbnail">
-          <img src="/media/miskas.jpg" alt="Paris" style="width: 1200px; height: 300px; object-fit: cover;">
-          <p><strong>Paris</strong></p>
-          <p>Friday 27 November 2015</p>
+          <img src="{{ event.image.url }}" alt="Paris" style="width: 1200px; height: 300px; object-fit: cover;">
+            <p><strong><h3>{{ event.title }}</h3></strong></p>
+          <p>{{ event.information.dateTime.date }}</p>
+            <p><small><i>{{ event.description|truncatewords:20|linebreaks }}</i></small></p>
           <button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
-        </div>
+        </div>{% empty %}<h1>Δεν υπάρχουν ακόμα εκδηλώσεις...</h1>>
+            {% endfor %}
       </div>
     </div>
     <div id="menu1" class="tab-pane fade">
