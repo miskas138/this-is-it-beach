@@ -4,6 +4,8 @@ from django import forms
 from datetimewidget.widgets import DateTimeWidget
 
 class EventCreateForm(forms.ModelForm):
+    title = forms.CharField(label='Τίτλος')
+    section = forms.ChoiceField(label='Κατηγορία', choices=SECTION_CHOISES, widget=forms.Select(attrs={'class':'form-control'}))
     def clean_image(self):
         image = self.cleaned_data['image']
         if image:
@@ -17,6 +19,7 @@ class EventCreateForm(forms.ModelForm):
         exclude = ('user',)
 
 class LocationForm(forms.ModelForm):
+
     class Meta:
         model = Location
         exclude = ('event',)

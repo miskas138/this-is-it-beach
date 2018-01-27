@@ -2,22 +2,10 @@
 
 {% block content %}
 
-<h1>Δημιουργία εκδήλωσης!!!</h1>
-    <form action="." method="post" enctype="multipart/form-data">
-        {{ event.as_p }}
-
-        {{ location.media }}
-        {{ location.as_p }}
-    {% csrf_token %}
-    <input type="submit" value="Post it!!" style="color: black">
-    </form>
-
-
-
 
 
     <div id="login" class="container-fluid text-center" style="margin-top: 50px;">
-<div> <h1>create an account</h1>
+<div> <h1>Δημιουργία Εκδήλωσης!!!!</h1>
     <p>please sign up using the following form:</p>
     {% if user_form.errors or profile_form.errors %}
         <p>Βάλε τα καλά!!!!</p>
@@ -32,11 +20,19 @@
         <div class="form-group">
             {{ field.errors }}
             <label class="control-label col-sm-6">{{ field.label_tag }}</label>
-            <div class="col-sm-1">{{ field }}</div>
+            <div class="col-sm-2">{{ field }}</div>
         </div>
 {% endfor %}
      {{ information.media }}
     {% for field in information %}
+        <div class="form-group">
+            {{ field.errors }}
+            <label class="control-label col-sm-6">{{ field.label_tag }}</label>
+            <div class="col-sm-2">{{ field }}</div>
+        </div>
+{% endfor %}
+      {{ location.media }}
+    {% for field in location %}
         <div class="form-group">
             {{ field.errors }}
             <label class="control-label col-sm-6">{{ field.label_tag }}</label>

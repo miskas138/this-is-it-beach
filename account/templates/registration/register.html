@@ -21,30 +21,7 @@
             <div class="col-sm-1">{{ field }}</div>
         </div>
 {% endfor %}
-      <!-- <div class="form-group">
-           <label class="control-label col-sm-6">{{ user_form.username.label }}</label>
-           <div class="col-sm-1">{{ user_form.username }}</div>
-       </div>
-       <div class="form-group">
-           <label class="control-label col-sm-6">{{ user_form.first_name.label }}</label>
-           <div class="col-sm-1">{{ user_form.first_name }}</div>
-       </div>
-       <div class="form-group">
-           <label class="control-label col-sm-6">{{ user_form.last_name.label }}</label>
-           <div class="col-sm-1">{{ user_form.last_name }}</div>
-       </div>
-       <div class="form-group">
-           <label class="control-label col-sm-6">{{ user_form.email.label }}</label>
-           <div class="col-sm-1">{{ user_form.email }}</div>
-       </div>
-       <div class="form-group">
-           <label class="control-label col-sm-6">{{ user_form.password.label }}</label>
-           <div class="col-sm-1">{{ user_form.password }}</div>
-       </div>
-       <div class="form-group">
-           <label class="control-label col-sm-6">{{ user_form.password2.label }}</label>
-           <div class="col-sm-1">{{ user_form.password2 }}</div>
-       </div>-->{{ profile_form.media }}
+    {{ profile_form.media }}
     {% for field in profile_form %}
         <div class="form-group">
             {{ field.errors }}
@@ -53,27 +30,7 @@
         </div>
 {% endfor %}
 
-      <!-- <div class="form-group">
-           <label class="control-label col-sm-6">{{ profile_form.gender.label }}</label>
-           <div class="col-sm-1">{{ profile_form.gender }}</div>
-       </div>
-       <div class="form-group">
-           <label class="control-label col-sm-6">{{ profile_form.date_of_birth.label }}</label>
-           <div class="col-sm-2">{{ profile_form.date_of_birth }}</div>
-       </div>
-       <div class="form-group">
-           <label class="control-label col-sm-6">{{ profile_form.photo.label }}</label>
-               <span class="col-sm-2 fileUpload btn btn-primary"><div class="upload" style="fill-opacity: 0;opacity: 0;
-  position: absolute;">{{ profile_form.photo }}</div>Eπιλέξτε φωτογραφία
-    </span>
-       </div>
 
-       <!--{#  #}{ profile_form.as_p }}
-      <!-- <b>{#  #}{ user_form.first_name.label }}</b>-->
-      <!-- <span> <b> Εισάγετε την ημέρα γενεθλίων σας</b></span>
-      <input type="date" name="bday"
-    oninvalid="this.setCustomValidity('Παρακαλώ εισάγετε την ημερομηνία γέννησης')"
-    oninput="setCustomValidity('')"  required/>--->
         {% csrf_token %}
 <div class="form-group">
       <div class="col-sm-offset-6 col-sm-1">
