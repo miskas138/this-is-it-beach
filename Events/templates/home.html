@@ -5,7 +5,7 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
-        {% for i in events %}
+        {% for i in carousel_events %}
       <li data-target="#myCarousel" data-slide-to="{{ forloop.counter0 }}"
           {% if forloop.counter0 == 0 %}class="active">{% endif %}</li>
 
@@ -14,7 +14,7 @@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-      {% for event in events|slice:":10" %}
+      {% for event in carousel_events %}
         <div class="item {% if forloop.counter0 == 0 %}active{% endif %}">
         <img src="{{ event.image.url }}" alt="New York">
         <div class="carousel-caption">
@@ -40,7 +40,7 @@
 
 <h3 class="text-center">From The Blog</h3>
 <div class="row1">
-<div class="container-fluid col-sm-2 text-center">linvl g btgv etge gerg erge rge rgergr grgrgrsvvdrdrv evrvdrvrvr vvrv
+<div class="container-fluid col-sm-2 text-center" style="background-color: #29292c; color: #f1f1f1; border-radius: 15px">linvl g btgv etge gerg erge rge rgergr grgrgrsvvdrdrv evrvdrvrvr vvrv
 
 {% if request.user|has_group:"advanced_user" %}
 <div id="mySidenav" class="sidenav">
@@ -93,16 +93,8 @@ function closeNav() {
     <div id="home" class="tab-pane fade in active">
       <h2>Προβολή όλων των εκδηλώσεων</h2>
       <p>Σκρολλάρετε προς τα κάτω για να δείτε όλες τις εκδηλώσεις!!!</p>
-        <div class="col-sm-8 col-sm-offset-2">
-            {% for event in events %}
-        <div class="thumbnail">
-          <img src="{{ event.image.url }}" alt="Paris" style="width: 1200px; height: 300px; object-fit: cover;">
-            <p><strong><h3>{{ event.title }}</h3></strong></p>
-          <p>{{ event.information.dateTime.date }}</p>
-            <p><small><i>{{ event.description|truncatewords:20|linebreaks }}</i></small></p>
-          <button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
-        </div>{% empty %}<h1>Δεν υπάρχουν ακόμα εκδηλώσεις...</h1>>
-            {% endfor %}
+        <div class="col-sm-8 col-sm-offset-2" id="event_list">
+           {% include "ajax_list.html" %}
       </div>
     </div>
     <div id="menu1" class="tab-pane fade">
@@ -138,4 +130,33 @@ function closeNav() {
 <div class="container-fluid col-sm-2">linvl g btgv etge gerg erge rge rgergr grgrgrsvvdrdrv evrvdrvrvr vvrv</div>
 
 </div>
+{% endblock %}
+
+{% block domready %}
+
+ var page = 1;
+ var empty_page = false;
+ var block_request = false;
+    $(window).scroll(function() {
+        var margin = $(document).height()-750;
+        if ($(window).scrollTop() > margin && empty_page==false && block_request==false){
+            block_request = true;
+            page += 1;
+            $.get('?page='+page, function(data) {
+                if (data==('')){
+                    empty_page = true;
+                }else {
+                    block_request = false;
+                    $('#event_list').append(data);
+
+                }
+
+
+
+            });
+
+        }
+
+    });
+
 {% endblock %}

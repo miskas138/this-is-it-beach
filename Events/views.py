@@ -1,3 +1,5 @@
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.views.decorators.cache import cache_control
@@ -9,8 +11,21 @@ from .forms import *
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)  # απενεργοποίηση του back button στον browser
 @login_required
 def home_page(request):
-    events = Event.objects.all().order_by('information__dateTime')
-    return render(request, 'home.html', {'section': 'home', 'events': events})
+    events = Event.objects.all().order_by('-information__dateTime')
+    carousel_events = events[:10]
+    paginator = Paginator(events, 3)
+    page = request.GET.get('page')
+    try:
+        events = paginator.page(page)
+    except PageNotAnInteger:
+        events = paginator.page(1)
+    except EmptyPage:
+        if request.is_ajax():
+            return HttpResponse('')
+        events = paginator.page(paginator.num_pages)
+    if request.is_ajax():
+        return render(request, 'ajax_list.html', {'events': events, 'carousel_events': carousel_events})
+    return render(request, 'home.html', {'section': 'home', 'events': events, 'carousel_events': carousel_events})
 
 
 
@@ -32,9 +47,15 @@ def event_create(request):
             new_location = location.save(commit=False)
             new_location.event = new_event
             new_location.save()
-            return redirect('dashboard')
+            return redirect('home_page')
     else:
         event = EventCreateForm()
         information = InformationForm()
         location = LocationForm()
     return render(request, 'event_create.html', {'event': event, 'information': information, 'location': location})
+
+@login_required
+def user_list(request):
+    users = User.objects.filter(is_active=True, groups__name='advanced_user')
+
+    return render(request, 'organizers/organizers_list.html', {'users': users})
