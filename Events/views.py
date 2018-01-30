@@ -1,6 +1,6 @@
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.views.decorators.cache import cache_control
 
@@ -59,3 +59,8 @@ def user_list(request):
     users = User.objects.filter(is_active=True, groups__name='advanced_user')
 
     return render(request, 'organizers/organizers_list.html', {'users': users})
+
+
+def event_details(request, pk):
+    event = get_object_or_404(Event, pk=pk)
+    return render(request,'event_details.html', {'event': event})

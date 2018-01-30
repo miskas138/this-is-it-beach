@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.urls import reverse
 from geoposition.fields import GeopositionField
 
 SECTION_CHOISES = (('ΜΟΥΣΙΚΗ', 'Μουσική'), ('ΘΕΑΤΡΟ', 'Θέατρο'), ('ΧΟΡΟΣ', 'Χορός'), ('ΕΚΘΕΣΗ', 'Έκθεση'), ('ΚΙΝΗΜΑΤΟΓΡΑΦΟΣ',
@@ -17,6 +18,9 @@ class Event(models.Model):
     section = models.CharField(max_length=20, choices=SECTION_CHOISES, default='ΜΟΥΣΙΚΗ')
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('event_details', args=[self.pk])
 
 class Information(models.Model):
     event = models.OneToOneField(Event, on_delete=models.CASCADE)

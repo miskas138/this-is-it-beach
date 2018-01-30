@@ -1,0 +1,100 @@
+{% extends 'account/base.html' %}
+{% load account_tags %}
+{% block content %}
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!--no Indicators -->
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+
+        <div class="item active">
+        <img src="{{ event.image.url }}" alt="New York">
+        <div class="carousel-caption">
+          <h3>{{ event.title }}</h3>
+
+            <p><i>{{ event.information.dateTime }}</i></p>
+        </div>
+      </div>
+
+    </div>
+
+    <!--no Left and right controls -->
+
+</div>
+
+
+<h3 class="text-center">From The Blog</h3>
+<div class="row1">
+    <div class="container-fluid col-sm-2 text-center" style="background-color: #29292c; color: #f1f1f1; border-radius: 15px"><p>linvl g btgv etge gerg erge rge rgergr grgrgrsvvdrdrv evrvdrvrvr vvrv</p>>
+
+{% if request.user|has_group:"advanced_user" %}
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn closebtn-left" onclick="closeNav()"><span class="glyphicon glyphicon-chevron-left"></span></a>
+  <a href="{% url 'event_create' %}">Δημιουργία Εκδήλωσης</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>
+
+<h2>Animated Sidenav Example</h2>
+<p>Click on the element below to open the side navigation menu.</p>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "220px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+{% endif %}
+
+
+
+</div>
+
+
+
+
+    <div class="container-fluid text-center col-sm-8 panel panel-default" style="border-radius: 10px">
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Όλες</a></li>
+    <li><a data-toggle="tab" href="#menu1">Chandler</a></li>
+    <li><a data-toggle="tab" href="#menu2">Peter</a></li>
+      <li><a data-toggle="tab" href="#menu3">Chandler</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h2>Προβολή όλων των εκδηλώσεων</h2>
+      <p>Σκρολλάρετε προς τα κάτω για να δείτε όλες τις εκδηλώσεις!!!</p>
+        <div class="col-sm-8 col-sm-offset-2" id="event_list">
+           {% include "ajax_list.html" %}
+      </div>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h2>Chandler Bing, Guitarist</h2>
+      <p>Always a pleasure people! Hope you enjoyed it as much as I did. Could I BE.. any more pleased?</p>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h2>Peter Griffin, Bass player</h2>
+      <p>I mean, sometimes I enjoy the show, but other times I enjoy other things.</p>
+    </div>
+      <div id="menu3" class="tab-pane fade">
+      <h2>Chandler Bing, Guitarist</h2>
+      <p>Always a pleasure people! Hope you enjoyed it as much as I did. Could I BE.. any more pleased?</p>
+    </div>
+  </div>
+    </div>
+<div class="container-fluid col-sm-2">linvl g btgv etge gerg erge rge rgergr grgrgrsvvdrdrv evrvdrvrvr vvrv</div>
+
+</div>
+{% endblock %}
+
+{% block domready %}
+{% endblock %}
