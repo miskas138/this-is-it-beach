@@ -42,22 +42,21 @@
        </div>
        <div class="form-group">
            <label class="control-label col-sm-6">{{ profile_form.photo.label }}</label>
-               <span class="col-sm-2 fileUpload btn btn-primary"><div class="upload" style="fill-opacity: 0;opacity: 0;
-  position: absolute;">{{ profile_form.photo }}</div>Eπιλέξτε φωτογραφία
-    </span>
+               <span class="col-sm-2 btn btn-default btn-file">{{ profile_form.photo }}Eπιλέξτε φωτογραφία<input type="file"></span>
+
        </div>
        <div class="form-group">
            <label class="control-label col-sm-6">{{ profile_form.address.label }}</label>
-           <div class="col-sm-2">{{ profile_form.address }}</div>
+           <div class="col-sm-1">{{ profile_form.address }}</div>
        </div>
 
        <div class="form-group">
            <label class="control-label col-sm-6">{{ profile_form.city.label }}</label>
-           <div class="col-sm-2">{{ profile_form.city }}</div>
+           <div class="col-sm-1">{{ profile_form.city }}</div>
        </div>
         <div class="form-group">
            <label class="control-label col-sm-6">{{ profile_form.phone_number.label }}</label>
-           <div class="col-sm-2">{{ profile_form.phone_number }}</div>
+           <div class="col-sm-1">{{ profile_form.phone_number }}</div>
        </div>
 
 

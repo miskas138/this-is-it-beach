@@ -15,23 +15,26 @@
 
 </div>
 <div class="login-form">
-   <form class="form-horizontal" action="." method="post" enctype="multipart/form-data">
-       {% for field in event %}
+
+
+
+<ul class="nav nav-tabs">
+    <li class="active"><a href="#info-tab" data-toggle="tab">Information <i class="fa"></i></a></li>
+    <li><a href="#address-tab" data-toggle="tab">Address <i class="fa"></i></a></li>
+    <li><a href="#location-tab" data-toggle="tab">Location <i class="fa"></i></a></li>
+</ul>
+
+<form id="accountForm" method="post" class="form-horizontal" action="." enctype="multipart/form-data">
+    <div class="tab-content">
+        <div class="tab-pane fade in active" id="info-tab">
+             {% for field in event %}
         <div class="form-group">
             {{ field.errors }}
             <label class="control-label col-sm-6">{{ field.label_tag }}</label>
             <div class="col-sm-2">{{ field }}</div>
         </div>
 {% endfor %}
-     {{ information.media }}
-    {% for field in information %}
-        <div class="form-group">
-            {{ field.errors }}
-            <label class="control-label col-sm-6">{{ field.label_tag }}</label>
-            <div class="col-sm-2">{{ field }}</div>
-        </div>
-{% endfor %}
-      {{ location.media }}
+
     {% for field in location %}
         <div class="form-group">
             {{ field.errors }}
@@ -40,20 +43,151 @@
         </div>
 {% endfor %}
 
+        </div>
 
-        {% csrf_token %}
-<div class="form-group">
-      <div class="col-sm-offset-6 col-sm-1">
-          {% csrf_token %}
-        <button type="submit" class="btn btn-default">Εγγραφή</button>
-      </div>
+        <div class="tab-pane fade" id="address-tab">
+            {{ information.media }}
+    {% for field in information %}
+        <div class="form-group">
+            {{ field.errors }}
+            <label class="control-label col-sm-6">{{ field.label_tag }}</label>
+            <div class="col-sm-2">{{ field }}</div>
+        </div>
+{% endfor %}
+
+
+            </div>
+
+
+     <div class="tab-pane fade" id="location-tab">
+{{ location.media }}
+    {% for field in location %}
+        <div class="form-group">
+            {{ field.errors }}
+            <label class="control-label col-sm-6">{{ field.label_tag }}</label>
+            <div class="col-sm-2">{{ field }}</div>
+        </div>
+{% endfor %}<div id="map" style="width:100%;height:500px"></div>
+
+<script>
+    $("a[href='#location-tab']").on('shown.bs.tab', function myMap() {
+
+
+  var myCenter = new google.maps.LatLng(41.878114, -87.629798);
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {center: myCenter, zoom: 10};
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+  var marker = new google.maps.Marker({position:myCenter});
+  marker.setMap(map);
+  google.maps.event.addListener(marker,'click',function() {
+    var infowindow = new google.maps.InfoWindow({
+      content:"Διάλεξε τοποθεσία"
+    });
+  infowindow.open(map,marker);
+  });
+});
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDt3jxm41PYXEQRwTfyzzK2Ngq-nMn3GO8&callback=myMap"></script>
+     </div>  </div>
+
+
+    <div class="form-group" style="margin-top: 15px;">
+        {}{% csrf_token %}
+        <div class="col-xs-5 col-xs-offset-3">
+            <button type="submit" class="btn btn-default">Validate</button>
+        </div>
     </div>
+</form>
 
-    </form>
-
-</div></div>
-
+<script>
 
 
+
+$(document).ready(function() {
+
+    $('#accountForm')
+        .formValidation({
+            framework: 'bootstrap',
+            // Only disabled elements are excluded
+            // The invisible elements belonging to inactive tabs must be validated
+            excluded: [':disabled'],
+            icon: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                fullName: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The full name is required'
+                        }
+                    }
+                },
+                company: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The company name is required'
+                        }
+                    }
+                },
+                address: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The address is required'
+                        }
+                    }
+                },
+                city: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The city is required'
+                        }
+                    }
+                }
+            }
+        })
+        .on('err.field.fv', function(e, data) {
+            // data.fv --> The FormValidation instance
+
+            // Get the first invalid field
+            var $invalidFields = data.fv.getInvalidFields().eq(0);
+
+            // Get the tab that contains the first invalid field
+            var $tabPane     = $invalidFields.parents('.tab-pane'),
+                invalidTabId = $tabPane.attr('id');
+
+            // If the tab is not active
+            if (!$tabPane.hasClass('active')) {
+                // Then activate it
+                $tabPane.parents('.tab-content')
+                        .find('.tab-pane')
+                        .each(function(index, tab) {
+                            var tabId = $(tab).attr('id'),
+                                $li   = $('a[href="#' + tabId + '"][data-toggle="tab"]').parent();
+
+                            if (tabId === invalidTabId) {
+                                // activate the tab pane
+                                $(tab).addClass('active');
+                                // and the associated <li> element
+                                $li.addClass('active');
+                            } else {
+                                $(tab).removeClass('active');
+                                $li.removeClass('active');
+                            }
+                        });
+
+                // Focus on the field
+                $invalidFields.focus();
+            }
+        });
+});
+
+
+</script>
+
+</div>
+    </div>
 
 {% endblock %}

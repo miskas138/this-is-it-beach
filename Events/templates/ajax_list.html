@@ -5,5 +5,5 @@
           <p>{{ event.information.dateTime.date }}</p>
             <p><small><i>{{ event.description|truncatewords:20|linebreaks }}</i></small></p>
           <button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
-        </div>{% empty %}<h1>Δεν υπάρχουν ακόμα εκδηλώσεις...</h1>>
+        </div>{% empty %}<h1>Δεν υπάρχουν ακόμα εκδηλώσεις...</h1>
             {% endfor %}
