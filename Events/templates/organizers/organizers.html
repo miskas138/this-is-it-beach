@@ -5,7 +5,7 @@
   <br>
   <div class="row">
       {% for user in users %}
-    <div class="col-sm-4 panel panel-default" style="border-radius: 30%;color: #e1e1e1; background-color: #2d2d30;">
+    <div class="col-sm-4 panel panel-default" style="border-radius: 10%;color: whitesmoke; background-color: #431515;">
       <p class="text-center"><h2>{{ user.get_full_name }}</h2><br>
       <a href="#demo" data-toggle="collapse">
         <img src="{{ user.advanced_profile.photo.url }}" class="img-circle person" alt="Random Name" style="width: 255px; height :255px;object-fit: cover;">

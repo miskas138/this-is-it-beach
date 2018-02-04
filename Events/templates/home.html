@@ -38,45 +38,23 @@
 </div>
 
 
-<h3 class="text-center">From The Blog</h3>
+<h2 class="text-center"  style="margin: 0;padding-top: 0px;padding-bottom: 3px;color: black; background-color: #e6e6e9; opacity: 0.8;letter-spacing: 10px;">From The Blog</h2>
 <div class="row1">
-<div class="container-fluid col-sm-2 text-center" style="background-color: #29292c; color: #f1f1f1; border-radius: 15px">linvl g btgv etge gerg erge rge rgergr grgrgrsvvdrdrv evrvdrvrvr vvrv
-
+<div class="container-fluid col-sm-2 text-center" style="background-color: #29292c; color: #f1f1f1; border-radius: 15px">
 {% if request.user|has_group:"advanced_user" %}
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="{% url 'event_create' %}">Δημιουργία Εκδήλωσης</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
-</div>
-
-<h2>Animated Sidenav Example</h2>
-<p>Click on the element below to open the side navigation menu.</p>
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
-
-<script>
-function openNav() {
-    document.getElementById("mySidenav").style.width = "220px";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
-</script>
-
+{% include "side_bar.html" %}
+    {% else %}<p>Για τους φλώρους απλούς χρήστες δεν έχει πλαινή μπάρα :D</p>
 {% endif %}
 
 
 
 
-
 </div>
 
 
 
 
-    <div class="container-fluid text-center col-sm-8 panel panel-default" style="border-radius: 10px">
+    <div class="container-fluid text-center col-sm-8 panel panel-default" style="border-radius: 10px; opacity: 0.9">
 
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#home">Όλες</a></li>

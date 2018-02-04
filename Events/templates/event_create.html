@@ -19,14 +19,14 @@
 
 
 <ul class="nav nav-tabs">
-    <li class="active"><a href="#info-tab" data-toggle="tab">Information <i class="fa"></i></a></li>
-    <li><a href="#address-tab" data-toggle="tab">Address <i class="fa"></i></a></li>
-    <li><a href="#location-tab" data-toggle="tab">Location <i class="fa"></i></a></li>
+    <li class="active"><a href="#event-tab" data-toggle="tab">Η Εκδήλωση <i class="fa"></i></a></li>
+    <li><a href="#information-tab" data-toggle="tab">Πληροφορίες <i class="fa"></i></a></li>
+    <li><a href="#location-tab" data-toggle="tab">Τοποθεσία <i class="fa"></i></a></li>
 </ul>
 
 <form id="accountForm" method="post" class="form-horizontal" action="." enctype="multipart/form-data">
     <div class="tab-content">
-        <div class="tab-pane fade in active" id="info-tab">
+        <div class="tab-pane fade in active" id="event-tab">
              {% for field in event %}
         <div class="form-group">
             {{ field.errors }}
@@ -45,7 +45,7 @@
 
         </div>
 
-        <div class="tab-pane fade" id="address-tab">
+        <div class="tab-pane fade" id="information-tab">
             {{ information.media }}
     {% for field in information %}
         <div class="form-group">

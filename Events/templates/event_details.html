@@ -11,7 +11,7 @@
         <div class="item active">
         <img src="{{ event.image.url }}" alt="New York">
         <div class="carousel-caption">
-          <h3>{{ event.title }}</h3>
+
 
             <p><i>{{ event.information.dateTime }}</i></p>
         </div>
@@ -24,33 +24,12 @@
 </div>
 
 
-<h3 class="text-center">From The Blog</h3>
+<h2 class="text-center" style="margin: 0;padding-top: 0px;padding-bottom: 3px;color: black; background-color: #e5e5e8; opacity: 0.8;letter-spacing: 10px;">{{ event.title }}</h2>
 <div class="row1">
-    <div class="container-fluid col-sm-2 text-center" style="background-color: #29292c; color: #f1f1f1; border-radius: 15px"><p>linvl g btgv etge gerg erge rge rgergr grgrgrsvvdrdrv evrvdrvrvr vvrv</p>>
-
+    <div class="container-fluid col-sm-2 text-center" style="background-color: #29292c; color: #dcdcdc; opacity: 0.9; border-radius: 15px">
 {% if request.user|has_group:"advanced_user" %}
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn closebtn-left" onclick="closeNav()"><span class="glyphicon glyphicon-chevron-left"></span></a>
-  <a href="{% url 'event_create' %}">Δημιουργία Εκδήλωσης</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
-</div>
-
-<h2>Animated Sidenav Example</h2>
-<p>Click on the element below to open the side navigation menu.</p>
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
-
-<script>
-function openNav() {
-    document.getElementById("mySidenav").style.width = "220px";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
-</script>
-
+{% include "side_bar.html" %}
+    {% else %}<p>Για τους φλώρους απλούς χρήστες δεν έχει πλαινή μπάρα :D</p>
 {% endif %}
 
 
@@ -60,30 +39,37 @@ function closeNav() {
 
 
 
-    <div class="container-fluid text-center col-sm-8 panel panel-default" style="border-radius: 10px">
-
+    <div class="container-fluid col-sm-8 panel panel-default" style="border-radius: 10px">
+<div class="text-center">
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Όλες</a></li>
-    <li><a data-toggle="tab" href="#menu1">Chandler</a></li>
-    <li><a data-toggle="tab" href="#menu2">Peter</a></li>
-      <li><a data-toggle="tab" href="#menu3">Chandler</a></li>
+    <li class="active"><a data-toggle="tab" href="#home">Η Εκδήλωση</a></li>
+    <li><a data-toggle="tab" href="#menu1">Πληροφορίες</a></li>
+    <li><a data-toggle="tab" href="#menu2">Τοποθεσία</a></li>
+      <li><a data-toggle="tab" href="#menu3">Σχόλια</a></li>
   </ul>
-
+</div>
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
-      <h2>Προβολή όλων των εκδηλώσεων</h2>
-      <p>Σκρολλάρετε προς τα κάτω για να δείτε όλες τις εκδηλώσεις!!!</p>
-        <div class="col-sm-8 col-sm-offset-2" id="event_list">
-           {% include "ajax_list.html" %}
+
+
+        <div class="col-sm-8 col-sm-offset-2">
+            <p><h2><span class="glyphicon glyphicon-info-sign"></span>Περιγραφή</h2></p>
+           <p>{{ event.description }}</p>
+            <p><em><span class="glyphicon glyphicon-pushpin"></span>Κατηγορία:</em> <h4 style="border-radius: 40%">{{ event.section }}</h4></p>
+            <p><span class="glyphicon glyphicon-calendar"></span><em>Ημερομηνία ανάρτησης Δημοσίευσης: {{ event.created }}</em></p>
+
       </div>
     </div>
     <div id="menu1" class="tab-pane fade">
-      <h2>Chandler Bing, Guitarist</h2>
-      <p>Always a pleasure people! Hope you enjoyed it as much as I did. Could I BE.. any more pleased?</p>
-    </div>
+        <div class="col-sm-8 col-sm-offset-2">
+      <h2><span class="glyphicon glyphicon-info-sign"></span>Πληροφορίες Εκδήλωσης</h2>
+      <p><span class="glyphicon glyphicon-calendar"><span class="glyphicon glyphicon-time"></span></span>Ημερομηνία και ώρα Εκδήλωσης: {{ event.information.dateTime }}</p>
+        <p>Τιμή εισητηρίου: {{ event.information.ticket_price }} <span class="glyphicon glyphicon-euro"></span></p>
+        <p><span class="glyphicon glyphicon-shopping-cart"></span>Προπώληση: {{ event.information.presale }}</p>
+        </div></div>
     <div id="menu2" class="tab-pane fade">
-      <h2>Peter Griffin, Bass player</h2>
-      <p>I mean, sometimes I enjoy the show, but other times I enjoy other things.</p>
+      <h2>Τοποθεσία Εκδήλωσης</h2>
+      <p>Όνομα Τοποθεσίας: {{ event.location.name }}</p>
     </div>
       <div id="menu3" class="tab-pane fade">
       <h2>Chandler Bing, Guitarist</h2>

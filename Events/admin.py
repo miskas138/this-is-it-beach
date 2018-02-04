@@ -11,7 +11,7 @@ class InformationAdmin(admin.ModelAdmin):
     list_filter = ['event', 'dateTime']
 
 class LocationAdmin(admin.ModelAdmin):
-    list_display = ['name', 'event', 'address']
+    list_display = ['name', 'address']
     list_filter = ['name']
 
 admin.site.register(Event, EventAdmin)

@@ -29,12 +29,13 @@ class Information(models.Model):
     presale = models.CharField(max_length=200, blank=True, null=True)
 
 class Location(models.Model):
-    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='location')
     name = models.CharField(max_length=200)
     address = models.CharField(max_length=200)
     tel = models.IntegerField()
     city = models.CharField(max_length=20)
     site = models.URLField(blank=True, null=True)
+    email = models.EmailField(blank=True, null=True)
     position = GeopositionField()
 
 class Comment(models.Model):

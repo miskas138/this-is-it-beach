@@ -1,0 +1,25 @@
+
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn closebtn-left" onclick="closeNav()"><span class="glyphicon glyphicon-chevron-left"></span></a>
+  <a href="{% url 'event_create' %}">Δημιουργία Εκδήλωσης</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>
+    <p>Κάποια στιγμή πρέπει να σκεφτώ τι θα βάλω εδώ στο πλάι</p>
+
+<h2>Εργαλεία Διοργανωτή</h2>
+<p>Επιλέξτε τον σύνδεσμο "Εργαλεία" για δημιουργία νέας εκδήλωσης, προβολή στατιστικών και άλλα"</p>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Εργαλεία</span>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "220px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
