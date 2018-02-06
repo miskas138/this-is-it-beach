@@ -63,4 +63,19 @@ def user_list(request):
 
 def event_details(request, pk):
     event = get_object_or_404(Event, pk=pk)
-    return render(request,'event_details.html', {'event': event})
+    comments = event.comments.filter(active=True).order_by('-created')[:50]
+    if request.method == 'POST':
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            new_comment = comment_form.save(commit=False)
+            new_comment.event = event
+            new_comment.user = request.user
+            new_comment.save()
+            comment_form = CommentForm()
+    else:
+        comment_form = CommentForm()
+        new_comment = None
+    return render(request,'event_details.html', {'event': event,
+                                                 'comments':comments,
+                                                 'comment_form': comment_form,
+                                                 'new_comment': new_comment,})

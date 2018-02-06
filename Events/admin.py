@@ -14,6 +14,13 @@ class LocationAdmin(admin.ModelAdmin):
     list_display = ['name', 'address']
     list_filter = ['name']
 
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('user', 'event', 'created', 'active')
+    list_filter = ('active', 'created', 'updated')
+    search_fields = ('user', 'body')
+
+
+admin.site.register(Comment, CommentAdmin)
 admin.site.register(Event, EventAdmin)
 admin.site.register(Information, InformationAdmin)
 admin.site.register(Location, LocationAdmin)

@@ -72,8 +72,29 @@
       <p>Όνομα Τοποθεσίας: {{ event.location.name }}</p>
     </div>
       <div id="menu3" class="tab-pane fade">
-      <h2>Chandler Bing, Guitarist</h2>
-      <p>Always a pleasure people! Hope you enjoyed it as much as I did. Could I BE.. any more pleased?</p>
+
+          {% for comment in comments %}
+       <div class="media">
+    <div class="media-left">
+      <img src="{% if comment.user.profile %}{{ comment.user.profile.photo.url }}{% else %}{{ comment.user.advanced_profile.photo.url }}{% endif %}" class="media-object" style="width:45px; height:45px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">{{ comment.user }} <small><i>Posted on {{ comment.created }}</i></small></h4>
+        <div style="width: 400px; overflow-wrap: break-word">{{ comment.body|linebreaks }}</div>
+    </div>
+       </div>
+        {% empty %}
+        <p>There are no comments yet!!!</p>
+    {% endfor %}
+    {% if new_comment  %}
+        <h2>Your comment has been added!!!</h2>
+    {% endif %}
+         <h2>Add a new comment</h2>
+        <form action="." method="post" style="color: black">
+            {{ comment_form.as_p }}
+            {% csrf_token %}
+        <input type="submit" value="add comment">
+        </form>
     </div>
   </div>
     </div>
