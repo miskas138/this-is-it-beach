@@ -29,7 +29,7 @@ class Information(models.Model):
     presale = models.CharField(max_length=200, blank=True, null=True)
 
 class Location(models.Model):
-    event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='location')
+    event = models.OneToOneField(Event, on_delete=models.CASCADE, related_name='location')
     name = models.CharField(max_length=200)
     address = models.CharField(max_length=200)
     tel = models.IntegerField()

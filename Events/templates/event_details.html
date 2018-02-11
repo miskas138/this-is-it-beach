@@ -24,7 +24,8 @@
 </div>
 
 
-<h2 class="text-center" style="margin: 0;padding-top: 0px;padding-bottom: 3px;color: black; background-color: #e5e5e8; opacity: 0.8;letter-spacing: 10px;">{{ event.title }}</h2>
+<h2 class="text-center" style="border: 5px; border-style: groove;margin: 0;padding-top: 0px;padding-bottom: 3px; color: #d5d5d5 !important;
+      background-color: #29292c !important; opacity: 0.8;letter-spacing: 10px;">{{ event.title }}</h2>
 <div class="row1">
     <div class="container-fluid col-sm-2 text-center" style="background-color: #29292c; color: #dcdcdc; opacity: 0.9; border-radius: 15px">
 {% if request.user|has_group:"advanced_user" %}
@@ -68,20 +69,52 @@
         <p><span class="glyphicon glyphicon-shopping-cart"></span>Προπώληση: {{ event.information.presale }}</p>
         </div></div>
     <div id="menu2" class="tab-pane fade">
-      <h2>Τοποθεσία Εκδήλωσης</h2>
-      <p>Όνομα Τοποθεσίας: {{ event.location.name }}</p>
+        <div class="col-sm-8 col-sm-offset-2">
+                <h2>Τοποθεσία Εκδήλωσης</h2>
+             <p>Όνομα Τοποθεσίας: {{ event.location.name }}</p>
+            <p>Διεύθυνση: {{ event.location.address }}</p>
+            <p>Τηλέφωνο: {{ event.location.tel }}</p>
+            <p>Πόλη: {{ event.location.city }}</p>
+            <p>Ιστοσελίδα: <a href="{{ event.location.site }}">{{ event.location.site }}</a></p>
+             <p>Ηλεκτρονικό ταχυδρομείο: {{ event.location.email }}</p>
+             <p>Δείτε στον χάρτη: </p>
+            <div id="map" style="width:100%;height:500px"></div>
+
+            <script>
+    $("a[href='#menu2']").on('shown.bs.tab', function myMap() {
+
+
+  var myCenter = new google.maps.LatLng({{ event.location.position }});
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {center: myCenter, zoom: 10};
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+  var marker = new google.maps.Marker({position:myCenter});
+  marker.setMap(map);
+  google.maps.event.addListener(marker,'click',function() {
+    var infowindow = new google.maps.InfoWindow({
+      content:"{{ event.location.name }}, {{ event.location.address }}"
+    });
+  infowindow.open(map,marker);
+  });
+});
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDt3jxm41PYXEQRwTfyzzK2Ngq-nMn3GO8&callback=myMap"></script>
+        </div>
     </div>
       <div id="menu3" class="tab-pane fade">
-
+          <div class="col-sm-8 col-sm-offset-2 text-left">
           {% for comment in comments %}
        <div class="media">
-    <div class="media-left">
-      <img src="{% if comment.user.profile %}{{ comment.user.profile.photo.url }}{% else %}{{ comment.user.advanced_profile.photo.url }}{% endif %}" class="media-object" style="width:45px; height:45px">
+    <div class="media-left media-middle">
+      <img src="{% if comment.user.profile %}{{ comment.user.profile.photo.url }}{% else %}{{ comment.user.advanced_profile.photo.url }}{% endif %}" class="media-object" style="width:45px; height:45px;object-fit: cover;">
     </div>
     <div class="media-body">
-      <h4 class="media-heading">{{ comment.user }} <small><i>Posted on {{ comment.created }}</i></small></h4>
-        <div style="width: 400px; overflow-wrap: break-word">{{ comment.body|linebreaks }}</div>
-    </div>
+        <h3 class="media-heading text-left" style="margin-bottom: 0px; margin-top: 5px;"><strong>{{ comment.user }}</strong><span><small><i> {{ comment.created }}</i></small></span> </h3>
+
+
+
+    </div> <div class="text-left" style="overflow-wrap: break-word"><p>{{ comment.body|linebreaks }}</p></div>
        </div>
         {% empty %}
         <p>There are no comments yet!!!</p>
@@ -93,11 +126,11 @@
         <form action="." method="post" style="color: black">
             {{ comment_form.as_p }}
             {% csrf_token %}
-        <input type="submit" value="add comment">
+        <input class="btn btn-default" type="submit" value="κοινοποίηση σχολίου">
         </form>
     </div>
   </div>
-    </div>
+  </div></div>
 <div class="container-fluid col-sm-2">linvl g btgv etge gerg erge rge rgergr grgrgrsvvdrdrv evrvdrvrvr vvrv</div>
 
 </div>

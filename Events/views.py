@@ -52,6 +52,7 @@ def event_create(request):
         event = EventCreateForm()
         information = InformationForm()
         location = LocationForm()
+
     return render(request, 'event_create.html', {'event': event, 'information': information, 'location': location})
 
 @login_required
@@ -75,6 +76,7 @@ def event_details(request, pk):
     else:
         comment_form = CommentForm()
         new_comment = None
+
     return render(request,'event_details.html', {'event': event,
                                                  'comments':comments,
                                                  'comment_form': comment_form,
