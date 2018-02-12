@@ -1,8 +1,9 @@
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.views.decorators.cache import cache_control
+from django.views.decorators.http import require_POST
 
 from account.views import dashboard
 from .forms import *
@@ -63,7 +64,10 @@ def user_list(request):
 
 
 def event_details(request, pk):
+    global new_comment
     event = get_object_or_404(Event, pk=pk)
+    likes = event.likes.all()
+    user_like = likes.filter(user=request.user)
     comments = event.comments.filter(active=True).order_by('-created')[:50]
     if request.method == 'POST':
         comment_form = CommentForm(data=request.POST)
@@ -78,6 +82,27 @@ def event_details(request, pk):
         new_comment = None
 
     return render(request,'event_details.html', {'event': event,
-                                                 'comments':comments,
+                                                 'comments': comments,
                                                  'comment_form': comment_form,
-                                                 'new_comment': new_comment,})
+                                                 'new_comment': new_comment,
+                                                 'likes': likes,
+                                                 'user_like': user_like})
+
+@login_required
+@require_POST
+def event_like(request):
+    event_id = request.POST.get('id')
+    action = request.POST.get('action')
+    if event_id and action:
+        try:
+            event = Event.objects.get(id=event_id)
+            if action == 'like':
+
+                Like.objects.get_or_create(event=event, user=request.user)
+            else:
+
+                Like.objects.filter(event=event, user=request.user).delete()
+            return JsonResponse({'status': 'ok'})
+        except:
+            pass
+    return JsonResponse({'status': 'ko'})

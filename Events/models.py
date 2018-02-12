@@ -51,3 +51,12 @@ class Comment(models.Model):
 
     def __str__(self):
         return 'Comment by {} on {}'.format(self.user.username, self.event)
+
+
+class Like(models.Model):
+    event = models.ForeignKey(Event, related_name='likes', blank=True, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='likes', blank=True, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.event.title

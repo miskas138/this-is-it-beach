@@ -19,7 +19,10 @@ class CommentAdmin(admin.ModelAdmin):
     list_filter = ('active', 'created', 'updated')
     search_fields = ('user', 'body')
 
+class LikeAdmin(admin.ModelAdmin):
+    list_display = ('event', 'user', 'created')
 
+admin.site.register(Like, LikeAdmin)
 admin.site.register(Comment, CommentAdmin)
 admin.site.register(Event, EventAdmin)
 admin.site.register(Information, InformationAdmin)

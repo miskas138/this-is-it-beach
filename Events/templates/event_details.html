@@ -23,9 +23,64 @@
 
 </div>
 
+<!--Title-->
+<h2 class="text-center" style="font-family: Montserrat, sans-serif;border: 5px; border-style: groove;margin: 0;padding-top: 0px;padding-bottom: 3px; color: #d5d5d5 !important;
+      background-color: rgb(0,0,0) !important; opacity: 0.8;letter-spacing: 10px;">{{ event.title }}</h2>
 
-<h2 class="text-center" style="border: 5px; border-style: groove;margin: 0;padding-top: 0px;padding-bottom: 3px; color: #d5d5d5 !important;
-      background-color: #29292c !important; opacity: 0.8;letter-spacing: 10px;">{{ event.title }}</h2>
+    <!--like+modal-->
+
+    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">
+         {% with total_likes=likes.count  %}
+   <h4><span class="count"><span id="total">{{ total_likes }}</span> like{{ total_likes|pluralize }}</span></h4>
+        {% endwith %}</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" style="color: black">users like</h4>
+        </div>
+        <div class="modal-body">
+
+            {% for like in likes %}
+
+
+                <div class="media">
+    <div class="media-left">
+      <img src="{% if like.user.profile %}{{ like.user.profile.photo.url }}{% else %}{{ like.user.advanced_profile.photo.url }}{% endif %}" class="media-object" style="width:45px; height:45px;object-fit: cover">
+    </div>
+    <div class="media-body">
+
+        <p style="color: black">{{ like.user.username }}</p>
+    </div>
+       </div>
+
+
+            {% empty %}<p style="color: black">nobody likes the post yet</p>
+        {% endfor %}</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" style="color: black">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <label class="label label-success"> <span class="glyphicon {% if not user_like %}glyphicon-thumbs-up{% else %}glyphicon-thumbs-down{% endif %}"></span>
+    <a href="#" data-id="{{ event.id }}" data-action="{% if user_like %}un{% endif %}like" class="like">
+        {% if not user_like  %}
+            Like
+        {% else %}
+            Unlike
+        {% endif %}
+    </a>
+</label>
+
+
+
 <div class="row1">
     <div class="container-fluid col-sm-2 text-center" style="background-color: #29292c; color: #dcdcdc; opacity: 0.9; border-radius: 15px">
 {% if request.user|has_group:"advanced_user" %}
@@ -137,4 +192,24 @@
 {% endblock %}
 
 {% block domready %}
+     $('a.like').click(function(e){
+        e.preventDefault();
+        $.post('{% url "like" %}',
+            {
+                id: $(this).data('id'),
+                action: $(this).data('action'),
+            },
+        function(data){
+            if (data['status'] == 'ok'){
+                  var previous_action = $('a.like').data('action');
+                  $('a.like').data('action', previous_action == 'like' ? 'unlike' : 'like');
+                  $('a.like').text(previous_action == 'like' ? 'Unlike' : 'Like');
+                   $(".glyphicon").toggleClass("glyphicon-thumbs-up glyphicon-thumbs-down");
+
+                  var previous_likes = parseInt($('#total').text());
+                  $('#total').text(previous_action == 'like' ? previous_likes +1 : previous_likes -1);
+                                }
+                    }
+    );
+    });
 {% endblock %}
