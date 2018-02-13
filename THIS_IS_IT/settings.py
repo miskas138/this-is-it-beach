@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'Events',
     'geoposition',
     'datetimewidget',
+    'taggit',
 ]
 
 MIDDLEWARE = [

@@ -69,6 +69,15 @@ def event_details(request, pk):
     likes = event.likes.all()
     user_like = likes.filter(user=request.user)
     comments = event.comments.filter(active=True).order_by('-created')[:50]
+    View.objects.get_or_create(event=event, user=request.user)
+    views = event.register.all().count()
+    total_registered = event.register.all()
+    try:
+        user_registered = event.register.get(user=request.user)
+    except:
+        user_registered = None
+
+
     if request.method == 'POST':
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
@@ -86,7 +95,11 @@ def event_details(request, pk):
                                                  'comment_form': comment_form,
                                                  'new_comment': new_comment,
                                                  'likes': likes,
-                                                 'user_like': user_like})
+                                                 'user_like': user_like,
+                                                 'total_registered': total_registered,
+                                                 'user_registered': user_registered,
+                                                 'views': views,
+                                                 })
 
 @login_required
 @require_POST
@@ -102,6 +115,24 @@ def event_like(request):
             else:
 
                 Like.objects.filter(event=event, user=request.user).delete()
+            return JsonResponse({'status': 'ok'})
+        except:
+            pass
+    return JsonResponse({'status': 'ko'})
+
+
+@login_required
+@require_POST
+def event_register(request):
+    event_id = request.POST.get('id')
+    action = request.POST.get('action')
+    if event_id and action:
+        try:
+            event = Event.objects.get(id=event_id)
+            if action == 'register':
+                Register.objects.get_or_create(event=event, user=request.user)
+            else:
+                Register.objects.filter(event=event, user=request.user).delete()
             return JsonResponse({'status': 'ok'})
         except:
             pass

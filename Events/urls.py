@@ -8,4 +8,6 @@ urlpatterns = [
     url(r'^event_details/(?P<pk>[0-9]+)/$', views.event_details, name='event_details'),
     url(r'^organizers/$', views.user_list, name='user_list'),
     url(r'^event_like/$', views.event_like, name='like'),
+    # register to post
+    url(r'^event/register/$', views.event_register, name='event_register'),
 ]

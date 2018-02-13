@@ -2,6 +2,7 @@ from django.db import models
 from django.conf import settings
 from django.urls import reverse
 from geoposition.fields import GeopositionField
+from taggit.managers import TaggableManager
 
 SECTION_CHOISES = (('ΜΟΥΣΙΚΗ', 'Μουσική'), ('ΘΕΑΤΡΟ', 'Θέατρο'), ('ΧΟΡΟΣ', 'Χορός'), ('ΕΚΘΕΣΗ', 'Έκθεση'), ('ΚΙΝΗΜΑΤΟΓΡΑΦΟΣ',
                                                                                                       'Κινηματογράφος'))
@@ -16,6 +17,7 @@ class Event(models.Model):
     created = models.DateField(auto_now_add=True,
                                db_index=True)
     section = models.CharField(max_length=20, choices=SECTION_CHOISES, default='ΜΟΥΣΙΚΗ')
+    tags = TaggableManager()
     def __str__(self):
         return self.title
 
@@ -58,5 +60,22 @@ class Like(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='likes', blank=True, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.event.title
+
+class Register(models.Model):
+    event = models.ForeignKey(Event, related_name='register', blank=True, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='register', blank=True, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.event.title
+
+class View(models.Model):
+    event = models.ForeignKey(Event, related_name='view', blank=True, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='viewed', blank=True, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True, db_index=True)
+    class Meta:
+        ordering = ('-created',)
     def __str__(self):
         return self.event.title
