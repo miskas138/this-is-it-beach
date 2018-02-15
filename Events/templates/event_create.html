@@ -34,10 +34,31 @@
             <div class="col-sm-2">{{ field }}</div>
         </div>
 {% endfor %}
+        <!--Tag select list-->
+        <div class="form-group">
+          <label for="sel2" class="control-label col-sm-6">Mutiple select list):</label>
+        <div  class="col-sm-2" >
+      <select  class="form-control" id="sel2">
+        {% for tag in tags %}<option>{{ tag }}</option>{% endfor %}
 
+      </select></div>
+        </div>
 
 
         </div>
+     <script>
+$(document).ready(function(){
+<!--$('#psoli').append($('#sel2 option:selected').text()+', ');-->
+        // language=JQuery-CSS
+    $('#sel2').find('option').on('click', function() {
+            var tags = $('#sel2').find('option:selected').text();
+            var input_tag = $('.tagman').val();
+            $('.tagman').val(input_tag+", "+tags);
+            });
+
+       });
+
+    </script>
 
         <div class="tab-pane fade" id="information-tab">
             {{ information.media }}

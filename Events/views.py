@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.views.decorators.cache import cache_control
 from django.views.decorators.http import require_POST
+from taggit.models import Tag
 
 from account.views import dashboard
 from .forms import *
@@ -33,6 +34,7 @@ def home_page(request):
 @login_required
 @user_passes_test(lambda u: u.groups.filter(name='advanced_user'), dashboard)
 def event_create(request):
+    tags = Tag.objects.all()
     if request.method == 'POST':
         event = EventCreateForm(data=request.POST, files=request.FILES)
         information = InformationForm(data=request.POST)
@@ -54,7 +56,8 @@ def event_create(request):
         information = InformationForm()
         location = LocationForm()
 
-    return render(request, 'event_create.html', {'event': event, 'information': information, 'location': location})
+    return render(request, 'event_create.html', {'event': event, 'information': information, 'location': location,
+                                                 'tags': tags})
 
 @login_required
 def user_list(request):
@@ -64,7 +67,6 @@ def user_list(request):
 
 
 def event_details(request, pk):
-    global new_comment
     event = get_object_or_404(Event, pk=pk)
     likes = event.likes.all()
     user_like = likes.filter(user=request.user)
@@ -72,6 +74,7 @@ def event_details(request, pk):
     View.objects.get_or_create(event=event, user=request.user)
     views = event.register.all().count()
     total_registered = event.register.all()
+    similar_events = event.tags.similar_objects()
     try:
         user_registered = event.register.get(user=request.user)
     except:
@@ -99,6 +102,7 @@ def event_details(request, pk):
                                                  'total_registered': total_registered,
                                                  'user_registered': user_registered,
                                                  'views': views,
+                                                 'similar_events': similar_events,
                                                  })
 
 @login_required

@@ -2,65 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30dca8e3-21a5-48c9-bbd1-26fa6411c221" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Events/migrations/0009_register.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Events/migrations/0010_view.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Events/migrations/0011_event_tags.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_taggit-0.22.2.dist-info/DESCRIPTION.rst" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_taggit-0.22.2.dist-info/INSTALLER" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_taggit-0.22.2.dist-info/LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_taggit-0.22.2.dist-info/METADATA" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_taggit-0.22.2.dist-info/RECORD" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_taggit-0.22.2.dist-info/WHEEL" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_taggit-0.22.2.dist-info/metadata.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_taggit-0.22.2.dist-info/top_level.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/admin.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/apps.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/forms.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/cs/LC_MESSAGES/django.mo" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/cs/LC_MESSAGES/django.po" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/de/LC_MESSAGES/django.mo" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/de/LC_MESSAGES/django.po" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/el/LC_MESSAGES/django.mo" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/el/LC_MESSAGES/django.po" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/en/LC_MESSAGES/django.po" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/eo/LC_MESSAGES/django.mo" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/eo/LC_MESSAGES/django.po" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/es/LC_MESSAGES/django.mo" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/es/LC_MESSAGES/django.po" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/he/LC_MESSAGES/django.mo" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/he/LC_MESSAGES/django.po" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/it/LC_MESSAGES/django.mo" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/it/LC_MESSAGES/django.po" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/ja/LC_MESSAGES/django.mo" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/ja/LC_MESSAGES/django.po" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/nb/LC_MESSAGES/django.mo" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/nb/LC_MESSAGES/django.po" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/nl/LC_MESSAGES/django.mo" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/nl/LC_MESSAGES/django.po" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/pt_BR/LC_MESSAGES/django.mo" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/pt_BR/LC_MESSAGES/django.po" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/ru/LC_MESSAGES/django.mo" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/ru/LC_MESSAGES/django.po" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/tr/LC_MESSAGES/django.mo" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/tr/LC_MESSAGES/django.po" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/zh_Hans/LC_MESSAGES/django.mo" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/locale/zh_Hans/LC_MESSAGES/django.po" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/managers.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/migrations/0001_initial.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/migrations/0002_auto_20150616_2121.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/migrations/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/models.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/utils.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/taggit/views.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Events/admin.py" afterPath="$PROJECT_DIR$/Events/admin.py" />
-      <change beforePath="$PROJECT_DIR$/Events/models.py" afterPath="$PROJECT_DIR$/Events/models.py" />
+      <change beforePath="$PROJECT_DIR$/Events/forms.py" afterPath="$PROJECT_DIR$/Events/forms.py" />
+      <change beforePath="$PROJECT_DIR$/Events/templates/event_create.html" afterPath="$PROJECT_DIR$/Events/templates/event_create.html" />
       <change beforePath="$PROJECT_DIR$/Events/templates/event_details.html" afterPath="$PROJECT_DIR$/Events/templates/event_details.html" />
-      <change beforePath="$PROJECT_DIR$/Events/urls.py" afterPath="$PROJECT_DIR$/Events/urls.py" />
       <change beforePath="$PROJECT_DIR$/Events/views.py" afterPath="$PROJECT_DIR$/Events/views.py" />
-      <change beforePath="$PROJECT_DIR$/THIS_IS_IT/settings.py" afterPath="$PROJECT_DIR$/THIS_IS_IT/settings.py" />
-      <change beforePath="$PROJECT_DIR$/venv/pip-selfcheck.json" afterPath="$PROJECT_DIR$/venv/pip-selfcheck.json" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -74,20 +20,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="event_details.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="event_details.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Events/templates/event_details.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding>
-                <element signature="e#570#804#0#HTML" expanded="true" />
-                <element signature="e#1535#1542#1#HTML" expanded="true" />
-                <element signature="e#1586#1606#0#HTML" expanded="true" />
-                <element signature="e#1936#1985#0#HTML" expanded="true" />
-                <element signature="e#2039#2059#0#HTML" expanded="true" />
-                <element signature="e#2142#2162#0#HTML" expanded="true" />
-                <element signature="e#2332#2354#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="167">
+              <caret line="206" column="64" lean-forward="false" selection-start-line="206" selection-start-column="64" selection-end-line="206" selection-end-column="64" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -105,7 +43,7 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Events/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="612">
               <caret line="37" column="44" lean-forward="false" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="44" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
@@ -114,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Events/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+            <state relative-caret-position="272">
+              <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -129,7 +67,7 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/THIS_IS_IT/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
+            <state relative-caret-position="935">
               <caret line="57" column="13" lean-forward="false" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
               <folding />
             </state>
@@ -139,8 +77,8 @@
       <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Events/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="41" column="63" lean-forward="false" selection-start-line="41" selection-start-column="63" selection-end-line="41" selection-end-column="63" />
+            <state relative-caret-position="51">
+              <caret line="9" column="35" lean-forward="false" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -151,8 +89,8 @@
       <file leaf-file-name="event_create.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Events/templates/event_create.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+            <state relative-caret-position="249">
+              <caret line="54" column="47" lean-forward="true" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -161,7 +99,7 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/account/templates/account/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state relative-caret-position="2686">
               <caret line="158" column="19" lean-forward="false" selection-start-line="158" selection-start-column="19" selection-end-line="158" selection-end-column="19" />
               <folding />
             </state>
@@ -171,7 +109,7 @@
       <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Events/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
+            <state relative-caret-position="697">
               <caret line="41" column="78" lean-forward="false" selection-start-line="41" selection-start-column="78" selection-end-line="41" selection-end-column="78" />
               <folding />
             </state>
@@ -181,8 +119,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Events/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="97" column="14" lean-forward="false" selection-start-line="97" selection-start-column="14" selection-end-line="97" selection-end-column="14" />
+            <state relative-caret-position="300">
+              <caret line="104" column="82" lean-forward="false" selection-start-line="104" selection-start-column="82" selection-end-line="104" selection-end-column="82" />
               <folding>
                 <element signature="e#0#72#0" expanded="true" />
               </folding>
@@ -240,16 +178,16 @@
         <option value="$PROJECT_DIR$/Events/templates/organizers/organizers.html" />
         <option value="$PROJECT_DIR$/Events/templates/side_bar.html" />
         <option value="$PROJECT_DIR$/Events/templates/ajax_location_form.html" />
-        <option value="$PROJECT_DIR$/Events/templates/event_create.html" />
-        <option value="$PROJECT_DIR$/Events/forms.py" />
         <option value="$PROJECT_DIR$/Events/templates/home.html" />
         <option value="$PROJECT_DIR$/account/templates/account/base.html" />
         <option value="$PROJECT_DIR$/Events/urls.py" />
-        <option value="$PROJECT_DIR$/Events/views.py" />
         <option value="$PROJECT_DIR$/Events/admin.py" />
-        <option value="$PROJECT_DIR$/Events/templates/event_details.html" />
         <option value="$PROJECT_DIR$/THIS_IS_IT/settings.py" />
         <option value="$PROJECT_DIR$/Events/models.py" />
+        <option value="$PROJECT_DIR$/Events/forms.py" />
+        <option value="$PROJECT_DIR$/Events/templates/event_create.html" />
+        <option value="$PROJECT_DIR$/Events/views.py" />
+        <option value="$PROJECT_DIR$/Events/templates/event_details.html" />
       </list>
     </option>
   </component>
@@ -281,6 +219,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -345,11 +284,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/Programs/Python/myproject" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SearchEverywhereHistoryKey" value="navtab&#9;null&#9;null&#10;tab&#9;null&#9;null" />
@@ -422,24 +360,24 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5060514" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26109216" sideWeight="0.48940998" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26109216" sideWeight="0.48940998" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.49394855" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20272315" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20877458" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="manage.py@THIS_IS_IT" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="manage.py@THIS_IS_IT" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -656,7 +594,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-119">
           <caret line="20" column="43" lean-forward="false" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -690,31 +627,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3621">
           <caret line="213" column="18" lean-forward="false" selection-start-line="211" selection-start-column="0" selection-end-line="221" selection-end-column="122" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Events/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="41" column="63" lean-forward="false" selection-start-line="41" selection-start-column="63" selection-end-line="41" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Events/templates/event_create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Events/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
+        <state relative-caret-position="697">
           <caret line="41" column="78" lean-forward="false" selection-start-line="41" selection-start-column="78" selection-end-line="41" selection-end-column="78" />
           <folding />
         </state>
@@ -728,19 +646,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Events/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="97" column="14" lean-forward="false" selection-start-line="97" selection-start-column="14" selection-end-line="97" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#72#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Events/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="612">
           <caret line="37" column="44" lean-forward="false" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="44" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
@@ -750,43 +658,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/account/templates/account/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="2686">
           <caret line="158" column="19" lean-forward="false" selection-start-line="158" selection-start-column="19" selection-end-line="158" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Events/templates/event_details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="e#570#804#0#HTML" expanded="true" />
-            <element signature="e#1535#1542#1#HTML" expanded="true" />
-            <element signature="e#1586#1606#0#HTML" expanded="true" />
-            <element signature="e#1936#1985#0#HTML" expanded="true" />
-            <element signature="e#2039#2059#0#HTML" expanded="true" />
-            <element signature="e#2142#2162#0#HTML" expanded="true" />
-            <element signature="e#2332#2354#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/THIS_IS_IT/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
+        <state relative-caret-position="935">
           <caret line="57" column="13" lean-forward="false" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Events/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="9" column="35" lean-forward="false" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Events/templates/event_create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="54" column="47" lean-forward="true" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Events/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="104" column="82" lean-forward="false" selection-start-line="104" selection-start-column="82" selection-end-line="104" selection-end-column="82" />
+          <folding>
+            <element signature="e#0#72#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Events/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        <state relative-caret-position="272">
+          <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Events/templates/event_details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="206" column="64" lean-forward="false" selection-start-line="206" selection-start-column="64" selection-end-line="206" selection-end-column="64" />
+          <folding />
         </state>
       </provider>
     </entry>

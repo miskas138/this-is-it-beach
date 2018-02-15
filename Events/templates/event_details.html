@@ -95,6 +95,7 @@
         {% endif %}
     </a>
     </div>
+     <p>Tags: {{ event.tags.all|join:", " }}</p>
 
 
 
@@ -203,7 +204,7 @@
     </div>
   </div>
   </div></div>
-<div class="container-fluid col-sm-2">linvl g btgv etge gerg erge rge rgergr grgrgrsvvdrdrv evrvdrvrvr vvrv</div>
+    <div class="container-fluid col-sm-2 panel panel-default"><p>similar events: </p><ul>{% for similar_event in similar_events %}<a href="{{ similar_event.get_absolute_url }}"><li>{{ similar_event }}</li></a>{% endfor %}</ul></div>
 
 </div>
 {% endblock %}
