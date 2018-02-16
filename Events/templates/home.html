@@ -70,6 +70,9 @@
 
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
+        {% if tag %}
+<h2>Posts tagged with "{{ tag.name }}"</h2>
+{% endif %}
       <h2>Προβολή όλων των εκδηλώσεων</h2>
       <p>Σκρολλάρετε προς τα κάτω για να δείτε όλες τις εκδηλώσεις!!!</p>
         <div class="col-sm-8 col-sm-offset-2" id="event_list">

@@ -95,7 +95,13 @@
         {% endif %}
     </a>
     </div>
-     <p>Tags: {{ event.tags.all|join:", " }}</p>
+    <!--tags-->
+     <p>Tags: {% for tag in event.tags.all %}
+<a href="{% url "home_page_by_tag" tag.slug %}">
+{{ tag.name }}
+</a>
+{% if not forloop.last %}, {% endif %}
+{% endfor %}</p>
 
 
 

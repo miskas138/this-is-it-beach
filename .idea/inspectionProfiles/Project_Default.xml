@@ -26,6 +26,7 @@
           <option value="bool.read" />
           <option value="shituation.forms.magic_bu_buffer" />
           <option value="account.views.user" />
+          <option value="Events.models.*" />
         </list>
       </option>
     </inspection_tool>

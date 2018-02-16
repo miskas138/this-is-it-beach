@@ -12,8 +12,12 @@ from .forms import *
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)  # απενεργοποίηση του back button στον browser
 @login_required
-def home_page(request):
+def home_page(request, tag_slug=None):
     events = Event.objects.all().order_by('-information__dateTime')
+    tag = None
+    if tag_slug:
+        tag = get_object_or_404(Tag, slug=tag_slug)
+        events = events.filter(tags__in=[tag])
     carousel_events = events[:10]
     paginator = Paginator(events, 3)
     page = request.GET.get('page')
@@ -26,8 +30,12 @@ def home_page(request):
             return HttpResponse('')
         events = paginator.page(paginator.num_pages)
     if request.is_ajax():
-        return render(request, 'ajax_list.html', {'events': events, 'carousel_events': carousel_events})
-    return render(request, 'home.html', {'section': 'home', 'events': events, 'carousel_events': carousel_events})
+        return render(request, 'ajax_list.html', {'events': events,
+                                                  'carousel_events': carousel_events})
+    return render(request, 'home.html', {'section': 'home',
+                                         'events': events,
+                                         'carousel_events': carousel_events,
+                                         'tag': tag})
 
 
 
