@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'geoposition',
     'datetimewidget',
     'taggit',
+    'tinymce',
 ]
 
 MIDDLEWARE = [
@@ -149,4 +150,26 @@ LOGOUT_URL = reverse_lazy('logout')
 
 ABSOLUTE_URL_OVERRIDES = {
     'auth.User': lambda u: reverse_lazy('user_details', args=[u.username])
+}
+
+TAGGIT_CASE_INSENSITIVE = True
+
+
+TINYMCE_DEFAULT_CONFIG = {
+    'plugins': "table,spellchecker,paste,searchreplace",
+    'theme': "advanced",
+    'cleanup_on_startup': True,
+    'custom_undo_redo_levels': 10,
+}
+TINYMCE_SPELLCHECKER = True
+TINYMCE_COMPRESSOR = True
+TINYMCE_EXTRA_MEDIA = {
+    'css': {
+        'all': [
+
+        ],
+    },
+    'js': [
+
+    ],
 }

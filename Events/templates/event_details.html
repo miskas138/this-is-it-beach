@@ -27,82 +27,6 @@
 <h2 class="text-center" style="font-family: Montserrat, sans-serif;border: 5px; border-style: groove;margin: 0;padding-top: 0px;padding-bottom: 3px; color: #d5d5d5 !important;
       background-color: rgb(0,0,0) !important; opacity: 0.8;letter-spacing: 10px;">{{ event.title }}</h2>
 
-    <!--views-->
-    <button type="button" class="btn btn-primary">Total views <span class="badge">{{ views }}</span></button>
-
-    <!--like+modal-->
-
-    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">
-         {% with total_likes=likes.count  %}
-   <h4><span class="count"><span id="total">{{ total_likes }}</span> like{{ total_likes|pluralize }}</span></h4>
-        {% endwith %}</button>
-
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title" style="color: black">users like</h4>
-        </div>
-        <div class="modal-body">
-
-            {% for like in likes %}
-
-
-                <div class="media">
-    <div class="media-left">
-      <img src="{% if like.user.profile %}{{ like.user.profile.photo.url }}{% else %}{{ like.user.advanced_profile.photo.url }}{% endif %}" class="media-object" style="width:45px; height:45px;object-fit: cover">
-    </div>
-    <div class="media-body">
-
-        <p style="color: black">{{ like.user.username }}</p>
-    </div>
-       </div>
-
-
-            {% empty %}<p style="color: black">nobody likes the post yet</p>
-        {% endfor %}</div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal" style="color: #f6f6f6">Close</button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-  <label class="label label-success"> <span class="glyphicon {% if not user_like %}glyphicon-thumbs-up{% else %}glyphicon-thumbs-down{% endif %}"></span>
-    <a href="#" data-id="{{ event.id }}" data-action="{% if user_like %}un{% endif %}like" class="like">
-        {% if not user_like  %}
-            Like
-        {% else %}
-            Unlike
-        {% endif %}
-    </a>
-</label>
-    <!--register-->
-    <div>
-     <span class="register-count">
-            <span class="total-registered">{{ total_registered.count }}</span>
-            registered
-        </span>
-    <a href="#" data-id="{{ event.id }}" data-action="{% if user_registered %}un{% endif %}register" class="register">
-        {% if not user_registered %}
-            Register
-        {% else %}
-            Unregister
-        {% endif %}
-    </a>
-    </div>
-    <!--tags-->
-     <p>Tags: {% for tag in event.tags.all %}
-<a href="{% url "home_page_by_tag" tag.slug %}">
-{{ tag.name }}
-</a>
-{% if not forloop.last %}, {% endif %}
-{% endfor %}</p>
-
 
 
 <div class="row1">
@@ -135,6 +59,7 @@
         <div class="col-sm-8 col-sm-offset-2">
             <p><h2><span class="glyphicon glyphicon-info-sign"></span>Περιγραφή</h2></p>
            <p>{{ event.description }}</p>
+            <p>{{ event.content|safe|linebreaks }}</p>
             <p><em><span class="glyphicon glyphicon-pushpin"></span>Κατηγορία:</em> <h4 style="border-radius: 40%">{{ event.section }}</h4></p>
             <p><span class="glyphicon glyphicon-calendar"></span><em>Ημερομηνία ανάρτησης Δημοσίευσης: {{ event.created }}</em></p>
 
@@ -146,6 +71,7 @@
       <p><span class="glyphicon glyphicon-calendar"><span class="glyphicon glyphicon-time"></span></span>Ημερομηνία και ώρα Εκδήλωσης: {{ event.information.dateTime }}</p>
         <p>Τιμή εισητηρίου: {{ event.information.ticket_price }} <span class="glyphicon glyphicon-euro"></span></p>
         <p><span class="glyphicon glyphicon-shopping-cart"></span>Προπώληση: {{ event.information.presale }}</p>
+
         </div></div>
     <div id="menu2" class="tab-pane fade">
         <div class="col-sm-8 col-sm-offset-2">
@@ -210,6 +136,86 @@
     </div>
   </div>
   </div></div>
+    <!--right column-->
+
+    <!--views-->
+    <button type="button" class="btn btn-primary">Total views <span class="badge">{{ views }}</span></button>
+
+    <!--like+modal-->
+
+   <p> <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+         {% with total_likes=likes.count  %}
+             <h2 style="padding: 0; margin: 0"><span class="count"><span id="total">{{ total_likes }}</span> like{{ total_likes|pluralize }}</span></h2>
+         {% endwith %}</button>
+   <label class="label label-success"> <span class="glyphicon {% if not user_like %}glyphicon-thumbs-up{% else %}glyphicon-thumbs-down{% endif %}"></span>
+    <a href="#" data-id="{{ event.id }}" data-action="{% if user_like %}un{% endif %}like" class="like">
+        {% if not user_like  %}
+            Like
+        {% else %}
+            Unlike
+        {% endif %}
+    </a>
+</label></p>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" style="color: black">users like</h4>
+        </div>
+        <div class="modal-body">
+
+            {% for like in likes %}
+
+
+                <div class="media">
+    <div class="media-left">
+      <img src="{% if like.user.profile %}{{ like.user.profile.photo.url }}{% else %}{{ like.user.advanced_profile.photo.url }}{% endif %}" class="media-object" style="width:45px; height:45px;object-fit: cover">
+    </div>
+    <div class="media-body">
+
+        <p style="color: black">{{ like.user.username }}</p>
+    </div>
+       </div>
+
+
+            {% empty %}<p style="color: black">nobody likes the post yet</p>
+        {% endfor %}</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" style="color: #f6f6f6">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+    <!--register-->
+    <div>
+     <span class="register-count">
+            <span class="total-registered">{{ total_registered.count }}</span>
+            registered
+        </span>
+    <a href="#" data-id="{{ event.id }}" data-action="{% if user_registered %}un{% endif %}register" class="register">
+        {% if not user_registered %}
+            Register
+        {% else %}
+            Unregister
+        {% endif %}
+    </a>
+    </div>
+    <!--tags-->
+     <p>Tags: {% for tag in tags %}
+<a href="{% url "home_page_by_tag" tag.slug %}">
+{{ tag.name }}
+</a>
+{% if not forloop.last %}, {% endif %}
+{% endfor %}</p>
+
+
     <div class="container-fluid col-sm-2 panel panel-default"><p>similar events: </p><ul>{% for similar_event in similar_events %}<a href="{{ similar_event.get_absolute_url }}"><li>{{ similar_event }}</li></a>{% endfor %}</ul></div>
 
 </div>

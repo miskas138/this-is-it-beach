@@ -27,6 +27,7 @@
 <form id="accountForm" method="post" class="form-horizontal" action="." enctype="multipart/form-data">
     <div class="tab-content">
         <div class="tab-pane fade in active" id="event-tab">
+                {{ event.media }}
              {% for field in event %}
         <div class="form-group">
             {{ field.errors }}

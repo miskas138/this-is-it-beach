@@ -14,6 +14,12 @@ from .forms import *
 @login_required
 def home_page(request, tag_slug=None):
     events = Event.objects.all().order_by('-information__dateTime')
+    music_events = events.filter(section="ΜΟΥΣΙΚΗ")
+    theater_events = events.filter(section="ΘΕΑΤΡΟ")
+    movie_events = events.filter(section="ΚΙΝΗΜΑΤΟΓΡΑΦΟΣ")
+    dancing_events = events.filter(section="ΧΟΡΟΣ")
+    exhibition_events = events.filter(section="ΕΚΘΕΣΗ")
+    misc_events = events.filter(section="ΔΙΑΦΟΡΕΣ")
     tag = None
     if tag_slug:
         tag = get_object_or_404(Tag, slug=tag_slug)
@@ -34,6 +40,12 @@ def home_page(request, tag_slug=None):
                                                   'carousel_events': carousel_events})
     return render(request, 'home.html', {'section': 'home',
                                          'events': events,
+                                         'music_events': music_events,
+                                         'theater_events': theater_events,
+                                         'exhibition_events': exhibition_events,
+                                         'dancing_events': dancing_events,
+                                         'movie_events': movie_events,
+                                         'misc_events': misc_events,
                                          'carousel_events': carousel_events,
                                          'tag': tag})
 
@@ -52,6 +64,7 @@ def event_create(request):
             new_event = event.save(commit=False)
             new_event.user = request.user
             new_event.save()
+            event.save_m2m()
             new_information = information.save(commit=False)
             new_information.event = new_event
             new_information.save()
@@ -83,6 +96,7 @@ def event_details(request, pk):
     views = event.register.all().count()
     total_registered = event.register.all()
     similar_events = event.tags.similar_objects()
+    tags = event.tags.all()
     try:
         user_registered = event.register.get(user=request.user)
     except:
@@ -111,6 +125,7 @@ def event_details(request, pk):
                                                  'user_registered': user_registered,
                                                  'views': views,
                                                  'similar_events': similar_events,
+                                                 'tags': tags,
                                                  })
 
 @login_required
