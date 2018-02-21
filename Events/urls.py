@@ -13,4 +13,5 @@ urlpatterns = [
     url(r'^event/register/$', views.event_register, name='event_register'),
     url(r'^tag/(?P<tag_slug>[-\w]+)/$', views.home_page, name='home_page_by_tag'),
     url(r'^tinymce/', include('tinymce.urls')),
+    url(r'^home/(?P<section>[-\w]+)/$', views.home_page, name='home_page_section'),
 ]

@@ -12,14 +12,18 @@ from .forms import *
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)  # απενεργοποίηση του back button στον browser
 @login_required
-def home_page(request, tag_slug=None):
+def home_page(request, tag_slug=None, section=None):
     events = Event.objects.all().order_by('-information__dateTime')
-    music_events = events.filter(section="ΜΟΥΣΙΚΗ")
+    music_events = events.filter(section="ΜΟΥΣΙΚΗ")[:5]
     theater_events = events.filter(section="ΘΕΑΤΡΟ")
     movie_events = events.filter(section="ΚΙΝΗΜΑΤΟΓΡΑΦΟΣ")
     dancing_events = events.filter(section="ΧΟΡΟΣ")
     exhibition_events = events.filter(section="ΕΚΘΕΣΗ")
     misc_events = events.filter(section="ΔΙΑΦΟΡΕΣ")
+    if section:
+        events = events.filter(section=section)
+    else:
+        section = 'home'
     tag = None
     if tag_slug:
         tag = get_object_or_404(Tag, slug=tag_slug)
@@ -38,7 +42,7 @@ def home_page(request, tag_slug=None):
     if request.is_ajax():
         return render(request, 'ajax_list.html', {'events': events,
                                                   'carousel_events': carousel_events})
-    return render(request, 'home.html', {'section': 'home',
+    return render(request, 'home.html', {'section': section,
                                          'events': events,
                                          'music_events': music_events,
                                          'theater_events': theater_events,

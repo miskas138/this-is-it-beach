@@ -58,13 +58,13 @@
     <div class="container-fluid text-center col-sm-8 panel panel-default" style="border-radius: 10px; opacity: 0.9">
 
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Όλες</a></li>
-    <li><a data-toggle="tab" href="#music">Μουσική</a></li>
-    <li><a data-toggle="tab" href="#theater">Θέατρο</a></li>
-      <li><a data-toggle="tab" href="#movie">Κινηματογράφος</a></li>
-    <li><a data-toggle="tab" href="#dance">Χορός</a></li>
-      <li><a data-toggle="tab" href="#exhibition">Έκθεση</a></li>
-    <li><a data-toggle="tab" href="#misc">Διάφορες</a></li>
+    <li {% if section == "home" %}class="active"{% endif %}><a data-toggle="tab" href="#home">Όλες</a></li>
+    <li {% if section == "ΜΟΥΣΙΚΗ" %}class="active"{% endif %}><a data-toggle="tab" href="#music">Μουσική</a></li>
+    <li {% if section == "ΘΕΑΤΡΟ" %}class="active"{% endif %}><a data-toggle="tab" href="#theater">Θέατρο</a></li>
+      <li {% if section == "ΚΙΝΗΜΑΤΟΓΡΑΦΟΣ" %}class="active"{% endif %}><a data-toggle="tab" href="#movie">Κινηματογράφος</a></li>
+    <li {% if section == "ΧΟΡΟΣ" %}class="active"{% endif %}><a data-toggle="tab" href="#dance">Χορός</a></li>
+      <li {% if section == "ΕΚΘΕΣΗ" %}class="active"{% endif %}><a data-toggle="tab" href="#exhibition">Έκθεση</a></li>
+    <li {% if section == "ΔΙΑΦΟΡΕΣ" %}class="active"{% endif %}><a data-toggle="tab" href="#misc">Διάφορες</a></li>
       <li><a data-toggle="tab" href="#menu7">Chandler</a></li>
   </ul>
 
@@ -89,35 +89,35 @@
     <div id="theater" class="tab-pane fade">
        <h2>Θεατρικές Εκδηλώσεις</h2>
       <p>Σκρολλάρετε προς τα κάτω για να δείτε όλες τις θεατρικές εκδηλώσεις</p>
-         <div class="col-sm-8 col-sm-offset-2" id="event_list">
+         <div class="col-sm-8 col-sm-offset-2" id="music_event_list">
            {% include "ajax_list.html" with events=theater_events %}
       </div>
     </div>
       <div id="movie" class="tab-pane fade">
       <h2>Κινηματογραφικές Εκδηλώσεις</h2>
       <p>Σκρολλάρετε προς τα κάτω για να δείτε όλες τις κινηματογραφικές εκδηλώσεις</p>
-         <div class="col-sm-8 col-sm-offset-2" id="event_list">
+         <div class="col-sm-8 col-sm-offset-2" id="movie_event_list">
            {% include "ajax_list.html" with events=movie_events %}
       </div>
     </div>
       <div id="dance" class="tab-pane fade">
      <h2>Εκδηλώσεις Χορού</h2>
       <p>Σκρολλάρετε προς τα κάτω για να δείτε όλες τις εκδηλώσεις χορού</p>
-         <div class="col-sm-8 col-sm-offset-2" id="event_list">
+         <div class="col-sm-8 col-sm-offset-2" id="dancing_event_list">
            {% include "ajax_list.html" with events=dancing_events %}
       </div>
     </div>
       <div id="exhibition" class="tab-pane fade">
      <h2>Εκθεσιακές Εκδηλώσεις</h2>
       <p>Σκρολλάρετε προς τα κάτω για να δείτε όλες τις εκθεσιακές εκδηλώσεις</p>
-         <div class="col-sm-8 col-sm-offset-2" id="event_list">
+         <div class="col-sm-8 col-sm-offset-2" id="exhibition_event_list">
            {% include "ajax_list.html" with events=exhibition_events %}
       </div>
     </div>
       <div id="misc" class="tab-pane fade">
       <h2>Διάφορες Εκδηλώσεις</h2>
       <p>Σκρολλάρετε προς τα κάτω για να δείτε όλες τις διάφορες εκδηλώσεις</p>
-         <div class="col-sm-8 col-sm-offset-2" id="event_list">
+         <div class="col-sm-8 col-sm-offset-2" id="misc_event_list">
            {% include "ajax_list.html" with events=misc_events %}
       </div>
     </div>
@@ -148,6 +148,7 @@
                 }else {
                     block_request = false;
                     $('#event_list').append(data);
+
 
                 }
 
