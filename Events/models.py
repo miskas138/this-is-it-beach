@@ -4,6 +4,7 @@ from django.urls import reverse
 from geoposition.fields import GeopositionField
 from taggit.managers import TaggableManager
 from tinymce.models import HTMLField
+from django.contrib.auth.models import User
 
 
 SECTION_CHOISES = (('ΜΟΥΣΙΚΗ', 'Μουσική'),
@@ -89,3 +90,19 @@ class View(models.Model):
         ordering = ('-created',)
     def __str__(self):
         return self.event.title
+
+
+
+class Contact(models.Model):
+    user_from = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='rel_from_set', on_delete=models.CASCADE)
+    user_to = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='rel_to_set', on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True, db_index=True)
+
+    class Meta:
+        ordering = ('-created',)
+    def __str__(self):
+        return '{} follows {}'.format(self.user_from, self.user_to)
+
+#add a field in user model dynamically
+User.add_to_class('following', models.ManyToManyField('self', through=Contact, related_name='followers',
+                                                      symmetrical=False))

@@ -58,18 +58,15 @@
     <div class="container-fluid text-center col-sm-8 panel panel-default" style="border-radius: 10px; opacity: 0.9">
 
   <ul class="nav nav-tabs">
-    <li {% if section == "home" %}class="active"{% endif %}><a data-toggle="tab" href="#home">Όλες</a></li>
-    <li {% if section == "ΜΟΥΣΙΚΗ" %}class="active"{% endif %}><a data-toggle="tab" href="#music">Μουσική</a></li>
-    <li {% if section == "ΘΕΑΤΡΟ" %}class="active"{% endif %}><a data-toggle="tab" href="#theater">Θέατρο</a></li>
-      <li {% if section == "ΚΙΝΗΜΑΤΟΓΡΑΦΟΣ" %}class="active"{% endif %}><a data-toggle="tab" href="#movie">Κινηματογράφος</a></li>
-    <li {% if section == "ΧΟΡΟΣ" %}class="active"{% endif %}><a data-toggle="tab" href="#dance">Χορός</a></li>
-      <li {% if section == "ΕΚΘΕΣΗ" %}class="active"{% endif %}><a data-toggle="tab" href="#exhibition">Έκθεση</a></li>
-    <li {% if section == "ΔΙΑΦΟΡΕΣ" %}class="active"{% endif %}><a data-toggle="tab" href="#misc">Διάφορες</a></li>
-      <li><a data-toggle="tab" href="#menu7">Chandler</a></li>
+    <li {% if not section %}class="active"{% endif %}><a href="{% url "home_page" %}">Όλες</a></li>
+    <li {% if section == "ΜΟΥΣΙΚΗ" %}class="active"{% endif %}><a href="{% url "home_page_section" section='ΜΟΥΣΙΚΗ' %}">Μουσική</a></li>
+    <li {% if section == "ΘΕΑΤΡΟ" %}class="active"{% endif %}><a href="{% url "home_page_section" section='ΘΕΑΤΡΟ' %}">Θέατρο</a></li>
+      <li {% if section == "ΚΙΝΗΜΑΤΟΓΡΑΦΟΣ" %}class="active"{% endif %}><a href="{% url "home_page_section" section='ΚΙΝΗΜΑΤΟΓΡΑΦΟΣ' %}">Κινηματογράφος</a></li>
+    <li {% if section == "ΧΟΡΟΣ" %}class="active"{% endif %}><a href="{% url "home_page_section" section='ΧΟΡΟΣ' %}">Χορός</a></li>
+      <li {% if section == "ΕΚΘΕΣΗ" %}class="active"{% endif %}><a href="{% url "home_page_section" section='ΕΚΘΕΣΗ' %}">Έκθεση</a></li>
+    <li {% if section == "ΔΙΑΦΟΡΕΣ" %}class="active"{% endif %}><a href="{% url "home_page_section" section='ΔΙΑΦΟΡΕΣ' %}">Διάφορες</a></li>
   </ul>
 
-  <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
         {% if tag %}
 <h2>Posts tagged with "{{ tag.name }}"</h2>
        {% else %}
@@ -79,54 +76,9 @@
            {% include "ajax_list.html" %}
       </div>
     </div>
-    <div id="music" class="tab-pane fade">
-      <h2>Μουσικές Εκδηλώσεις</h2>
-      <p>Σκρολλάρετε προς τα κάτω για να δείτε όλες τις μουσικές εκδηλώσεις</p>
-         <div class="col-sm-8 col-sm-offset-2" id="event_list">
-           {% include "ajax_list.html" with events=music_events %}
-      </div>
-    </div>
-    <div id="theater" class="tab-pane fade">
-       <h2>Θεατρικές Εκδηλώσεις</h2>
-      <p>Σκρολλάρετε προς τα κάτω για να δείτε όλες τις θεατρικές εκδηλώσεις</p>
-         <div class="col-sm-8 col-sm-offset-2" id="music_event_list">
-           {% include "ajax_list.html" with events=theater_events %}
-      </div>
-    </div>
-      <div id="movie" class="tab-pane fade">
-      <h2>Κινηματογραφικές Εκδηλώσεις</h2>
-      <p>Σκρολλάρετε προς τα κάτω για να δείτε όλες τις κινηματογραφικές εκδηλώσεις</p>
-         <div class="col-sm-8 col-sm-offset-2" id="movie_event_list">
-           {% include "ajax_list.html" with events=movie_events %}
-      </div>
-    </div>
-      <div id="dance" class="tab-pane fade">
-     <h2>Εκδηλώσεις Χορού</h2>
-      <p>Σκρολλάρετε προς τα κάτω για να δείτε όλες τις εκδηλώσεις χορού</p>
-         <div class="col-sm-8 col-sm-offset-2" id="dancing_event_list">
-           {% include "ajax_list.html" with events=dancing_events %}
-      </div>
-    </div>
-      <div id="exhibition" class="tab-pane fade">
-     <h2>Εκθεσιακές Εκδηλώσεις</h2>
-      <p>Σκρολλάρετε προς τα κάτω για να δείτε όλες τις εκθεσιακές εκδηλώσεις</p>
-         <div class="col-sm-8 col-sm-offset-2" id="exhibition_event_list">
-           {% include "ajax_list.html" with events=exhibition_events %}
-      </div>
-    </div>
-      <div id="misc" class="tab-pane fade">
-      <h2>Διάφορες Εκδηλώσεις</h2>
-      <p>Σκρολλάρετε προς τα κάτω για να δείτε όλες τις διάφορες εκδηλώσεις</p>
-         <div class="col-sm-8 col-sm-offset-2" id="misc_event_list">
-           {% include "ajax_list.html" with events=misc_events %}
-      </div>
-    </div>
-      <div id="menu7" class="tab-pane fade">
-      <h2>Chandler Bing, Guitarist</h2>
-      <p>Always a pleasure people! Hope you enjoyed it as much as I did. Could I BE.. any more pleased?</p>
-    </div>
-  </div>
-    </div>
+
+
+
 <div class="container-fluid col-sm-2">linvl g btgv etge gerg erge rge rgergr grgrgrsvvdrdrv evrvdrvrvr vvrv</div>
 
 </div>

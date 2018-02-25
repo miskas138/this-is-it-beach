@@ -25,13 +25,13 @@
       font: 400 15px/1.8 Lato, sans-serif;
       color: #777;
       opacity: 1.2;
-      background: url("/media/ksevrasma.png") repeat;
+     <!-- background: url("/media/ksevrasma.png") repeat;-->
 
   }
 
 
   h3, h4 {
-      margin: 10px 0 30px 0;
+      margin: 0px 0 0px 0;
       letter-spacing: 10px;
       font-size: 20px;
       color: #111;
@@ -42,10 +42,10 @@
 
   .person {
       border: 10px solid transparent;
-      margin-bottom: 25px;
-      width: 80%;
+      margin: 0px;
+      width: 100%;
       height: 80%;
-      opacity: 0.7;
+      opacity: 0.9;
   }
   .person:hover {
       border-color: #141414;
@@ -321,46 +321,6 @@
   </div>
 </nav>
 
-
-
-
-
-
-<!--bottom navbar-->
-<nav class="navbar navbar-inverse navbar-fixed-bottom"style="">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myBottomNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">WebSiteName</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myBottomNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Page 1-1</a></li>
-            <li><a href="#">Page 1-2</a></li>
-            <li><a href="#">Page 1-3</a></li>
-          </ul>
-        </li>
-        <li><!--status home page link test-->
-    <a href="{% url "home_page_section" section='ΜΟΥΣΙΚΗ' %}">
-MUSIC
-</a></li>
-        <li> <a href="{% url "home_page_section" section='ΘΕΑΤΡΟ' %}">Θέατρο</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
 
 {% block content %}
 

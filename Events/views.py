@@ -14,16 +14,8 @@ from .forms import *
 @login_required
 def home_page(request, tag_slug=None, section=None):
     events = Event.objects.all().order_by('-information__dateTime')
-    music_events = events.filter(section="ΜΟΥΣΙΚΗ")[:5]
-    theater_events = events.filter(section="ΘΕΑΤΡΟ")
-    movie_events = events.filter(section="ΚΙΝΗΜΑΤΟΓΡΑΦΟΣ")
-    dancing_events = events.filter(section="ΧΟΡΟΣ")
-    exhibition_events = events.filter(section="ΕΚΘΕΣΗ")
-    misc_events = events.filter(section="ΔΙΑΦΟΡΕΣ")
     if section:
         events = events.filter(section=section)
-    else:
-        section = 'home'
     tag = None
     if tag_slug:
         tag = get_object_or_404(Tag, slug=tag_slug)
@@ -44,12 +36,6 @@ def home_page(request, tag_slug=None, section=None):
                                                   'carousel_events': carousel_events})
     return render(request, 'home.html', {'section': section,
                                          'events': events,
-                                         'music_events': music_events,
-                                         'theater_events': theater_events,
-                                         'exhibition_events': exhibition_events,
-                                         'dancing_events': dancing_events,
-                                         'movie_events': movie_events,
-                                         'misc_events': misc_events,
                                          'carousel_events': carousel_events,
                                          'tag': tag})
 
@@ -119,7 +105,7 @@ def event_details(request, pk):
         comment_form = CommentForm()
         new_comment = None
 
-    return render(request,'event_details.html', {'event': event,
+    return render(request, 'event_details.html', {'event': event,
                                                  'comments': comments,
                                                  'comment_form': comment_form,
                                                  'new_comment': new_comment,
@@ -168,3 +154,28 @@ def event_register(request):
         except:
             pass
     return JsonResponse({'status': 'ko'})
+
+
+@login_required
+def user_details(request, username):
+    user = get_object_or_404(User, username=username, is_active=True)
+
+    return render(request, 'organizers/user_details.html', {'user': user})
+
+@login_required
+@require_POST
+def user_follow(request):
+    user_id = request.POST.get('id')
+    action = request.POST.get('action')
+    if user_id and action:
+        try:
+            user = User.objects.get(id=user_id)
+            if action=='follow':
+                Contact.objects.get_or_create(user_from=request.user, user_to=user)
+            else:
+                Contact.objects.filter(user_from=request.user, user_to=user).delete()
+            return JsonResponse({'status': 'ok'})
+        except User.DoesNotExist:
+            return JsonResponse({'status': 'ko'})
+    return JsonResponse({'status': 'ko'})
+
