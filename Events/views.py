@@ -83,7 +83,7 @@ def event_details(request, pk):
     user_like = likes.filter(user=request.user)
     comments = event.comments.filter(active=True).order_by('-created')[:50]
     View.objects.get_or_create(event=event, user=request.user)
-    views = event.register.all().count()
+    views = event.view.all().count()
     total_registered = event.register.all()
     similar_events = event.tags.similar_objects()
     tags = event.tags.all()

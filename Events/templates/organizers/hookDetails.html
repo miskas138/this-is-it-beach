@@ -9,11 +9,11 @@
     <div class="carousel-inner" role="listbox">
 
         <div class="item active">
-        <img src="{{ event.image.url }}" alt="New York">
+        <img src="{{ user.advanced_profile.photo.url }}" alt="New York">
         <div class="carousel-caption">
-
-
-            <p><i>{{ event.information.dateTime }}</i></p>
+ <h3 style="height: 40px; max-height: 40px; letter-spacing: 0">{{ user.advanced_profile.organization_name }}</h3>
+<p>{{ user.get_full_name }}</p>
+            <p><i>{{ user.date_joined }}</i></p>
         </div>
       </div>
 
@@ -25,7 +25,7 @@
 
 <!--Title-->
 <h2 class="text-center" style="font-family: Montserrat, sans-serif;border: 5px; border-style: groove;margin: 0;padding-top: 0px;padding-bottom: 3px; color: #d5d5d5 !important;
-      background-color: rgb(0,0,0) !important; opacity: 0.8;letter-spacing: 10px;">{{ event.title }}</h2>
+      background-color: rgb(0,0,0) !important; opacity: 0.8;letter-spacing: 10px;">{{ user.advanced_profile.organization_name }}</h2>
 
 
 
@@ -35,10 +35,7 @@
 {% include "side_bar.html" %}
     {% else %}<p>Για τους φλώρους απλούς χρήστες δεν έχει πλαινή μπάρα :D</p>
 {% endif %}
-
-
-
-</div>
+    </div>
 
 
 
@@ -56,7 +53,7 @@
     <div id="home" class="tab-pane fade in active">
 
 
-        <div class="text-center">
+        <div class="col-sm-8 col-sm-offset-2">
             <p><h2><span class="glyphicon glyphicon-info-sign"></span>Περιγραφή</h2></p>
            <p>{{ event.description }}</p>
             <p>{{ event.content|safe|linebreaks }}</p>

@@ -1,4 +1,6 @@
 {% extends 'account/base.html' %}
+{% load account_tags %}
+
 
 {% block content %}
 
@@ -37,12 +39,31 @@
     </a>
 </div>
 
-    <div id="organizers-list">
 
+<div class="container-fluid text-center">
+  <h3>THE BAND</h3>
+  <p><em>We love music!</em></p>
+  <p>We have created a fictional band website. Lorem ipsum..</p>
+  <br>
+  <div class="row">
+  <!--left container-->
+<div class="container-fluid col-sm-2 text-center" style="background-color: #29292c; color: #f1f1f1; border-radius: 15px">
+{% if request.user|has_group:"advanced_user" %}
+{% include "side_bar.html" %}
+    {% else %}<p>Για τους φλώρους απλούς χρήστες δεν έχει πλαινή μπάρα :D</p>
+{% endif %}
+</div>
+  <!--middle container-->
+  <div class="container-fluid col-sm-8 panel panel-default" style="border-radius: 10px;">
+      <div id="organizers-list">
 {% include "organizers/organizers.html" %}
+ </div>
+ </div>
+  <!--right container-->
+  <div class="container-fluid col-sm-2">linvl g btgv etge gerg erge rge rgergr grgrgrsvvdrdrv evrvdrvrvr vvrv</div>
+  </div>
+</div>
 
-
-    </div>
 
 {% endblock %}
 {% block domready %}
