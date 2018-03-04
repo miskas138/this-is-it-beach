@@ -29,7 +29,7 @@
 
 
 
-<div class="row1">
+<p class="row1">
     <div class="container-fluid col-sm-2 text-center" style="background-color: #29292c; color: #dcdcdc; opacity: 0.9; border-radius: 15px">
 {% if request.user|has_group:"advanced_user" %}
 {% include "side_bar.html" %}
@@ -40,45 +40,53 @@
 
 
 
-    <div class="container-fluid col-sm-8 panel panel-default" style="border-radius: 10px">
+    <div class="container-fluid col-sm-8 panel panel-default text-center" style="border-radius: 10px">
 <div class="text-center">
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Η Εκδήλωση</a></li>
+    <li class="active"><a data-toggle="tab" href="#home">Δημοσιευμένες Εκδηλώσεις</a></li>
     <li><a data-toggle="tab" href="#menu1">Πληροφορίες</a></li>
     <li><a data-toggle="tab" href="#menu2">Τοποθεσία</a></li>
       <li><a data-toggle="tab" href="#menu3">Σχόλια</a></li>
+      <li><a data-toggle="tab" href="#menu4">Επικοινωνία</a></li>
   </ul>
 </div>
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
 
 
-        <div class="col-sm-8 col-sm-offset-2">
-            <p><h2><span class="glyphicon glyphicon-info-sign"></span>Περιγραφή</h2></p>
-           <p>{{ event.description }}</p>
-            <p>{{ event.content|safe|linebreaks }}</p>
-            <p><em><span class="glyphicon glyphicon-pushpin"></span>Κατηγορία:</em> <h4 style="border-radius: 40%">{{ event.section }}</h4></p>
-            <p><span class="glyphicon glyphicon-calendar"></span><em>Ημερομηνία ανάρτησης Δημοσίευσης: {{ event.created }}</em></p>
+        <div>
+          <h2>Προβολή όλων των εκδηλώσεων</h2>
+      <p>Σκρολλάρετε προς τα κάτω για να δείτε όλες τις εκδηλώσεις!!!</p>
+        <div id="event_list">
+           {% include "ajax_list.html" %}
+      </div>
 
       </div>
     </div>
     <div id="menu1" class="tab-pane fade">
         <div class="col-sm-8 col-sm-offset-2">
-      <h2><span class="glyphicon glyphicon-info-sign"></span>Πληροφορίες Εκδήλωσης</h2>
-      <p><span class="glyphicon glyphicon-calendar"><span class="glyphicon glyphicon-time"></span></span>Ημερομηνία και ώρα Εκδήλωσης: {{ event.information.dateTime }}</p>
-        <p>Τιμή εισητηρίου: {{ event.information.ticket_price }} <span class="glyphicon glyphicon-euro"></span></p>
-        <p><span class="glyphicon glyphicon-shopping-cart"></span>Προπώληση: {{ event.information.presale }}</p>
+      <h2><span class="glyphicon glyphicon-info-sign"></span>Πληροφορίες Διοργανωτή</h2>
+ <div class="col-md-4">
+      <p>Fan? Drop a note.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span>{{ user.username }}</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span>{{ user.get_full_name }}</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span>{{ user.date_joined }}</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span>{{ user.advanced_profile.address }}</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span>{{ user.advanced_profile.city }}</p>
+      <p><span class="glyphicon glyphicon-phone"></span>{{ user.advanced_profile.phone_number }}</p>
+      <p><span class="glyphicon glyphicon-envelope"></span>{{ user.email }}</p>
+    </div>
 
         </div></div>
     <div id="menu2" class="tab-pane fade">
         <div class="col-sm-8 col-sm-offset-2">
-                <h2>Τοποθεσία Εκδήλωσης</h2>
-             <p>Όνομα Τοποθεσίας: {{ event.location.name }}</p>
-            <p>Διεύθυνση: {{ event.location.address }}</p>
-            <p>Τηλέφωνο: {{ event.location.tel }}</p>
-            <p>Πόλη: {{ event.location.city }}</p>
+                <h2>Τοποθεσία Διωργανωτή</h2>
+             <p>Όνομα Τοποθεσίας: {{ user.advanced_profile.organization_name }}</p>
+            <p>Διεύθυνση: {{ user.advanced_profile.address }}</p>
+            <p>Τηλέφωνο: {{ user.advanced_profile.phone_number }}</p>
+            <p>Πόλη: {{ user.advanced_profile.city }}</p>
             <p>Ιστοσελίδα: <a href="{{ event.location.site }}">{{ event.location.site }}</a></p>
-             <p>Ηλεκτρονικό ταχυδρομείο: {{ event.location.email }}</p>
+             <p>Ηλεκτρονικό ταχυδρομείο: {{ user.email }}</p>
              <p>Δείτε στον χάρτη: </p>
             <div id="map" style="width:100%;height:500px"></div>
 
@@ -86,7 +94,7 @@
     $("a[href='#menu2']").on('shown.bs.tab', function myMap() {
 
 
-  var myCenter = new google.maps.LatLng({{ event.location.position }});
+  var myCenter = new google.maps.LatLng({{ user.advanced_profile.position }});
   var mapCanvas = document.getElementById("map");
   var mapOptions = {center: myCenter, zoom: 10};
   var map = new google.maps.Map(mapCanvas, mapOptions);
@@ -94,7 +102,7 @@
   marker.setMap(map);
   google.maps.event.addListener(marker,'click',function() {
     var infowindow = new google.maps.InfoWindow({
-      content:"{{ event.location.name }}, {{ event.location.address }}"
+      content:"{{ user.advanced_profile.organization_name }}, {{ user.advanced_profile.address }}"
     });
   infowindow.open(map,marker);
   });
@@ -132,27 +140,57 @@
         </form>
     </div>
   </div>
+  <div id="menu4" class="tab-pane fade">
+        <div class="col-sm-8 col-sm-offset-2">
+      <h2><span class="glyphicon glyphicon-info-sign"></span>Επικοινωνία</h2>
+<div class="row">
+    <div class="col-md-4">
+      <p>Fan? Drop a note.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span>Chicago, US</p>
+      <p><span class="glyphicon glyphicon-phone"></span>Phone: +00 1515151515</p>
+      <p><span class="glyphicon glyphicon-envelope"></span>Email: mail@mail.com</p>
+    </div>
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+      <br>
+      <div class="row">
+        <div class="col-md-12 form-group">
+          <button class="btn pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+        </div></div>
   </div></div>
     <!--right column-->
-
-    <!--views-->
-    <button type="button" class="btn btn-primary">Total views <span class="badge">{{ views }}</span></button>
 
     <!--like+modal-->
 
    <p> <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
-         {% with total_likes=likes.count  %}
-             <h2 style="padding: 0; margin: 0"><span class="count"><span id="total">{{ total_likes }}</span> like{{ total_likes|pluralize }}</span></h2>
+         {% with  user.followers.count as total_followers  %}
+             <h2 style="padding: 0; margin: 0"> <span class="count">
+            <span class="total">{{ total_followers }}</span>
+            follower{{ total_followers|pluralize }}
+        </span></h2>
          {% endwith %}</button>
-   <label class="label label-success"> <span class="glyphicon {% if not user_like %}glyphicon-thumbs-up{% else %}glyphicon-thumbs-down{% endif %}"></span>
-    <a href="#" data-id="{{ event.id }}" data-action="{% if user_like %}un{% endif %}like" class="like">
-        {% if not user_like  %}
-            Like
+ <p> <label class="label label-success">
+    <a href="#" data-id="{{ user.id }}" data-action="{% if request.user in user.followers.all %}un{% endif %}follow" class="follow-button">
+        {% if request.user not in user.followers.all %}
+            Follow
         {% else %}
-            Unlike
+            Unfollow
         {% endif %}
     </a>
-</label></p>
+  </label></p></p>
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
@@ -162,25 +200,25 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title" style="color: black">users like</h4>
+          <h4 class="modal-title" style="color: black">Followers</h4>
         </div>
         <div class="modal-body">
 
-            {% for like in likes %}
+            {% for follower in user.followers.all %}
 
 
                 <div class="media">
     <div class="media-left">
-      <img src="{% if like.user.profile %}{{ like.user.profile.photo.url }}{% else %}{{ like.user.advanced_profile.photo.url }}{% endif %}" class="media-object" style="width:45px; height:45px;object-fit: cover">
+      <img src="{% if follower.profile %}{{ follower.profile.photo.url }}{% else %}{{ follower.advanced_profile.photo.url }}{% endif %}" class="media-object" style="width:45px; height:45px;object-fit: cover">
     </div>
     <div class="media-body">
 
-        <p style="color: black">{{ like.user.username }}</p>
+        <p style="color: black">{{ follower.username }}</p>
     </div>
        </div>
 
 
-            {% empty %}<p style="color: black">nobody likes the post yet</p>
+            {% empty %}<p style="color: black">Κανένας δεν ακολουθεί ακόμα τον χρήστη {{ user.username }}</p>
         {% endfor %}</div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal" style="color: #f6f6f6">Close</button>
@@ -190,73 +228,66 @@
     </div>
   </div>
 
-    <!--register-->
-    <div>
-     <span class="register-count">
-            <span class="total-registered">{{ total_registered.count }}</span>
-            registered
-        </span>
-    <a href="#" data-id="{{ event.id }}" data-action="{% if user_registered %}un{% endif %}register" class="register">
-        {% if not user_registered %}
-            Register
-        {% else %}
-            Unregister
-        {% endif %}
-    </a>
-    </div>
-    <!--tags-->
-     <p>Tags: {% for tag in tags %}
-<a href="{% url "home_page_by_tag" tag.slug %}">
-{{ tag.name }}
-</a>
-{% if not forloop.last %}, {% endif %}
-{% endfor %}</p>
-
-
-    <div class="container-fluid col-sm-2 panel panel-default"><p>similar events: </p><ul>{% for similar_event in similar_events %}<a href="{{ similar_event.get_absolute_url }}"><li>{{ similar_event }}</li></a>{% endfor %}</ul></div>
-
-</div>
 {% endblock %}
 
 {% block domready %}
-     $('a.like').click(function(e){
-        e.preventDefault();
-        $.post('{% url "like" %}',
-            {
-                id: $(this).data('id'),
-                action: $(this).data('action'),
-            },
-        function(data){
-            if (data['status'] == 'ok'){
-                  var previous_action = $('a.like').data('action');
-                  $('a.like').data('action', previous_action == 'like' ? 'unlike' : 'like');
-                  $('a.like').text(previous_action == 'like' ? 'Unlike' : 'Like');
-                   $(".glyphicon").toggleClass("glyphicon-thumbs-up glyphicon-thumbs-down");
 
-                  var previous_likes = parseInt($('#total').text());
-                  $('#total').text(previous_action == 'like' ? previous_likes +1 : previous_likes -1);
-                                }
-                    }
-    );
-    });
-    <!--register ajax call-->
-     $('a.register').click(function (e) {
+
+    $('a.follow-button').click(function(e) {
         e.preventDefault();
-        $.post('{% url 'event_register' %}',
+        $.post(
+            '{% url 'user_follow' %}',
             {
                 id: $(this).data('id'),
-                action: $(this).data('action'),
+                action: $(this).data('action')
             },
-        function (data) {
-            if (data['status'] == 'ok'){
-                var previous_action = $('a.register').data('action');
-                $('a.register').data('action', previous_action == 'register' ? 'unregister' : 'register');
-                $('a.register').text(previous_action == 'register' ? 'Unregister' : 'Register');
-                var previous_registered = parseInt($('.total-registered').text());
-                $('.total-registered').text(previous_action == 'register' ? previous_registered +1 : previous_registered -1);
+        function(data) {
+                if (data['status']=='ok') {
+                    var previous_action = $('a.follow-button').data('action');
+                //toggle data action
+                    $('a.follow-button').data('action', previous_action=='follow'?'unfollow':'follow');
+
+                //toggle link text
+                    $('a.follow-button').text(previous_action=='follow'?'Unfollow':'Follow');
+
+                //update total followers
+                    var previous_followers = parseInt($('span.count .total').text());
+                    $('span.count .total').text(previous_action=='follow'? previous_followers+1: previous_followers-1);
+
             }
 
-        });
+
+        }
+        );
 
     });
+<!--ajax paginator-->
+
+ var page = 1;
+ var empty_page = false;
+ var block_request = false;
+    $(window).scroll(function() {
+        var margin = $(document).height()-750;
+        if ($(window).scrollTop() > margin && empty_page==false && block_request==false){
+            block_request = true;
+            page += 1;
+            $.get('?page='+page, function(data) {
+                if (data==('')){
+                    empty_page = true;
+                }else {
+                    block_request = false;
+                    $('#event_list').append(data);
+
+
+                }
+
+
+
+            });
+
+        }
+
+    });
+
+
 {% endblock %}

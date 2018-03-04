@@ -301,7 +301,7 @@
         <li><a href="{% url 'home_page' %}">HOME</a></li>
         <li><a href="{% url 'user_list' %}">Διοργανωτές</a></li>
         <li><a href="#tour">TOUR</a></li>
-          {% if request.user.is_authenticated %}<li><a href="#"><img src="{% if request.user|has_group:'simple_user' %}{{ request.user.profile.photo.url }}" style="width: 20px;height: 20px;  object-fit: cover;"><span> {{ request.user.username }}
+          {% if request.user.is_authenticated %}<li><a href="{% if request.user|has_group:'advanced_user' %}{% url 'user_details' user.username %}{% else %}#{% endif %}"><img src="{% if request.user|has_group:'simple_user' %}{{ request.user.profile.photo.url }}" style="width: 20px;height: 20px;  object-fit: cover;"><span> {{ request.user.username }}
           {% else %}{{ request.user.advanced_profile.photo.url }}" style="width: 20px;height: 20px; object-fit: cover;"><span> {{ request.user.username }}{% endif %}</span></a></li>
           {% endif %}
           <li><a href="{% if request.user.is_authenticated %}{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Αποσύνδεση</a>{% else %}{% url 'login' %}">

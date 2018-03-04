@@ -58,6 +58,10 @@
            <label class="control-label col-sm-6">{{ profile_form.organization_name.label }}</label>
            <div class="col-sm-1">{{ profile_form.organization_name }}</div>
        </div>
+     <div class="form-group">
+           <label class="control-label col-sm-6">{{ profile_form.description.label }}</label>
+           <div class="col-sm-1">{{ profile_form.description }}</div>
+       </div>
        <div class="form-group">
            <label class="control-label col-sm-6">{{ profile_form.photo.label }}</label>
                <span class="col-sm-2 fileUpload btn btn-primary"><div class="upload" style="fill-opacity: 0;opacity: 0;
@@ -76,6 +80,10 @@
         <div class="form-group">
            <label class="control-label col-sm-6">{{ profile_form.phone_number.label }}</label>
            <div class="col-sm-2">{{ profile_form.phone_number }}</div>
+       </div>
+    <div class="form-group">{{ profile_form.media }}
+           <label class="control-label col-sm-6">{{ profile_form.position.label }}</label>
+           <div class="col-sm-1">{{ profile_form.position }}</div>
        </div>
 {% endif %}
 <div class="form-group">

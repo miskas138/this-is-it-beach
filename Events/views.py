@@ -8,6 +8,7 @@ from taggit.models import Tag
 
 from account.views import dashboard
 from .forms import *
+from django.contrib.auth.models import User
 
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)  # απενεργοποίηση του back button στον browser
@@ -159,8 +160,38 @@ def event_register(request):
 @login_required
 def user_details(request, username):
     user = get_object_or_404(User, username=username, is_active=True)
+    profile = Advanced_Profile.objects.get(user=user)
+    comments = profile.user_comments.filter(active=True).order_by('-created')[:50]
+    events = user.events_created.all().order_by('-information__dateTime')
+    paginator = Paginator(events, 3)
+    page = request.GET.get('page')
+    try:
+        events = paginator.page(page)
+    except PageNotAnInteger:
+        events = paginator.page(1)
+    except EmptyPage:
+        if request.is_ajax():
+            return HttpResponse('')
+        events = paginator.page(paginator.num_pages)
+    if request.method == 'POST':
+        comment_form = UserCommentForm(data=request.POST)
+        if comment_form.is_valid():
+            new_comment = comment_form.save(commit=False)
+            new_comment.profile = Advanced_Profile.objects.get(user=user)
+            new_comment.user = request.user
+            new_comment.save()
+            comment_form = UserCommentForm()
+    else:
+        comment_form = UserCommentForm()
+        new_comment = None
+    if request.is_ajax():
+        return render(request, 'ajax_list.html', {'events': events})
 
-    return render(request, 'organizers/user_details.html', {'user': user})
+    return render(request, 'organizers/hookDetails.html', {'user': user, 'events': events,
+                                                           'comments': comments,
+                                                           'comment_form': comment_form,
+                                                           'new_comment': new_comment,
+                                                           })
 
 @login_required
 @require_POST

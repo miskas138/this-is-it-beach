@@ -5,6 +5,7 @@ from geoposition.fields import GeopositionField
 from taggit.managers import TaggableManager
 from tinymce.models import HTMLField
 from django.contrib.auth.models import User
+from account.models import Advanced_Profile
 
 
 SECTION_CHOISES = (('ΜΟΥΣΙΚΗ', 'Μουσική'),
@@ -64,6 +65,21 @@ class Comment(models.Model):
 
     def __str__(self):
         return 'Comment by {} on {}'.format(self.user.username, self.event)
+
+
+class UserComment(models.Model):
+    profile = models.ForeignKey(Advanced_Profile, related_name='user_comments', on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='profile_comments', on_delete=models.CASCADE)
+    body = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now_add=True)
+    active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ('created',)
+
+    def __str__(self):
+        return 'Comment by {} on {}'.format(self.user.username, self.profile)
 
 
 class Like(models.Model):

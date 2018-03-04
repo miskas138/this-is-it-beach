@@ -1,6 +1,8 @@
 from django.db import models
 from django.db import models
 from django.conf import settings
+from geoposition.fields import GeopositionField
+
 # Create your models here.
 
 
@@ -18,11 +20,13 @@ class Profile(models.Model):
 class Advanced_Profile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     organization_name = models.CharField(max_length=50, null=True, blank=True)
+    description = models.TextField(blank=True, null=True)
     photo = models.ImageField(upload_to='advanced_profile_photos', blank=True, null=True)
     address = models.CharField(max_length=50, blank=True, null=True)
     city = models.CharField(max_length=20, blank=True, null=True)
     phone_number = models.IntegerField()
     user_type = models.CharField(max_length=15, choices=USER_TYPE_CHOISES, default='ADVANCED_USER')
+    position = GeopositionField(blank=True, null=True)
     def __str__(self):
         return 'Advanced Profile for user {}'.format(self.user.username)
 
