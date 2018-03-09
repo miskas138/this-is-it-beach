@@ -18,4 +18,6 @@ urlpatterns = [
     url(r'^users/follow/$', views.user_follow, name='user_follow'),
 
     url(r'^users/(?P<username>[-\w]+)/$', views.user_details, name='user_details'),
+    # video uploads
+    url(r'^event_details/(?P<pk>[0-9]+)/video_uploads/$', views.event_video_uploads, name='event_video_uploads'),
 ]

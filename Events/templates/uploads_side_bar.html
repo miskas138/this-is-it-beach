@@ -1,0 +1,26 @@
+
+
+<div id="mySidenav2" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn closebtn-left" onclick="closeNav2()"><span class="glyphicon glyphicon-chevron-left"></span></a>
+  <a href="{% url 'event_video_uploads' pk=event.pk %}">Ανεβασμένα Video</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>
+
+
+<h2>Εργαλεία χρήστη</h2>
+<p>Επιλέξτε τον σύνδεσμο "Uploads" για να δείτε ανεβασμένο υλικό(video, mp3, φωτογραφίες) από χρήστες που συμμετείχαν
+    στην προκειμένη εκδήλωση, καθώς και εργαλεία για να ανεβάσετε δικόσας υλικό!!!"</p>
+<span style="font-size:30px;cursor:pointer" onclick="openNav2()">&#9776; Uploads</span>
+
+<script>
+function openNav2() {
+    document.getElementById("mySidenav2").style.width = "220px";
+}
+
+function closeNav2() {
+    document.getElementById("mySidenav2").style.width = "0";
+}
+</script>
+

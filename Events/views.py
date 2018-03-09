@@ -210,3 +210,8 @@ def user_follow(request):
             return JsonResponse({'status': 'ko'})
     return JsonResponse({'status': 'ko'})
 
+
+def event_video_uploads(request, pk):
+    event = get_object_or_404(Event, pk=pk)
+    video_uploads = event.video_uploads.all()
+    return render(request, 'video_uploads.html', {'video_uploads': video_uploads, 'event': event})

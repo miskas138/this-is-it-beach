@@ -30,13 +30,15 @@
 
 
 <div class="row1">
+    <!--sidebar-->
     <div class="container-fluid col-sm-2 text-center" style="background-color: #29292c; color: #dcdcdc; opacity: 0.9; border-radius: 15px">
 {% if request.user|has_group:"advanced_user" %}
 {% include "side_bar.html" %}
     {% else %}<p>Για τους φλώρους απλούς χρήστες δεν έχει πλαινή μπάρα :D</p>
 {% endif %}
 
-
+    <!--uploads sidebar-->
+{% include "uploads_side_bar.html" %}
 
 </div>
 
