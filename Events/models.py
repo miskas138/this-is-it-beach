@@ -129,6 +129,6 @@ class VideoUpload(models.Model):
     event = models.ForeignKey(Event, related_name='video_uploads', blank=True, null=True, on_delete=models.CASCADE)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='video_uploads', blank=True, null=True, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
-    video = models.FileField(upload_to='media/event_video_uploads/%D/%M/%Y', blank=True, null=True)
+    video = models.FileField(upload_to='event_video_uploads/%D/%M/%Y', blank=True, null=True)
     class Meta:
         ordering = ('-created',)

@@ -214,4 +214,52 @@ def user_follow(request):
 def event_video_uploads(request, pk):
     event = get_object_or_404(Event, pk=pk)
     video_uploads = event.video_uploads.all()
-    return render(request, 'video_uploads.html', {'video_uploads': video_uploads, 'event': event})
+    likes = event.likes.all()
+    user_like = likes.filter(user=request.user)
+    comments = event.comments.filter(active=True).order_by('-created')[:50]
+    View.objects.get_or_create(event=event, user=request.user)
+    views = event.view.all().count()
+    total_registered = event.register.all()
+    similar_events = event.tags.similar_objects()
+    tags = event.tags.all()
+    new_comment = None
+    try:
+        user_registered = event.register.get(user=request.user)
+    except:
+        user_registered = None
+
+    if request.method == 'POST':
+        form = VideoUploadForm(data=request.POST, files=request.FILES)
+        if form.is_valid():
+            new_item = form.save(commit=False)
+            new_item.user = request.user
+            new_item.event = event
+            new_item.save()
+
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            new_comment = comment_form.save(commit=False)
+            new_comment.event = event
+            new_comment.user = request.user
+            new_comment.save()
+            comment_form = CommentForm()
+    else:
+        comment_form = CommentForm()
+
+        form = VideoUploadForm()
+
+
+    return render(request, 'video_uploads_2.html', {'event': event,
+                                                    'comments': comments,
+                                                    'comment_form': comment_form,
+                                                    'new_comment': new_comment,
+                                                    'likes': likes,
+                                                    'user_like': user_like,
+                                                    'total_registered': total_registered,
+                                                    'user_registered': user_registered,
+                                                    'views': views,
+                                                    'similar_events': similar_events,
+                                                    'tags': tags,
+                                                    'video_uploads': video_uploads,
+                                                    'form': form,
+                                                    })

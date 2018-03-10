@@ -55,11 +55,14 @@
 
 
         <div>
+             {% if request.user in user.followers.all or request.user == user %}
           <h2>Προβολή όλων των εκδηλώσεων</h2>
       <p>Σκρολλάρετε προς τα κάτω για να δείτε όλες τις εκδηλώσεις!!!</p>
         <div id="event_list">
            {% include "ajax_list.html" %}
-      </div>
+      </div>{% else  %}
+            You are not following this user to see his post list. Click follow and refresh the page
+   {% endif %}
 
       </div>
     </div>

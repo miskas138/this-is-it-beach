@@ -56,3 +56,18 @@ class UserCommentForm(forms.ModelForm):
         widgets = {
             'body': forms.Textarea(attrs={'rows': 5, 'cols': 25, 'class': 'form-control'}),
         }
+
+class VideoUploadForm(forms.ModelForm):
+    def clean_video(self):
+        video = self.cleaned_data['video']
+        if video:
+            if (video.name.endswith('mp4') or video.name.endswith('MP4')):
+                return video
+            else:
+                raise forms.ValidationError('The given file does not match valid video extensions.')
+        else:
+            raise forms.ValidationError('You havent selected any file!!!')
+
+    class Meta:
+        model = VideoUpload
+        exclude = ('user', 'event')
