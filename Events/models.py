@@ -132,3 +132,23 @@ class VideoUpload(models.Model):
     video = models.FileField(upload_to='event_video_uploads/%D/%M/%Y', blank=True, null=True)
     class Meta:
         ordering = ('-created',)
+
+
+class Mp3Upload(models.Model):
+    event = models.ForeignKey(Event, related_name='mp3_uploads', blank=True, null=True, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='mp3_uploads', blank=True, null=True, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    mp3 = models.FileField(upload_to='event_mp3_uploads/%D/%M/%Y', blank=True, null=True)
+    class Meta:
+        ordering = ('-created',)
+
+
+class ImageUpload(models.Model):
+    event = models.ForeignKey(Event, related_name='image_uploads', blank=True, null=True, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='image_uploads', blank=True, null=True, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField(upload_to='event_image_uploads/%D/%M/%Y', blank=True, null=True)
+    class Meta:
+        ordering = ('-created',)
+
+

@@ -48,9 +48,9 @@
     <div class="container-fluid col-sm-8 panel panel-default" style="border-radius: 10px">
 <div class="text-center">
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Videos</a></li>
-    <li><a data-toggle="tab" href="#menu1">Ανεβάστε ένα Video</a></li>
-    <li><a data-toggle="tab" href="#menu2">Φωτογραφίες</a></li>
+    <li class="active"><a data-toggle="tab" href="#home">Φωτογραφίες</a></li>
+    <li><a data-toggle="tab" href="#menu1">Ανεβάστε μια φωτογραφία</a></li>
+    <li><a data-toggle="tab" href="#menu2">μονο μαλακιες</a></li>
       <li><a data-toggle="tab" href="#menu3">Σχόλια</a></li>
   </ul>
 </div>
@@ -59,10 +59,10 @@
 
 
         <div class="text-center">
-            <h2>Προβολή ανεβασμένων video</h2>
-      <p>Σκρολλάρετε προς τα κάτω για να δείτε όλα τα video!!!</p>
-        <div id="video_uploads_list">
-           {% include "video_uploads.html" %}
+            <h2>Προβολή ανεβασμένων Φωτογραφιών</h2>
+      <p>Σκρολλάρετε προς τα κάτω για να δείτε όλες τις φωτογραφίες!!!</p>
+        <div id="image_uploads_list">
+           {% include "image_list.html" %}
 
         </div>
 
@@ -70,13 +70,13 @@
     </div>
     <div id="menu1" class="tab-pane fade">
         <div class="col-sm-8 col-sm-offset-2">
-      <h2><span class="glyphicon glyphicon-info-sign"></span>Ανεβάστε ένα βίντεο σε μορφή mp4</h2>
-         <h1>Upload a Video!!!</h1>
+      <h2><span class="glyphicon glyphicon-info-sign"></span>Ανεβάστε φωτογραφίες σε μορφή JPG ή PNG</h2>
+
     <form action="." method="post" enctype="multipart/form-data">
-    {{ form.as_p }}
+    {{ image_form.as_p }}
 
     {% csrf_token %}
-    <input type="submit" value="upload!!" style="color: black">
+    <input type="submit" value="Ανέβασέ το!" style="color: black">
     </form>
 
         </div></div>
@@ -284,7 +284,7 @@
                     empty_page = true;
                 }else {
                     block_request = false;
-                    $('#video_uploads_list').append(data);
+                    $('#image_uploads_list').append(data);
 
 
                 }

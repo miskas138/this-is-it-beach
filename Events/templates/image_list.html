@@ -1,0 +1,22 @@
+
+
+
+{% for upload in image_uploads %}
+
+    <div class='post thumbnail'>
+       <div class='date'>
+            <p>published : {{ upload.created }} by {{ upload.user }}</p>
+        </div>
+
+
+  <img src="{{ upload.image.url }}">
+
+
+ </div>
+   {% empty %}
+
+        <p>There are no video uploads yet!!!!</p>
+
+{% endfor %}
+
+

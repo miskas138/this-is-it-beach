@@ -36,7 +36,14 @@ class ViewAdmin(admin.ModelAdmin):
 class VideoUploadAdmin(admin.ModelAdmin):
     list_display = ('event','user','created')
 
+class Mp3UploadAdmin(admin.ModelAdmin):
+    list_display = ('event', 'user', 'created')
 
+class ImageUploadAdmin(admin.ModelAdmin):
+    list_display = ('event', 'user', 'created')
+
+
+admin.site.register(ImageUpload, ImageUploadAdmin)
 admin.site.register(View, ViewAdmin)
 admin.site.register(Register, RegisterAdmin)
 admin.site.register(Like, LikeAdmin)
@@ -45,3 +52,4 @@ admin.site.register(Event, EventAdmin)
 admin.site.register(Information, InformationAdmin)
 admin.site.register(Location, LocationAdmin)
 admin.site.register(VideoUpload, VideoUploadAdmin)
+admin.site.register(Mp3Upload, Mp3UploadAdmin)

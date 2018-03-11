@@ -71,3 +71,35 @@ class VideoUploadForm(forms.ModelForm):
     class Meta:
         model = VideoUpload
         exclude = ('user', 'event')
+
+
+class Mp3UploadForm(forms.ModelForm):
+    def clean_mp3(self):
+        mp3 = self.cleaned_data['mp3']
+        if mp3:
+            if (mp3.name.endswith('mp3') or mp3.name.endswith('MP3')):
+                return mp3
+            else:
+                raise forms.ValidationError('The given file does not match valid mp3 extension.')
+        else:
+            raise forms.ValidationError('You havent selected any file!!!')
+
+    class Meta:
+        model = Mp3Upload
+        exclude = ('user', 'event')
+
+
+class ImageUploadForm(forms.ModelForm):
+    def clean_image(self):
+        image = self.cleaned_data['image']
+        if image:
+            if (image.name.endswith('jpg') or image.name.endswith('JPG') or image.name.endswith('png') or image.name.endswith('PNG')):
+                return image
+            else:
+                raise forms.ValidationError('The given file does not match valid jpg or png extension.')
+        else:
+            raise forms.ValidationError('You havent selected any image!!!')
+
+    class Meta:
+        model = ImageUpload
+        exclude = ('user', 'event')

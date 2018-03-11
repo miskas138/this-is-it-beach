@@ -214,6 +214,18 @@ def user_follow(request):
 def event_video_uploads(request, pk):
     event = get_object_or_404(Event, pk=pk)
     video_uploads = event.video_uploads.all()
+    paginator = Paginator(video_uploads, 3)
+    page = request.GET.get('page')
+    try:
+        video_uploads = paginator.page(page)
+    except PageNotAnInteger:
+        video_uploads = paginator.page(1)
+    except EmptyPage:
+        if request.is_ajax():
+            return HttpResponse('')
+        video_uploads = paginator.page(paginator.num_pages)
+
+
     likes = event.likes.all()
     user_like = likes.filter(user=request.user)
     comments = event.comments.filter(active=True).order_by('-created')[:50]
@@ -247,6 +259,8 @@ def event_video_uploads(request, pk):
         comment_form = CommentForm()
 
         form = VideoUploadForm()
+    if request.is_ajax():
+        return render(request, 'video_uploads.html', {'video_uploads': video_uploads})
 
 
     return render(request, 'video_uploads_2.html', {'event': event,
@@ -263,3 +277,140 @@ def event_video_uploads(request, pk):
                                                     'video_uploads': video_uploads,
                                                     'form': form,
                                                     })
+
+
+def event_mp3_uploads(request, pk):
+    event = get_object_or_404(Event, pk=pk)
+    mp3_uploads = event.mp3_uploads.all()
+    paginator = Paginator(mp3_uploads, 5)
+    page = request.GET.get('page')
+    try:
+        mp3_uploads = paginator.page(page)
+    except PageNotAnInteger:
+        mp3_uploads = paginator.page(1)
+    except EmptyPage:
+        if request.is_ajax():
+            return HttpResponse('')
+        mp3_uploads = paginator.page(paginator.num_pages)
+
+
+    likes = event.likes.all()
+    user_like = likes.filter(user=request.user)
+    comments = event.comments.filter(active=True).order_by('-created')[:50]
+    View.objects.get_or_create(event=event, user=request.user)
+    views = event.view.all().count()
+    total_registered = event.register.all()
+    similar_events = event.tags.similar_objects()
+    tags = event.tags.all()
+    new_comment = None
+    try:
+        user_registered = event.register.get(user=request.user)
+    except:
+        user_registered = None
+
+    if request.method == 'POST':
+        mp3_form = Mp3UploadForm(data=request.POST, files=request.FILES)
+        if mp3_form.is_valid():
+            new_item = mp3_form.save(commit=False)
+            new_item.user = request.user
+            new_item.event = event
+            new_item.save()
+
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            new_comment = comment_form.save(commit=False)
+            new_comment.event = event
+            new_comment.user = request.user
+            new_comment.save()
+            comment_form = CommentForm()
+    else:
+        comment_form = CommentForm()
+
+        mp3_form = Mp3UploadForm()
+    if request.is_ajax():
+        return render(request, 'mp3_list.html', {'mp3_uploads': mp3_uploads})
+
+
+    return render(request, 'mp3_uploads.html', {'event': event,
+                                                'comments': comments,
+                                                'comment_form': comment_form,
+                                                'new_comment': new_comment,
+                                                'likes': likes,
+                                                'user_like': user_like,
+                                                'total_registered': total_registered,
+                                                'user_registered': user_registered,
+                                                'views': views,
+                                                'similar_events': similar_events,
+                                                'tags': tags,
+                                                'mp3_uploads': mp3_uploads,
+                                                'mp3_form': mp3_form,
+                                                })
+
+
+def event_image_uploads(request, pk):
+    event = get_object_or_404(Event, pk=pk)
+    image_uploads = event.image_uploads.all()
+    paginator = Paginator(image_uploads, 3)
+    page = request.GET.get('page')
+    try:
+        image_uploads = paginator.page(page)
+    except PageNotAnInteger:
+        image_uploads = paginator.page(1)
+    except EmptyPage:
+        if request.is_ajax():
+            return HttpResponse('')
+        mp3_uploads = paginator.page(paginator.num_pages)
+
+
+    likes = event.likes.all()
+    user_like = likes.filter(user=request.user)
+    comments = event.comments.filter(active=True).order_by('-created')[:50]
+    View.objects.get_or_create(event=event, user=request.user)
+    views = event.view.all().count()
+    total_registered = event.register.all()
+    similar_events = event.tags.similar_objects()
+    tags = event.tags.all()
+    new_comment = None
+    try:
+        user_registered = event.register.get(user=request.user)
+    except:
+        user_registered = None
+
+    if request.method == 'POST':
+        image_form = ImageUploadForm(data=request.POST, files=request.FILES)
+        if image_form.is_valid():
+            new_item = image_form.save(commit=False)
+            new_item.user = request.user
+            new_item.event = event
+            new_item.save()
+
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            new_comment = comment_form.save(commit=False)
+            new_comment.event = event
+            new_comment.user = request.user
+            new_comment.save()
+            comment_form = CommentForm()
+    else:
+        comment_form = CommentForm()
+
+        image_form = ImageUploadForm()
+    if request.is_ajax():
+        return render(request, 'image_list.html', {'image_uploads': image_uploads})
+
+
+    return render(request, 'image_uploads.html', {'event': event,
+                                                  'comments': comments,
+                                                  'comment_form': comment_form,
+                                                  'new_comment': new_comment,
+                                                  'likes': likes,
+                                                  'user_like': user_like,
+                                                  'total_registered': total_registered,
+                                                  'user_registered': user_registered,
+                                                  'views': views,
+                                                  'similar_events': similar_events,
+                                                  'tags': tags,
+                                                  'image_uploads': image_uploads,
+                                                  'image_form': image_form,
+                                                  })
+

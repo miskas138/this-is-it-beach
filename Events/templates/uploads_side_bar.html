@@ -3,8 +3,8 @@
 <div id="mySidenav2" class="sidenav">
   <a href="javascript:void(0)" class="closebtn closebtn-left" onclick="closeNav2()"><span class="glyphicon glyphicon-chevron-left"></span></a>
   <a href="{% url 'event_video_uploads' pk=event.pk %}">Ανεβασμένα Video</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
+  <a href="{% url 'event_mp3_uploads' pk=event.pk %}">Mp3</a>
+  <a href="{% url 'event_image_uploads' pk=event.pk %}">Φωτογραφίες</a>
   <a href="#">Contact</a>
 </div>
 

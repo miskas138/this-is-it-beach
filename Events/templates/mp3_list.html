@@ -1,7 +1,7 @@
 
 
 
-{% for upload in video_uploads %}
+{% for upload in mp3_uploads %}
 
     <div class='post thumbnail'>
        <div class='date'>
@@ -10,17 +10,12 @@
 
 
 
- <video id="my-audio" width=80% preload="auto" controls>
-  <source src="{{ upload.video.url }}" type="video/mp4">
- <source
-    src="{{ upload.video.url }}"
-    type="video/webm">
+ <audio preload="auto" controls>
+  <source src="{{ upload.mp3.url }}" type="audio/mp3">
+ <source src="{{ upload.video.url }}" type="audio/ogg">
 
-<source
-    src="{{ upload.video.url }}"
-    type="video/ogg">
   Your browser doesn't support HTML5 video tag.
-</video>
+</audio>
 
 
  </div>

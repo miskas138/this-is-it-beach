@@ -20,4 +20,8 @@ urlpatterns = [
     url(r'^users/(?P<username>[-\w]+)/$', views.user_details, name='user_details'),
     # video uploads
     url(r'^event_details/(?P<pk>[0-9]+)/video_uploads/$', views.event_video_uploads, name='event_video_uploads'),
+    # mp3 uploads
+    url(r'^event_details/(?P<pk>[0-9]+)/mp3_uploads/$', views.event_mp3_uploads, name='event_mp3_uploads'),
+    # image uploads
+    url(r'^event_details/(?P<pk>[0-9]+)/image_uploads/$', views.event_image_uploads, name='event_image_uploads'),
 ]
