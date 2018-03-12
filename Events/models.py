@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 from account.models import Advanced_Profile
 
 
+
 SECTION_CHOISES = (('ΜΟΥΣΙΚΗ', 'Μουσική'),
                    ('ΘΕΑΤΡΟ', 'Θέατρο'),
                    ('ΧΟΡΟΣ', 'Χορός'),

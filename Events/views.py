@@ -5,10 +5,11 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from django.views.decorators.cache import cache_control
 from django.views.decorators.http import require_POST
 from taggit.models import Tag
-
+from datetime import timedelta
 from account.views import dashboard
 from .forms import *
 from django.contrib.auth.models import User
+from django.utils import timezone
 
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)  # απενεργοποίηση του back button στον browser
@@ -414,3 +415,11 @@ def event_image_uploads(request, pk):
                                                   'image_form': image_form,
                                                   })
 
+
+@login_required
+@user_passes_test(lambda u: u.groups.filter(name='advanced_user'), home_page)
+def organization_charts(request):
+
+    events = Event.objects.filter(user=request.user, view__created__gte=timezone.datetime.now()-timedelta(days=30)).order_by('title').values("title").annotate(n=models.Count("pk"))
+    #posts = Views.objects.filter(post__author=request.user, created__gte=timezone.datetime.now()-timedelta(days=15))
+    return render(request, 'organization_charts.html', {'events': events})

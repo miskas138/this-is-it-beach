@@ -24,4 +24,6 @@ urlpatterns = [
     url(r'^event_details/(?P<pk>[0-9]+)/mp3_uploads/$', views.event_mp3_uploads, name='event_mp3_uploads'),
     # image uploads
     url(r'^event_details/(?P<pk>[0-9]+)/image_uploads/$', views.event_image_uploads, name='event_image_uploads'),
+    # orgaization charts
+    url(r'^charts/organization/$', views.organization_charts, name='organization_charts'),
 ]
