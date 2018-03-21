@@ -420,6 +420,9 @@ def event_image_uploads(request, pk):
 @user_passes_test(lambda u: u.groups.filter(name='advanced_user'), home_page)
 def organization_charts(request):
 
-    events = Event.objects.filter(user=request.user, view__created__gte=timezone.datetime.now()-timedelta(days=30)).order_by('title').values("title").annotate(n=models.Count("pk"))
+    events_views = Event.objects.filter(user=request.user, view__created__gte=timezone.datetime.now()-timedelta(days=30)).order_by('title').values("title").annotate(n=models.Count("pk"))
+    events_likes = Event.objects.filter(user=request.user, likes__created__gte=timezone.datetime.now()-timedelta(days=30)).order_by('title').values("title").annotate(n=models.Count("pk"))
+    events_registered = Event.objects.filter(user=request.user, register__created__gte=timezone.datetime.now()-timedelta(days=300)).order_by('title').values("title").annotate(n=models.Count("pk"))
+
     #posts = Views.objects.filter(post__author=request.user, created__gte=timezone.datetime.now()-timedelta(days=15))
-    return render(request, 'organization_charts.html', {'events': events})
+    return render(request, 'organization_charts.html', {'events_views': events_views, 'events_likes': events_likes, 'events_registered': events_registered})
