@@ -71,14 +71,15 @@
     <div id="menu1" class="tab-pane fade">
         <div class="col-sm-8 col-sm-offset-2">
       <h2><span class="glyphicon glyphicon-info-sign"></span>Ανεβάστε φωτογραφίες σε μορφή JPG ή PNG</h2>
-
+        {% if user_registered %}
     <form action="." method="post" enctype="multipart/form-data">
     {{ image_form.as_p }}
 
     {% csrf_token %}
     <input type="submit" value="Ανέβασέ το!" style="color: black">
     </form>
-
+        {% else %}<h2>Θα πρέπει να είστε εγγεγραμμένος στην εκδήλωση για να ανεβάσεις υλικό.
+        </h2><p>Κάνε εγγραφή στην εκδήλωση και ανανέωσε την σελίδα</p>{% endif %}
         </div></div>
     <div id="menu2" class="tab-pane fade">
         <div class="col-sm-8 col-sm-offset-2">
