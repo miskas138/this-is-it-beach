@@ -2,75 +2,49 @@
 {% block content %}
 <br><br>
     <div class="row container-fluid" style="margin: 0">
-    <div class="col-sm-4 text-center">
-<h1>My views chart</h1>
 
-<div id="piechart"></div>
-
-
-    <h2>Views for each event</h2>
-{% for event in events_views %}
-    <div>  <a href="{{ event.get_absolute_url }}"> {{ event.title }}</a>, {{ event.n }}</div>
-{% endfor %}</div>
 
 
     <!--likes chart-->
-     <div class="col-sm-4 text-center">
+     <div class="col-sm-6 text-center">
 <h1>My likes chart</h1>
 
 <div id="piechart2"></div>
 
-    <h3>Likes for each event</h3>
-{% for event in events_likes %}
-    <div> <a href="{{ event.get_absolute_url }}">{{ event.title }}</a>, {{ event.n }}</div>
-{% endfor %}</div>
+    <h2>Likes for event</h2>
+
+    <div>{{ events_likes }} likes in total {{ events_views }} view{{ events_views|pluralize }}</div>
+</div>
 
      <!--registered chart-->
-     <div class="col-sm-4 text-center">
+     <div class="col-sm-6 text-center">
 <h1>My registered chart</h1>
 
 <div id="piechart3"></div>
 
-    <h2>Registered for each event</h2>
-{% for event in events_registered %}
-    <div> <a href="{{ event.get_absolute_url }}">{{ event.title }}</a>, {{ event.n }}</div>
-{% endfor %}</div></div>
+    <h2>Registered to the event</h2>
+     <div>{{ events_registered }} users registered in total {{ events_views }} view{{ events_views|pluralize }}</div>
+</div></div>
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 <script type="text/javascript">
 // Load google charts
 google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawChart);
 google.charts.setOnLoadCallback(drawChart2);
 google.charts.setOnLoadCallback(drawChart3);
 
 
-// Draw the chart and set the chart values
-function drawChart() {
-  var data = google.visualization.arrayToDataTable([
-  ['Task', 'Hours per Day'],
-      {% for event in events_views %}
-  ['{{ event.title }}', {{ event.n }}],
-      {% endfor %}
-]);
 
-  // Optional; add a title and set the width and height of the chart
-  var options = { 'is3D':true, 'title':'my total views chart', 'width':'100%', 'height':400,
-      'legend': {'position': 'top', 'maxLines': 8}};
-
-  // Display the chart inside the <div> element with id="piechart"
-  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-  chart.draw(data, options);
-}
 
 // Draw the chart and set the chart values
 function drawChart2() {
   var data2 = google.visualization.arrayToDataTable([
   ['Task', 'Hours per Day'],
-      {% for event in events_likes %}
-  ['{{ event.title }}', {{ event.n }}],
-      {% endfor %}
+
+  ['total likes', {{ events_likes }}],
+       ['Επισκέπτες που δεν έχουν βαθμολογήσει', {{ events_views}}-{{ events_likes }}],
+
 ]);
 
   // Optional; add a title and set the width and height of the chart
@@ -86,9 +60,9 @@ function drawChart2() {
 function drawChart3() {
   var data3 = google.visualization.arrayToDataTable([
   ['Task', 'Hours per Day'],
-      {% for event in events_registered %}
-  ['{{ event.title }}', {{ event.n }}],
-      {% endfor %}
+
+  ['total registered', {{ events_registered }}],
+   ['Επισκέπτες που δεν έχουν εγγραφεί', {{ events_views}}-{{ events_registered }}],
 ]);
 
   // Optional; add a title and set the width and height of the chart
@@ -101,7 +75,7 @@ function drawChart3() {
 }
 <!--window resize-->
 $(window).resize(function(){
-	  	drawChart();
+
 	  	drawChart2();
 	  	drawChart3()
 	});

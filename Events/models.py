@@ -37,6 +37,9 @@ class Event(models.Model):
     def get_absolute_url(self):
         return reverse('event_details', args=[self.pk])
 
+    def get_absolute_statistics_url(self):
+        return reverse('event_statistics_details', args=[self.pk])
+
 class Information(models.Model):
     event = models.OneToOneField(Event, on_delete=models.CASCADE)
     dateTime = models.DateTimeField(blank=True, null=True)

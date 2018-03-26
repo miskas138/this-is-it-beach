@@ -7,7 +7,11 @@
   <a href="#">Clients</a>
   <a href="#">Contact</a>
 </div>
-    <p>Κάποια στιγμή πρέπει να σκεφτώ τι θα βάλω εδώ στο πλάι</p>
+{% if event %}
+   <!--event statistics-->
+       <a href="{{ event.get_absolute_statistics_url }}"> <div><span class="glyphicon glyphicon-info-sign"></span>Στατιστικά Εκδήλωσης</div></a>
+{% endif %}
+
 
 <h2>Εργαλεία Διοργανωτή</h2>
 <p>Επιλέξτε τον σύνδεσμο "Εργαλεία" για δημιουργία νέας εκδήλωσης, προβολή στατιστικών και άλλα"</p>
