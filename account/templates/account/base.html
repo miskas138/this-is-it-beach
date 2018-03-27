@@ -9,7 +9,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
@@ -276,6 +275,10 @@
     margin-top: 15px;
 }
 
+      body.modal-open div.modal-backdrop {
+    z-index: 0;
+}
+
   </style>
      <script type="text/javascript">
         tinyMCE.init({
@@ -301,7 +304,7 @@
         <li><a href="{% url 'home_page' %}">HOME</a></li>
         <li><a href="{% url 'user_list' %}">Διοργανωτές</a></li>
         <li><a href="#tour">TOUR</a></li>
-          {% if request.user.is_authenticated %}<li><a href="{% if request.user|has_group:'advanced_user' %}{% url 'user_details' user.username %}{% else %}#{% endif %}"><img src="{% if request.user|has_group:'simple_user' %}{{ request.user.profile.photo.url }}" style="width: 20px;height: 20px;  object-fit: cover;"><span> {{ request.user.username }}
+          {% if request.user.is_authenticated %}<li><a href="{% if request.user|has_group:'advanced_user' %}{% url 'user_details' request.user.username %}{% else %}#{% endif %}"><img src="{% if request.user|has_group:'simple_user' %}{{ request.user.profile.photo.url }}" style="width: 20px;height: 20px;  object-fit: cover;"><span> {{ request.user.username }}
           {% else %}{{ request.user.advanced_profile.photo.url }}" style="width: 20px;height: 20px; object-fit: cover;"><span> {{ request.user.username }}{% endif %}</span></a></li>
           {% endif %}
           <li><a href="{% if request.user.is_authenticated %}{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Αποσύνδεση</a>{% else %}{% url 'login' %}">
@@ -315,7 +318,43 @@
               <li><a href="{% url "edit" %}">Επεξεργασία προφίλ</a></li>
           </ul>
         </li>
-        <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+        <li><!-- Used to open the Modal -->
+<a href="#" data-toggle="modal" data-target="#mySearchModal"><span class="glyphicon glyphicon-search"></span></a>
+
+<!-- Modal -->
+<div class="modal fade" id="mySearchModal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4><span class="glyphicon glyphicon-search"></span> Αναζήτηση</h4>
+      </div>
+      <div class="modal-body">
+        <form role="form">
+          <div class="form-group">
+            <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span> Tickets, $23 per person</label>
+            <input type="number" class="form-control" id="psw" placeholder="How many?">
+          </div>
+          <div class="form-group">
+            <label for="usrname"><span class="glyphicon glyphicon-user"></span> Send To</label>
+            <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+          </div>
+          <button type="submit" class="btn btn-block">Pay
+            <span class="glyphicon glyphicon-ok"></span>
+          </button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+          <span class="glyphicon glyphicon-remove"></span> Cancel
+        </button>
+        <p>Need <a href="#">help?</a></p>
+      </div>
+    </div>
+  </div>
+</div></li>
       </ul>
     </div>
   </div>
