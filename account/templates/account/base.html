@@ -334,14 +334,25 @@
       <div class="modal-body">
         <form role="form">
           <div class="form-group">
-            <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span> Tickets, $23 per person</label>
-            <input type="number" class="form-control" id="psw" placeholder="How many?">
+            <label for="event_genre"><span class="glyphicon glyphicon-cog"></span> Επιλέξτε είδος εκδήλωσης</label>
+             <select class="form-control" id="event_genre">
+                <option>Μουσική</option>
+                 <option>Θέατρο</option>
+                  <option>Χορός</option>
+                   <option>Έκθεση</option>
+                 <option>Κινηματογράφος</option>
+                 <option>Διάφορες</option>
+             </select>
           </div>
           <div class="form-group">
-            <label for="usrname"><span class="glyphicon glyphicon-user"></span> Send To</label>
-            <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+            <label for="organizer"><span class="glyphicon glyphicon-user"></span> Όνομα διοργανωτή</label>
+            <input type="text" class="form-control" id="organizer" placeholder="Προσθέστε όνομα διοργανωτή">
           </div>
-          <button type="submit" class="btn btn-block">Pay
+             <div class="form-group">
+            <label for="date-from"><span class="glyphicon glyphicon-calendar"></span> Ημερομηνία</label>
+            <input type="text" class="form-control" id="date-from" placeholder="Προσθέστε ημερομηνία">
+          </div>
+          <button type="submit" class="btn btn-block"><span class="glyphicon glyphicon-search"></span> Αναζήτηση
             <span class="glyphicon glyphicon-ok"></span>
           </button>
         </form>
