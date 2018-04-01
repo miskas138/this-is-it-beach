@@ -6,6 +6,7 @@ from taggit.managers import TaggableManager
 from tinymce.models import HTMLField
 from django.contrib.auth.models import User
 from account.models import Advanced_Profile
+import html
 
 
 
@@ -39,6 +40,10 @@ class Event(models.Model):
 
     def get_absolute_statistics_url(self):
         return reverse('event_statistics_details', args=[self.pk])
+
+    def get_content_text(self):
+        content_text = html.unescape(self.content)
+        return content_text
 
 class Information(models.Model):
     event = models.OneToOneField(Event, on_delete=models.CASCADE)
