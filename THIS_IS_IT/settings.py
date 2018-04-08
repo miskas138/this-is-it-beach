@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'datetimewidget',
     'taggit',
     'tinymce',
+    'django_filters',
 ]
 
 MIDDLEWARE = [

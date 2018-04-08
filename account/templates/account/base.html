@@ -333,10 +333,21 @@
         <h4><span class="glyphicon glyphicon-search"></span> Αναζήτηση</h4>
       </div>
       <div class="modal-body">
-        <form role="form">
+        <form action="{% url "home_page" %}" role="form">
+            <div class="form-group">
+                <form method="get">
+    {{ filter.form.as_p }}
+    <button type="submit">Search</button>
+  </form>
+  <ul>
+  {% for event in filter.qs %}
+    <li>{{ event.title }} - {{ event.information.dateTime }} - {{ event.description }} - created: {{ event.created }}</li>
+  {% endfor %}
+  </ul>
+            </div>
           <div class="form-group">
             <label for="genre-search"><span class="glyphicon glyphicon-cog"></span> Επιλέξτε είδος εκδήλωσης</label>
-             <select class="form-control" id="genre-search">
+             <select class="form-control" id="genre-search" name="genre-search">
                    <option value="" selected hidden default>Επιλέξτε είδος εκδήλωσης</option>
                  <option value="">Όλες οι εκδηλώσεις</option>
                 <option>Μουσική</option>
@@ -349,19 +360,19 @@
           </div>
           <div class="form-group">
             <label for="organizer-search"><span class="glyphicon glyphicon-user"></span> Όνομα διοργανωτή</label>
-            <input type="text" class="form-control" id="organizer-search" placeholder="Προσθέστε όνομα διοργανωτή">
+            <input type="text" name="organizer-search" class="form-control" id="organizer-search" placeholder="Προσθέστε όνομα διοργανωτή">
           </div>
              <div class="form-group">
             <label for="date-search"><span class="glyphicon glyphicon-calendar"></span> Ημερομηνία</label>
-            <input type="text" class="form-control" id="date-search" placeholder="Προσθέστε ημερομηνία">
+            <input type="text" name="date-search" class="form-control" id="date-search" placeholder="Προσθέστε ημερομηνία">
           </div>
              <div class="form-group">
             <label for="location-search"><span class="glyphicon glyphicon-globe"></span> Περιοχή</label>
-            <input type="text" class="form-control" id="location-search" placeholder="Προσθέστε περιοχή">
+            <input type="text" name="location-search" class="form-control" id="location-search" placeholder="Προσθέστε περιοχή">
           </div>
              <div class="form-group">
             <label for="title-search"><span class="glyphicon glyphicon-asterisk"></span> Τίτλος/Περιγραφή</label>
-            <input type="text" class="form-control" id="title-search" placeholder="Αναζήτηση σε τίτλους και περιγραφές">
+            <input type="text" name="title-search" class="form-control" id="title-search" placeholder="Αναζήτηση σε τίτλους και περιγραφές">
           </div>
           <button type="submit" class="btn btn-block"><span class="glyphicon glyphicon-search"></span> Αναζήτηση
             <span class="glyphicon glyphicon-ok"></span>

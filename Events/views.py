@@ -6,6 +6,8 @@ from django.views.decorators.cache import cache_control
 from django.views.decorators.http import require_POST
 from taggit.models import Tag
 from datetime import timedelta
+
+from Events.filters import PostFilter
 from account.views import dashboard
 from .forms import *
 from django.contrib.auth.models import User
@@ -25,6 +27,7 @@ def home_page(request, tag_slug=None, section=None):
     carousel_events = events[:10]
     paginator = Paginator(events, 3)
     page = request.GET.get('page')
+    event_filter = PostFilter(request.GET, queryset=events)
     try:
         events = paginator.page(page)
     except PageNotAnInteger:
@@ -35,11 +38,13 @@ def home_page(request, tag_slug=None, section=None):
         events = paginator.page(paginator.num_pages)
     if request.is_ajax():
         return render(request, 'ajax_list.html', {'events': events,
-                                                  'carousel_events': carousel_events})
+                                                  'carousel_events': carousel_events,
+                                                  'filter': event_filter})
     return render(request, 'home.html', {'section': section,
                                          'events': events,
                                          'carousel_events': carousel_events,
-                                         'tag': tag})
+                                         'tag': tag,
+                                         'filter': event_filter})
 
 
 
@@ -360,7 +365,7 @@ def event_image_uploads(request, pk):
     except EmptyPage:
         if request.is_ajax():
             return HttpResponse('')
-        mp3_uploads = paginator.page(paginator.num_pages)
+        image_uploads = paginator.page(paginator.num_pages)
 
 
     likes = event.likes.all()

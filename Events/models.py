@@ -46,7 +46,7 @@ class Event(models.Model):
         return content_text
 
 class Information(models.Model):
-    event = models.OneToOneField(Event, on_delete=models.CASCADE)
+    event = models.OneToOneField(Event, on_delete=models.CASCADE, related_name='information')
     dateTime = models.DateTimeField(blank=True, null=True)
     ticket_price = models.FloatField()
     presale = models.CharField(max_length=200, blank=True, null=True)
