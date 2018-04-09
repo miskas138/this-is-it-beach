@@ -341,7 +341,9 @@
   </form>
   <ul>
   {% for event in filter.qs %}
-    <li>{{ event.title }} - {{ event.information.dateTime }} - {{ event.description }} - created: {{ event.created }}</li>
+    <a href="{{ event.get_absolute_url }}">   <div class="thumbnail">
+         <li>{{ event.title }} - {{ event.information.dateTime }} - {{ event.description }} - created: {{ event.created }}</li>
+      </div> </a>
   {% endfor %}
   </ul>
             </div>

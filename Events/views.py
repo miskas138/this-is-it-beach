@@ -24,10 +24,12 @@ def home_page(request, tag_slug=None, section=None):
     if tag_slug:
         tag = get_object_or_404(Tag, slug=tag_slug)
         events = events.filter(tags__in=[tag])
-    carousel_events = events[:10]
-    paginator = Paginator(events, 3)
-    page = request.GET.get('page')
     event_filter = PostFilter(request.GET, queryset=events)
+    events = event_filter.qs
+    carousel_events = events[:10]
+    paginator = Paginator(events, 5)
+    page = request.GET.get('page')
+
     try:
         events = paginator.page(page)
     except PageNotAnInteger:
