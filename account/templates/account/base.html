@@ -1,5 +1,6 @@
 {% load  staticfiles %}
 {% load account_tags %}
+{% load widget_tweaks %}
 <!DOCTYPE html>
 <html lang="en" xmlns:color="http://www.w3.org/1999/xhtml">
 <head>
@@ -334,19 +335,30 @@
       </div>
       <div class="modal-body">
         <form action="{% url "home_page" %}" role="form">
-            <div class="form-group">
-                <form method="get">
-    {{ filter.form.as_p }}
-    <button type="submit">Search</button>
-  </form>
-  <ul>
-  {% for event in filter.qs %}
-    <a href="{{ event.get_absolute_url }}">   <div class="thumbnail">
-         <li>{{ event.title }} - {{ event.information.dateTime }} - {{ event.description }} - created: {{ event.created }}</li>
-      </div> </a>
-  {% endfor %}
-  </ul>
-            </div>
+
+                <div method="get">
+
+                    {% for field in filter.form %}
+        <div class="form-group">
+            {{ field.errors }}
+            <label class="control-label">{{ field.label_tag }}</label>
+            <div>{{ field|add_class:'form-control' }}</div>
+        </div>
+{% endfor %}
+                <div class="form-group">
+                    <label class="control-label" for="title"><span class="glyphicon glyphicon-asterisk"></span> {{ filter.form.title.label }}</label>
+                    {% render_field filter.form.title class="form-control" placeholder="Εισάγετε τίτλο" id='title' %}
+                    <br><br>
+                   <button type="submit">Search</button>
+                </div>
+
+
+
+
+
+
+        <form>
+
           <div class="form-group">
             <label for="genre-search"><span class="glyphicon glyphicon-cog"></span> Επιλέξτε είδος εκδήλωσης</label>
              <select class="form-control" id="genre-search" name="genre-search">
