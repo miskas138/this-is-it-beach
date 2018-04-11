@@ -5,6 +5,8 @@ from Events.models import *
 from django import forms
 from .models import SECTION_CHOISES
 
+
+
 class PostFilter(django_filters.FilterSet):
     section = django_filters.ChoiceFilter(choices=SECTION_CHOISES, label='Είδος εκδήλωσης')
     title = django_filters.CharFilter(lookup_expr='icontains', label='Τίτλος')
