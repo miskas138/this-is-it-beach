@@ -338,13 +338,6 @@
 
                 <div method="get">
 
-                    {% for field in filter.form %}
-        <div class="form-group">
-            {{ field.errors }}
-            <label class="control-label">{{ field.label_tag }}</label>
-            <div>{{ field|add_class:'form-control' }}</div>
-        </div>
-{% endfor %}
 
                 <div class="form-group">
                     <label class="control-label" for="title"><span class="glyphicon glyphicon-asterisk"></span> {{ filter.form.title.label }}</label>
@@ -372,59 +365,21 @@
                            {% render_field filter.form.location__city class="form-control" placeholder="Εισάγετε περιοχή" id='location' %}
                  </div>
                 <div class="form-group">
-                          <label for="description"><span class="glyphicon glyphicon-info"></span> {{ filter.form.description.label }}</label>
+                          <label for="description"><span class="glyphicon glyphicon-info-sign"></span> {{ filter.form.description.label }}</label>
                            {% render_field filter.form.description class="form-control" placeholder="Εισάγετε λέξεις κλειδιά" id='description' %}
                  </div>
                 <div class="form-group">
                           <label for="messages"><span class="glyphicon glyphicon-globe"></span> {{ filter.form.comments__body.label }}</label>
                            {% render_field filter.form.comments__body class="form-control" placeholder="Εισάγετε λέξεις κλειδιά" id='messages' %}
-                 </div>
-                    <div class="form-group">
-                    <br><br>
-                   <button type="submit">Search</button>
-                </div>
+<br><br>
 
-
-
-
-
-
-        <form>
-
-          <div class="form-group">
-            <label for="genre-search"><span class="glyphicon glyphicon-cog"></span> Επιλέξτε είδος εκδήλωσης</label>
-             <select class="form-control" id="genre-search" name="genre-search">
-                   <option value="" selected hidden default>Επιλέξτε είδος εκδήλωσης</option>
-                 <option value="">Όλες οι εκδηλώσεις</option>
-                <option>Μουσική</option>
-                 <option>Θέατρο</option>
-                  <option>Χορός</option>
-                   <option>Έκθεση</option>
-                 <option>Κινηματογράφος</option>
-                 <option>Διάφορες</option>
-             </select>
-          </div>
-          <div class="form-group">
-            <label for="organizer-search"><span class="glyphicon glyphicon-user"></span> Όνομα διοργανωτή</label>
-            <input type="text" name="organizer-search" class="form-control" id="organizer-search" placeholder="Προσθέστε όνομα διοργανωτή">
-          </div>
-             <div class="form-group">
-            <label for="date-search"><span class="glyphicon glyphicon-calendar"></span> Ημερομηνία</label>
-            <input type="text" name="date-search" class="form-control" id="date-search" placeholder="Προσθέστε ημερομηνία">
-          </div>
-             <div class="form-group">
-            <label for="location-search"><span class="glyphicon glyphicon-globe"></span> Περιοχή</label>
-            <input type="text" name="location-search" class="form-control" id="location-search" placeholder="Προσθέστε περιοχή">
-          </div>
-             <div class="form-group">
-            <label for="title-search"><span class="glyphicon glyphicon-asterisk"></span> Τίτλος/Περιγραφή</label>
-            <input type="text" name="title-search" class="form-control" id="title-search" placeholder="Αναζήτηση σε τίτλους και περιγραφές">
-          </div>
+            <div class="form-group">
           <button type="submit" class="btn btn-block"><span class="glyphicon glyphicon-search"></span> Αναζήτηση
             <span class="glyphicon glyphicon-ok"></span>
           </button>
-        </form>
+
       </div>
+                </form>
       <div class="modal-footer">
         <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
           <span class="glyphicon glyphicon-remove"></span> Cancel
