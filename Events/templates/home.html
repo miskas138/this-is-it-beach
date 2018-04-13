@@ -114,7 +114,7 @@
         if ($(window).scrollTop() > margin && empty_page==false && block_request==false){
             block_request = true;
             page += 1;
-            $.get('{{ request.get_full_path }}'+'{% if "title" in request.get_full_path %}&{% else %}?{% endif %}page='+page, function(data) {
+            $.get('{{ request.get_full_path }}'+'{% if "content" in request.get_full_path %}&{% else %}?{% endif %}page='+page, function(data) {
                 if (data==('')){
                     empty_page = true;
                 }else {

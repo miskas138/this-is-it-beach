@@ -1,6 +1,7 @@
 {% load  staticfiles %}
 {% load account_tags %}
 {% load widget_tweaks %}
+
 <!DOCTYPE html>
 <html lang="en" xmlns:color="http://www.w3.org/1999/xhtml">
 <head>
@@ -334,9 +335,9 @@
         <h4><span class="glyphicon glyphicon-search"></span> Αναζήτηση</h4>
       </div>
       <div class="modal-body">
-        <form action="{% url "home_page" %}" role="form">
+        <form type="get" action="{% url "home_page" %}" role="form">
 
-                <div method="get">
+
 
 
                 <div class="form-group">
@@ -371,7 +372,14 @@
                 <div class="form-group">
                           <label for="messages"><span class="glyphicon glyphicon-globe"></span> {{ filter.form.comments__body.label }}</label>
                            {% render_field filter.form.comments__body class="form-control" placeholder="Εισάγετε λέξεις κλειδιά" id='messages' %}
-<br><br>
+                </div>
+                 <div class="form-group">
+                         <label for="content" class="control-label pull-left"><span class="glyphicon glyphicon-globe"></span> Περιεχόμενο</label>
+                          <input type="text" class="form-control" placeholder="Εισάγετε λέξεις κλειδιά" id='content' name="content">
+               </div>
+
+
+                    <br><br>
 
             <div class="form-group">
           <button type="submit" class="btn btn-block"><span class="glyphicon glyphicon-search"></span> Αναζήτηση
@@ -379,16 +387,21 @@
           </button>
 
       </div>
-                </form>
+            </form>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+
+
+
+
+          <button type="submit" class="btn btn-danger btn-default pull-left">
           <span class="glyphicon glyphicon-remove"></span> Cancel
         </button>
+      </div> </div>
         <p>Need <a href="#">help?</a></p>
       </div>
     </div>
   </div>
-</div></li>
+</li>
       </ul>
     </div>
   </div>
