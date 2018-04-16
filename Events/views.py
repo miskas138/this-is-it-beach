@@ -18,6 +18,7 @@ import html
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)  # απενεργοποίηση του back button στον browser
 @login_required
 def home_page(request, tag_slug=None, section=None):
+    pinaks = Calendar.calendarDate(7, )
     events = Event.objects.all().order_by('-information__dateTime')
     content = request.GET.get('content','')
     if section:
@@ -27,12 +28,12 @@ def home_page(request, tag_slug=None, section=None):
         tag = get_object_or_404(Tag, slug=tag_slug)
         events = events.filter(tags__in=[tag])
     if content:
-        pinaks = set()
+        events_found = set()
         for event in events:
             if event.content:
                 if content in event.get_content_text():
-                    pinaks.add(str(event.pk))
-        events = Event.objects.filter(pk__in=pinaks)
+                    events_found.add(str(event.pk))
+        events = Event.objects.filter(pk__in=events_found)
 
     event_filter = PostFilter(request.GET, queryset=events)
     events = event_filter.qs
@@ -56,7 +57,8 @@ def home_page(request, tag_slug=None, section=None):
                                          'events': events,
                                          'carousel_events': carousel_events,
                                          'tag': tag,
-                                         'filter': event_filter})
+                                         'filter': event_filter,
+                                         'pinaks': pinaks})
 
 
 

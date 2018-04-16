@@ -39,9 +39,9 @@
 
 
 <h2 class="text-center"  style="margin: 0;padding-top: 0px;padding-bottom: 3px;color: #d5d5d5 !important;
-      background-color: #29292c !important; opacity: 0.8;letter-spacing: 10px;">Λίστα Εκδηλώσεων</h2>
+      background-image: linear-gradient(#000000, #5f5f62); opacity: 0.8;letter-spacing: 10px;">Λίστα Εκδηλώσεων</h2>
 <div class="row1">
-<div class="container-fluid col-sm-2 text-center" style="background-color: #29292c; color: #f1f1f1; border-radius: 15px">
+<div class="container-fluid col-sm-2 text-center" style="background-image: linear-gradient(#000000, #5f5f62); color: #f1f1f1; border-radius: 15px">
 {% if request.user|has_group:"advanced_user" %}
 {% include "side_bar.html" %}
     {% else %}<p>Για τους φλώρους απλούς χρήστες δεν έχει πλαινή μπάρα :D</p>
@@ -99,9 +99,148 @@
 
 
 
-<div class="container-fluid col-sm-2">linvl g btgv etge gerg erge rge rgergr grgrgrsvvdrdrv evrvdrvrvr vvrv</div>
+<div class="col-sm-2 container-fluid"><div id="calendar-container">
+            <div id="calendar-header">
+                <span id="calendar-month-year"></span>
+            </div>
+            <div id="calendar-dates">
+            </div>
+        </div>
+<ul>
+        {% for pin in pinaks %}
+            <li><span id="day{{ pin.day }}"></span>   {{ pin }}  <span id="month{{ pin.day }}"></span>  </li><br>
+<script>
+    document.getElementById("month{{ pin.day }}").innerHTML = miskaks();
+    document.getElementById("day{{ pin.day }}").innerHTML = miskaks2();
+
+
+
+
+function miskaks(){
+    var month_name = ['Ιανουάριος','Φεβρουάριος','Μάρτιος','Απρίλιος','Μάιος','Ιούνιος','Ιούλιος','Αύγουστος','Σεπτέμβρης','Οκτώβρης','Νοέμβρης','Δεκέμβρης'];
+    month_name=month_name[{{ pin.month }}-1];
+    return month_name;
+}
+
+    function miskaks2 () {
+        var d = new Date("{{ pin.month }}/"+"{{ pin.day }}/"+"{{ pin.year }}");
+        var day_name = ['Κυρ','Δευ','Τρί','Τετ','Πέμ','Πάρ','Σάβ'];
+        day_name=day_name[d.getDay()];
+        return day_name;
+    }
+
+
+
+
+</script>
+{% endfor %}
+
+    </ul>
+<!--calendar fasi-->
+
+
+
+<div class="month" style="background-image: linear-gradient(#000000, #5f5f62)";>
+  <ul style="list-style: none">
+    <li class="prev">&#10094;</li>
+    <li class="next">&#10095;</li>
+      <li class="text-center"><p id="month"></p>
+      <span style="font-size:18px" id="year"></span>
+    </li>
+  </ul>
+</div>
+ <script>
+        function miskaks3(){
+    var month_name = ['Ιανουάριος','Φεβρουάριος','Μάρτιος','Απρίλιος','Μάιος','Ιούνιος','Ιούλιος','Αύγουστος','Σεπτέμβρης','Οκτώβρης','Νοέμβρης','Δεκέμβρης'];
+    var d = new Date();
+    month_name=month_name[d.getMonth()];
+    return month_name;
+}
+ function miskaks4(){
+    var d = new Date();
+    year=d.getFullYear();
+    return year;
+}
+
+     document.getElementById("month").innerHTML = miskaks3();
+
+ document.getElementById("year").innerHTML = miskaks4();
+    </script>
+
 
 </div>
+
+</div><script>window.onload = function(){
+    var d = new Date();
+    var month_name = ['Ιανουάριος','Φεβρουάριος','Μάρτιος','Απρίλιος','Μάιος','Ιούνιος','Ιούλιος','Αύγουστος','Σεπτέμβρης','Οκτώβρης','Νοέμβρης','Δεκέμβρης'];
+    var month = d.getMonth();   //0-11
+    var year = d.getFullYear(); //2014
+    var first_date = month_name[month] + " " + 1 + " " + year;
+    //September 1 2014
+    var tmp = new Date(first_date).toDateString();
+    //Mon Sep 01 2014 ...
+    var first_day = tmp.substring(0, 3);    //Mon
+    var day_name = ['Κυρ','Δευ','Τρί','Τετ','Πέμ','Πάρ','Σάβ'];
+    var day_no = day_name.indexOf(first_day);   //1
+    var days = new Date(year, month+1, 0).getDate();    //30
+    //Tue Sep 30 2014 ...
+    var calendar = get_calendar(day_no, days);
+    document.getElementById("calendar-month-year").innerHTML = month_name[month]+" "+year;
+    document.getElementById("calendar-dates").appendChild(calendar);
+}
+
+function get_calendar(day_no, days){
+    var table = document.createElement('table');
+    var tr = document.createElement('tr');
+
+    //row for the day letters
+    for(var c=0; c<=21; c++){
+        var td = document.createElement('td');
+        td.innerHTML = "ΚΔΤΤΠΠΣ"[c];
+        tr.appendChild(td);
+    }
+    table.appendChild(tr);
+
+    //create 2nd row
+    tr = document.createElement('tr');
+    var c;
+    for(c=0; c<=6; c++){
+        if(c == day_no){
+            break;
+        }
+        var td = document.createElement('td');
+        td.innerHTML = "";
+        tr.appendChild(td);
+    }
+
+    var count = 1;
+    for(; c<=6; c++){
+        var td = document.createElement('td');
+        td.innerHTML = count;
+        count++;
+        tr.appendChild(td);
+    }
+    table.appendChild(tr);
+
+    //rest of the date rows
+    for(var r=3; r<=7; r++){
+        tr = document.createElement('tr');
+        for(var c=0; c<=6; c++){
+            if(count > days){
+                table.appendChild(tr);
+                return table;
+            }
+            var td = document.createElement('td');
+            td.innerHTML = count;
+            count++;
+            tr.appendChild(td);
+        }
+        table.appendChild(tr);
+    }
+    return table;
+}
+    </script>
+
 {% endblock %}
 
 {% block domready %}

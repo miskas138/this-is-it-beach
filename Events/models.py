@@ -7,6 +7,7 @@ from tinymce.models import HTMLField
 from django.contrib.auth.models import User
 from account.models import Advanced_Profile
 import html
+import datetime
 
 
 
@@ -161,3 +162,10 @@ class ImageUpload(models.Model):
         ordering = ('-created',)
 
 
+class Calendar():
+    @staticmethod
+    def calendarDate(days=0, offset=0):
+        pinaks=[]
+        for day in range(days):
+            pinaks.append(datetime.datetime.now()+datetime.timedelta(days=day)+datetime.timedelta(days=offset))
+        return pinaks
