@@ -163,9 +163,10 @@ class ImageUpload(models.Model):
 
 
 class Calendar():
+    offset = 0
     @staticmethod
-    def calendarDate(days=0, offset=0):
+    def calendarDate(offset=0):
         pinaks=[]
-        for day in range(days):
+        for day in range(7):
             pinaks.append(datetime.datetime.now()+datetime.timedelta(days=day)+datetime.timedelta(days=offset))
         return pinaks

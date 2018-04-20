@@ -17,12 +17,15 @@ import html
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)  # απενεργοποίηση του back button στον browser
 @login_required
-def home_page(request, tag_slug=None, section=None):
-    pinaks = Calendar.calendarDate(7, )
+def home_page(request, tag_slug=None, section=None, date=None):
+    pinaks = Calendar.calendarDate()
     events = Event.objects.all().order_by('-information__dateTime')
     content = request.GET.get('content','')
+    date = request.GET.get('date','')
     if section:
         events = events.filter(section=section)
+    if date:
+        events = events.filter(information__dateTime__date__exact=date)
     tag = None
     if tag_slug:
         tag = get_object_or_404(Tag, slug=tag_slug)
@@ -458,3 +461,4 @@ def event_statistics_details(request, pk):
 
     return render(request, 'event_statistics_details.html', {'event': event, 'events_views': events_views, 'events_likes': events_likes, 'events_registered': events_registered,
                                                              'events_comments': events_comments})
+

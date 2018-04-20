@@ -20,6 +20,7 @@ class PostFilter(django_filters.FilterSet):
    # content = django_filters.CharFilter(lookup_expr='icontains', label='Περιεχόμενο')
     comments__body = django_filters.CharFilter(lookup_expr='icontains', label='Μηνύματα')
 
+
     class Meta:
         model = Event
         fields = {

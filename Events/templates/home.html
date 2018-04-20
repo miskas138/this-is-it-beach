@@ -38,7 +38,7 @@
 </div>
 
 
-<h2 class="text-center"  style="margin: 0;padding-top: 0px;padding-bottom: 3px;color: #d5d5d5 !important;
+<h2 id="lista-ekdiloseon-title" class="text-center"  style="margin: 0;padding-top: 0px;padding-bottom: 3px;color: #d5d5d5 !important;
       background-image: linear-gradient(#000000, #5f5f62); opacity: 0.8;letter-spacing: 10px;">Λίστα Εκδηλώσεων</h2>
 <div class="row1">
 <div class="container-fluid col-sm-2 text-center" style="background-image: linear-gradient(#000000, #5f5f62); color: #f1f1f1; border-radius: 15px">
@@ -69,7 +69,7 @@
 
         {% if tag %}
 <h2>Posts tagged with "{{ tag.name }}"</h2>
-            {% elif "title" in request.get_full_path %}
+            {% elif "title" or 'date' in request.get_full_path %}
             <h3>Αποτελέσματα αναζήτησης</h3><br><br>
             {% elif section == 'ΜΟΥΣΙΚΗ' %}
                 <h2>Προβολή όλων των μουσικών εκδηλώσεων</h2>
@@ -89,6 +89,7 @@
                {% elif section == "ΔΙΑΦΟΡΕΣ" %}
                 <h2>Προβολή διάφορων εκδηλώσεων</h2>
                  <p>Σκρολλάρετε προς τα κάτω για να δείτε διάφορες εκδηλώσεις!!!</p><br><br>
+
             {% else %}
       <h2>Προβολή όλων των εκδηλώσεων</h2>
       <p>Σκρολλάρετε προς τα κάτω για να δείτε όλες τις εκδηλώσεις!!!</p>{% endif %}
@@ -111,37 +112,9 @@
 
 
 
-<div class="month" style="background-image: linear-gradient(#000000, #5f5f62)";>
-  <ul style="list-style: none">
-    <li class="prev" style="padding-top: 35px">&#10094;</li>
-    <li class="next" style="padding-top: 35px">&#10095;</li>
-      <li class="text-center"><p id="month" style="padding-top: 25px; margin-bottom: 0px"></p>
-      <span style="font-size:18px" id="year"></span>
-    </li>
-  </ul>
-    <ul style="list-style-type: none;">
-        {% for pin in pinaks %}
-            <li id="miskas-calendar" class="text-center"><h3 style="color: whitesmoke; font-size: 70%; padding: 10px"><span id="day{{ pin.day }}"></span>   {{ pin.day }}</h3></li>
-<script>
 
-    document.getElementById("day{{ pin.day }}").innerHTML = miskaks2();
+   {% include "calendar.html" %}
 
-
-    function miskaks2 () {
-        var d = new Date("{{ pin.month }}/"+"{{ pin.day }}/"+"{{ pin.year }}");
-        var day_name = ['Κυρ','Δευ','Τρί','Τετ','Πέμ','Πάρ','Σάβ'];
-        day_name=day_name[d.getDay()];
-        return day_name;
-    }
-
-
-
-
-</script>
-{% endfor %}
-<br>
-    </ul>
-</div>
  <script>
         function miskaks3(){
     var month_name = ['Ιανουάριος','Φεβρουάριος','Μάρτιος','Απρίλιος','Μάιος','Ιούνιος','Ιούλιος','Αύγουστος','Σεπτέμβρης','Οκτώβρης','Νοέμβρης','Δεκέμβρης'];
@@ -263,5 +236,7 @@ function get_calendar(day_no, days){
         }
 
     });
+
+
 
 {% endblock %}
