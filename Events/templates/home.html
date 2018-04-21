@@ -19,7 +19,7 @@
         <img src="{{ event.image.url }}" alt="New York">
         <div class="carousel-caption">
           <h3>{{ event.title }}</h3>
-          <p>{{ event.description|truncatewords:30|linebreaks }}</p>
+            <div id="carousel-home-caption" ><p>{{ event.description|truncatewords:30|linebreaks }}</p></div>
             <p><i>{{ event.created }}</i></p>
         </div>
       </div>
@@ -118,19 +118,55 @@
  <script>
         function miskaks3(){
     var month_name = ['Ιανουάριος','Φεβρουάριος','Μάρτιος','Απρίλιος','Μάιος','Ιούνιος','Ιούλιος','Αύγουστος','Σεπτέμβρης','Οκτώβρης','Νοέμβρης','Δεκέμβρης'];
-    var d = new Date();
-    month_name=month_name[d.getMonth()];
+    month_name=month_name[{{ pinaks.1.month }}-1];
     return month_name;
 }
  function miskaks4(){
-    var d = new Date();
-    year=d.getFullYear();
+    year={{ pinaks.1.year }};
+    return year;
+}
+<!--second calendar tab-->
+   function miskaks5(){
+    var month_name = ['Ιανουάριος','Φεβρουάριος','Μάρτιος','Απρίλιος','Μάιος','Ιούνιος','Ιούλιος','Αύγουστος','Σεπτέμβρης','Οκτώβρης','Νοέμβρης','Δεκέμβρης'];
+    month_name=month_name[{{ pinaks2.1.month }}-1];
+    return month_name;
+}
+ function miskaks6(){
+    year={{ pinaks2.2.year }};
+    return year;
+}
+<!--third calendar tab-->
+           function miskaks7(){
+    var month_name = ['Ιανουάριος','Φεβρουάριος','Μάρτιος','Απρίλιος','Μάιος','Ιούνιος','Ιούλιος','Αύγουστος','Σεπτέμβρης','Οκτώβρης','Νοέμβρης','Δεκέμβρης'];
+    month_name=month_name[{{ pinaks3.3.month }}-1];
+    return month_name;
+}
+ function miskaks8(){
+    year={{ pinaks3.1.year }};
+    return year;
+}
+<!--fourth calendar tab-->
+           function miskaks9(){
+    var month_name = ['Ιανουάριος','Φεβρουάριος','Μάρτιος','Απρίλιος','Μάιος','Ιούνιος','Ιούλιος','Αύγουστος','Σεπτέμβρης','Οκτώβρης','Νοέμβρης','Δεκέμβρης'];
+    month_name=month_name[{{ pinaks4.1.month }}-1];
+    return month_name;
+}
+ function miskaks10(){
+    year={{ pinaks4.1.year }};
     return year;
 }
 
      document.getElementById("month").innerHTML = miskaks3();
+     document.getElementById("year").innerHTML = miskaks4();
 
- document.getElementById("year").innerHTML = miskaks4();
+      document.getElementById("month2").innerHTML = miskaks5();
+     document.getElementById("year2").innerHTML = miskaks6();
+
+      document.getElementById("month3").innerHTML = miskaks7();
+     document.getElementById("year3").innerHTML = miskaks8();
+
+      document.getElementById("month4").innerHTML = miskaks9();
+     document.getElementById("year4").innerHTML = miskaks10();
     </script>
 
 

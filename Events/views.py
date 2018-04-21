@@ -19,6 +19,18 @@ import html
 @login_required
 def home_page(request, tag_slug=None, section=None, date=None):
     pinaks = Calendar.calendarDate()
+    pinaks_first=pinaks[0]
+
+    pinaks2 = Calendar.calendarDate(7)
+    pinaks2_first = pinaks2[0]
+
+    pinaks3 = Calendar.calendarDate(14)
+    pinax3_first = pinaks3[0]
+
+    pinaks4 = Calendar.calendarDate(21)
+    pinaks4_first = pinaks4[0]
+
+
     events = Event.objects.all().order_by('-information__dateTime')
     content = request.GET.get('content','')
     date = request.GET.get('date','')
@@ -61,7 +73,11 @@ def home_page(request, tag_slug=None, section=None, date=None):
                                          'carousel_events': carousel_events,
                                          'tag': tag,
                                          'filter': event_filter,
-                                         'pinaks': pinaks})
+                                         'pinaks': pinaks,
+                                         'pinaks2': pinaks2,
+                                         'pinaks3': pinaks3,
+                                         'pinaks4': pinaks4, })
+
 
 
 

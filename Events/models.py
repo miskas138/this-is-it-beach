@@ -163,7 +163,6 @@ class ImageUpload(models.Model):
 
 
 class Calendar():
-    offset = 0
     @staticmethod
     def calendarDate(offset=0):
         pinaks=[]
