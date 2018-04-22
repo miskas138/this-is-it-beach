@@ -1,7 +1,9 @@
 {% extends 'account/base.html' %}
+{% load widget_tweaks %}
+
 
 {% block content %}
-    <div id="login" class="container-fluid text-center" style="margin-top: 50px">
+    <div id="login" class="container text-center" style="margin-top: 50px">
 <h1>Συνδεθείτε!!!</h1>
     {% if form.errors %}
         <div class="col-sm-offset-5 col-sm-3"><p>Ο συνδιασμός ονόματος χρήστη και συνθηματικού που εισάγατε δεν είναι έγκυρος.</p>
@@ -13,11 +15,11 @@
     <form class='form-horizontal' action="{% url 'login' %}" method="post">
         <div class="form-group">
             <label class="control-label col-sm-6">Όνομα χρήστη</label>
-            <div class="col-sm-1">{{ form.username }}</div>
+            <div class="col-sm-3"> {% render_field form.username class="form-control" placeholder="Εισάγετε όνομα χρήστη"%}</div>
        </div>
         <div class="form-group">
             <label class="control-label col-sm-6">Συνθηματικό</label>
-            <div class="col-sm-1">{{ form.password }}</div>
+            <div class="col-sm-3"> {% render_field form.password class="form-control" placeholder="Εισάγετε συνθηματικό"%}</div>
        </div>
         {% csrf_token %}
 
@@ -32,7 +34,8 @@
 
 
     </form>
-<a class="col-sm-offset-6 col-sm-3 text-left" href="{% url "password_reset" %}">Ξεχάσατε το συνθηματικό σας???</a></p>
-</div>
+<p></p><a class="col-sm-offset-6 col-sm-3 text-left" href="{% url "password_reset" %}">Ξεχάσατε το συνθηματικό σας???</a></p>
+ <p><a class="col-sm-offset-6 col-sm-3 text-left" href="register_type.html">Δημιουργήστε ένα νέο λογαριασμό</a></p>
+    </div>
 
 {% endblock %}

@@ -386,7 +386,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="{% url 'home_page' %}">HOME</a></li>
+        <li><a href="{% url 'home_page' %}">Αρχική</a></li>
         <li><a href="{% url 'user_list' %}">Διοργανωτές</a></li>
         <li><a href="#tour">TOUR</a></li>
           {% if request.user.is_authenticated %}<li><a href="{% if request.user|has_group:'advanced_user' %}{% url 'user_details' request.user.username %}{% else %}#{% endif %}"><img src="{% if request.user|has_group:'simple_user' %}{{ request.user.profile.photo.url }}" style="width: 20px;height: 20px;  object-fit: cover;"><span> {{ request.user.username }}
@@ -403,9 +403,9 @@
               <li><a href="{% url "edit" %}">Επεξεργασία προφίλ</a></li>
           </ul>
         </li>
-        <li><!-- Used to open the Modal -->
+       {% if request.user.is_authenticated %} <li><!-- Used to open the Modal -->
 <a href="#" data-toggle="modal" data-target="#mySearchModal"><span class="glyphicon glyphicon-search"></span></a>
-
+        {% endif %}
 <!-- Modal -->
 <div class="modal fade" id="mySearchModal" role="dialog">
   <div class="modal-dialog">
@@ -437,7 +437,7 @@
                  </div>
                   <div class="form-group">
                           <label for="date_gte"><span class="glyphicon glyphicon-calendar"></span> {{ filter.form.dateTime_gte.label }}</label>
-                           {% render_field filter.form.dateTime_gte class="form-control" placeholder="Ημερομηνία από" id='date_gte' %}
+                        {{ filter.form.media }}   {% render_field filter.form.dateTime_gte class="form-control" placeholder="Ημερομηνία από" id='date_gte' %}
                  </div>
                 <div class="form-group">
                           <label for="date_lte"><span class="glyphicon glyphicon-calendar"></span> {{ filter.form.dateTime_lte.label }}</label>

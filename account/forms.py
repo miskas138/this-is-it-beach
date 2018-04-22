@@ -19,7 +19,7 @@ class UserRegistrationForm(forms.ModelForm):
     def clean_password2(self):
         cd = self.cleaned_data
         if cd['password'] != cd['password2']:
-            raise forms.ValidationError('Passwords dont\'t match you fucking idiot')
+            raise forms.ValidationError('Τα συνθηματικά δεν ταιριάζουν')
         return cd['password2']
 
 YEARS= [x for x in range(1950, timezone.now().year+1)]

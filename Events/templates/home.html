@@ -69,7 +69,9 @@
 
         {% if tag %}
 <h2>Posts tagged with "{{ tag.name }}"</h2>
-            {% elif "title" or 'date' in request.get_full_path %}
+            {% elif "title" in request.get_full_path %}
+            <h3>Αποτελέσματα αναζήτησης</h3><br><br>
+             {% elif "date" in request.get_full_path %}
             <h3>Αποτελέσματα αναζήτησης</h3><br><br>
             {% elif section == 'ΜΟΥΣΙΚΗ' %}
                 <h2>Προβολή όλων των μουσικών εκδηλώσεων</h2>

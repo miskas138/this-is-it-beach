@@ -1,4 +1,5 @@
 import django_filters
+from datetimewidget.widgets import DateTimeWidget
 from django.forms import forms
 
 from Events.models import *
@@ -13,8 +14,8 @@ class PostFilter(django_filters.FilterSet):
     location__city = django_filters.CharFilter(lookup_expr='icontains', label='Πόλη/περιοχή')
     location__address = django_filters.CharFilter(lookup_expr='icontains', label='Διεύθυνση')
     user__username = django_filters.CharFilter(lookup_expr='icontains', label='Όνομα Διοργανωτή')
-    dateTime_gte = django_filters.DateTimeFilter(name='information__dateTime', lookup_expr='gte', label='Ημερομηνία από')
-    dateTime_lte = django_filters.DateTimeFilter(name='information__dateTime', lookup_expr='lte', label='Ημερομηνία εώς')
+    dateTime_gte = django_filters.DateTimeFilter(name='information__dateTime', widget=DateTimeWidget(attrs={'class': 'form-control'}, usel10n=True, bootstrap_version=3), lookup_expr='gte', label='Ημερομηνία από')
+    dateTime_lte = django_filters.DateTimeFilter(name='information__dateTime', widget=DateTimeWidget(attrs={'class': 'form-control'}, usel10n=True, bootstrap_version=3), lookup_expr='lte', label='Ημερομηνία εώς')
     information__ticket_price = django_filters.NumberFilter(lookup_expr='lte', label='Τιμή εισητηρίου εώς')
     description = django_filters.CharFilter(lookup_expr='icontains', label='Σύντομη περιγραφή')
    # content = django_filters.CharFilter(lookup_expr='icontains', label='Περιεχόμενο')

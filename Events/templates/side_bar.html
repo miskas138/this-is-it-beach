@@ -8,9 +8,11 @@
   <a href="#">Contact</a>
 </div>
 {% if event %}
+    {% if event.user == request.user  %}
    <!--event statistics-->
        <a href="{{ event.get_absolute_statistics_url }}"> <div><span class="glyphicon glyphicon-info-sign"></span>Στατιστικά Εκδήλωσης</div></a>
-{% endif %}
+        {% endif %}
+    {% endif %}
 
 
 <h2>Εργαλεία Διοργανωτή</h2>

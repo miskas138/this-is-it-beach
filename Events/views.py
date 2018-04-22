@@ -17,19 +17,14 @@ import html
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)  # απενεργοποίηση του back button στον browser
 @login_required
-def home_page(request, tag_slug=None, section=None, date=None):
+def home_page(request, tag_slug=None, section=None):
     pinaks = Calendar.calendarDate()
-    pinaks_first=pinaks[0]
 
     pinaks2 = Calendar.calendarDate(7)
-    pinaks2_first = pinaks2[0]
 
     pinaks3 = Calendar.calendarDate(14)
-    pinax3_first = pinaks3[0]
 
     pinaks4 = Calendar.calendarDate(21)
-    pinaks4_first = pinaks4[0]
-
 
     events = Event.objects.all().order_by('-information__dateTime')
     content = request.GET.get('content','')
@@ -52,8 +47,8 @@ def home_page(request, tag_slug=None, section=None, date=None):
 
     event_filter = PostFilter(request.GET, queryset=events)
     events = event_filter.qs
-    carousel_events = events[:10]
-    paginator = Paginator(events, 5)
+    carousel_events = events[:8]
+    paginator = Paginator(events, 4)
     page = request.GET.get('page')
 
     try:
@@ -67,7 +62,7 @@ def home_page(request, tag_slug=None, section=None, date=None):
     if request.is_ajax():
         return render(request, 'ajax_list.html', {'events': events,
                                                   'carousel_events': carousel_events,
-                                                  'filter': event_filter})
+                                                  })
     return render(request, 'home.html', {'section': section,
                                          'events': events,
                                          'carousel_events': carousel_events,
@@ -76,7 +71,7 @@ def home_page(request, tag_slug=None, section=None, date=None):
                                          'pinaks': pinaks,
                                          'pinaks2': pinaks2,
                                          'pinaks3': pinaks3,
-                                         'pinaks4': pinaks4, })
+                                         'pinaks4': pinaks4,})
 
 
 
@@ -85,6 +80,7 @@ def home_page(request, tag_slug=None, section=None, date=None):
 @user_passes_test(lambda u: u.groups.filter(name='advanced_user'), dashboard)
 def event_create(request):
     tags = Tag.objects.all()
+    event_filter = PostFilter(request.GET, queryset=Event.objects.all().order_by('-information__dateTime'))
     if request.method == 'POST':
         event = EventCreateForm(data=request.POST, files=request.FILES)
         information = InformationForm(data=request.POST)
@@ -108,16 +104,18 @@ def event_create(request):
         location = LocationForm()
 
     return render(request, 'event_create.html', {'event': event, 'information': information, 'location': location,
-                                                 'tags': tags})
+                                                 'tags': tags, 'filter': event_filter})
 
 @login_required
 def user_list(request):
     users = User.objects.filter(is_active=True, groups__name='advanced_user')
-
-    return render(request, 'organizers/organizers_list.html', {'users': users})
+    event_filter = PostFilter(request.GET, queryset=Event.objects.all().order_by('-information__dateTime'))
+    return render(request, 'organizers/organizers_list.html', {'users': users, 'filter': event_filter})
 
 
 def event_details(request, pk):
+    event_filter = PostFilter(request.GET, queryset=Event.objects.all().order_by('-information__dateTime'))
+
     event = get_object_or_404(Event, pk=pk)
     likes = event.likes.all()
     user_like = likes.filter(user=request.user)
@@ -156,6 +154,7 @@ def event_details(request, pk):
                                                  'views': views,
                                                  'similar_events': similar_events,
                                                  'tags': tags,
+                                                 'filter': event_filter,
                                                  })
 
 @login_required
@@ -198,6 +197,8 @@ def event_register(request):
 
 @login_required
 def user_details(request, username):
+    event_filter = PostFilter(request.GET, queryset=Event.objects.all().order_by('-information__dateTime'))
+
     user = get_object_or_404(User, username=username, is_active=True)
     profile = Advanced_Profile.objects.get(user=user)
     comments = profile.user_comments.filter(active=True).order_by('-created')[:50]
@@ -230,6 +231,7 @@ def user_details(request, username):
                                                            'comments': comments,
                                                            'comment_form': comment_form,
                                                            'new_comment': new_comment,
+                                                           'filter': event_filter,
                                                            })
 
 @login_required
@@ -251,6 +253,8 @@ def user_follow(request):
 
 
 def event_video_uploads(request, pk):
+    event_filter = PostFilter(request.GET, queryset=Event.objects.all().order_by('-information__dateTime'))
+
     event = get_object_or_404(Event, pk=pk)
     video_uploads = event.video_uploads.all()
     paginator = Paginator(video_uploads, 3)
@@ -315,10 +319,13 @@ def event_video_uploads(request, pk):
                                                     'tags': tags,
                                                     'video_uploads': video_uploads,
                                                     'form': form,
+                                                    'filter': event_filter
                                                     })
 
 
 def event_mp3_uploads(request, pk):
+    event_filter = PostFilter(request.GET, queryset=Event.objects.all().order_by('-information__dateTime'))
+
     event = get_object_or_404(Event, pk=pk)
     mp3_uploads = event.mp3_uploads.all()
     paginator = Paginator(mp3_uploads, 5)
@@ -383,10 +390,13 @@ def event_mp3_uploads(request, pk):
                                                 'tags': tags,
                                                 'mp3_uploads': mp3_uploads,
                                                 'mp3_form': mp3_form,
+                                                'filter': event_filter
                                                 })
 
 
 def event_image_uploads(request, pk):
+    event_filter = PostFilter(request.GET, queryset=Event.objects.all().order_by('-information__dateTime'))
+
     event = get_object_or_404(Event, pk=pk)
     image_uploads = event.image_uploads.all()
     paginator = Paginator(image_uploads, 3)
@@ -451,30 +461,41 @@ def event_image_uploads(request, pk):
                                                   'tags': tags,
                                                   'image_uploads': image_uploads,
                                                   'image_form': image_form,
+                                                  'filter': event_filter
                                                   })
 
 
 @login_required
 @user_passes_test(lambda u: u.groups.filter(name='advanced_user'), home_page)
 def organization_charts(request):
+    event_filter = PostFilter(request.GET, queryset=Event.objects.all().order_by('-information__dateTime'))
 
     events_views = Event.objects.filter(user=request.user, view__created__gte=timezone.datetime.now()-timedelta(days=30)).order_by('title').annotate(n=models.Count("pk"))
     events_likes = Event.objects.filter(user=request.user, likes__created__gte=timezone.datetime.now()-timedelta(days=30)).order_by('title').annotate(n=models.Count("pk"))
     events_registered = Event.objects.filter(user=request.user, register__created__gte=timezone.datetime.now()-timedelta(days=300)).order_by('title').annotate(n=models.Count("pk"))
 
     #posts = Views.objects.filter(post__author=request.user, created__gte=timezone.datetime.now()-timedelta(days=15))
-    return render(request, 'organization_charts.html', {'events_views': events_views, 'events_likes': events_likes, 'events_registered': events_registered})
+    return render(request, 'organization_charts.html', {'events_views': events_views,
+                                                        'events_likes': events_likes,
+                                                        'events_registered': events_registered,
+                                                        'filter': event_filter})
 
 
 @login_required
 @user_passes_test(lambda u: u.groups.filter(name='advanced_user'), home_page)
 def event_statistics_details(request, pk):
+    event_filter = PostFilter(request.GET, queryset=Event.objects.all().order_by('-information__dateTime'))
+
     event = get_object_or_404(Event, pk=pk)
     events_views = event.view.filter(created__gte=timezone.datetime.now() - timedelta(days=300)).count()
     events_likes = event.likes.filter(created__gte=timezone.datetime.now() - timedelta(days=300)).count()
     events_registered = event.register.filter(created__gte=timezone.datetime.now() - timedelta(days=300)).count()
     events_comments = event.comments.filter(created__gte=timezone.datetime.now() - timedelta(days=300)).count()
 
-    return render(request, 'event_statistics_details.html', {'event': event, 'events_views': events_views, 'events_likes': events_likes, 'events_registered': events_registered,
-                                                             'events_comments': events_comments})
+    return render(request, 'event_statistics_details.html', {'event': event,
+                                                             'events_views': events_views,
+                                                             'events_likes': events_likes,
+                                                             'events_registered': events_registered,
+                                                             'events_comments': events_comments,
+                                                             'filter': event_filter})
 
