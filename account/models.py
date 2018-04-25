@@ -7,7 +7,7 @@ from geoposition.fields import GeopositionField
 
 
 USER_TYPE_CHOISES = (('SIMPLE_USER','simple_user'), ('ADVANCED_USER','advanced_user'))
-USER_GENDER_CHOISES = (('MALE', 'male'), ('FEMALE', 'female'))
+USER_GENDER_CHOISES = (('MALE', 'Άνδρας'), ('FEMALE', 'Γυναίκα'))
 class Profile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
     date_of_birth = models.DateField(blank=True, null=True)
