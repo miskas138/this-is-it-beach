@@ -8,9 +8,8 @@
         <a href="{% url 'user_details' user.username %}"><img src="{{ user.advanced_profile.photo.url }}" class="img-circle person" alt="Random Name" style="width: 150px; height :160px;object-fit: cover;">
         </a>
       <div id="demo{{ forloop.counter }}" class="collapse">
-        <p>Guitarist and Lead Vocalist</p>
-        <p>Loves long walks on the beach</p>
-        <p>Member since 1988</p>
+        <p>{{ user.advanced_profile.description }}</p>
+
       </div>
     </div>
   {% endfor %}

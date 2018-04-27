@@ -36,7 +36,6 @@ class ProfileEditForm(forms.ModelForm):
 
 class AdvancedProfileEditForm(forms.ModelForm):
     organization_name = forms.CharField(label='Ονομασία οργανισμού')
-    description = forms.Textarea()
     address = forms.CharField(label='Διεύθυνση')
     city = forms.CharField(label='Πόλη')
     phone_number = forms.IntegerField(label='Τηλέφωνο')
@@ -44,7 +43,7 @@ class AdvancedProfileEditForm(forms.ModelForm):
 
     class Meta:
         model = Advanced_Profile
-        exclude = ('user_type', 'user')
+        fields = ('organization_name', 'description', 'address', 'city', 'phone_number', 'photo', 'position')
 
 
 class UserEditForm(forms.ModelForm):

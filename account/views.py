@@ -37,7 +37,7 @@ def register(request):
 
             return render(request, 'registration/register_done.html', {'new_user': new_user,
                                                                        'profile': profile,
-                                                                       'filter': event_filter })
+                                                                       'filter': event_filter})
     else:
         user_form = UserRegistrationForm()
         profile_form = ProfileEditForm()
@@ -65,12 +65,10 @@ def advanced_register(request):
             group = Group.objects.get(name='advanced_user')
             group.user_set.add(new_user)
             cd = profile_form.cleaned_data
-            profile = Advanced_Profile.objects.create(user=new_user,
-                                                      organization_name=cd['organization_name'],
-                                                      photo=cd['photo'],
-                                                      address=cd['address'],
-                                                      city=cd['city'],
-                                                      phone_number=cd['phone_number'])
+
+            profile = profile_form.save(commit=False)
+            profile.user = new_user
+            profile.save()
 
             return render(request, 'registration/register_done.html', {'new_user': new_user,
                                                                        'profile': profile,

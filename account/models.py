@@ -24,7 +24,7 @@ class Advanced_Profile(models.Model):
     photo = models.ImageField(upload_to='advanced_profile_photos', blank=True, null=True)
     address = models.CharField(max_length=50, blank=True, null=True)
     city = models.CharField(max_length=20, blank=True, null=True)
-    phone_number = models.IntegerField()
+    phone_number = models.IntegerField(blank=True, null=True)
     user_type = models.CharField(max_length=15, choices=USER_TYPE_CHOISES, default='ADVANCED_USER')
     position = GeopositionField(blank=True, null=True)
     def __str__(self):
