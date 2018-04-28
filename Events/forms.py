@@ -8,7 +8,7 @@ from datetimewidget.widgets import DateTimeWidget
 
 class EventCreateForm(forms.ModelForm):
     title = forms.CharField(label='Τίτλος')
-    content = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 30}))
+    content = forms.CharField(widget=TinyMCE())
     tags = TagField(label='Ετικέτες', help_text='δημιούργησε tag για την εκδήλωση διαχωρίζοντας με κόμματα, ή επέλεξε από την παρακάτω λίστα',
                     widget=TagWidget(attrs={'class': 'form-control tagman'}))
     section = forms.ChoiceField(label='Κατηγορία', choices=SECTION_CHOISES, widget=forms.Select(attrs={'class':'form-control'}))

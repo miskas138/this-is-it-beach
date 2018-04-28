@@ -158,6 +158,8 @@ TAGGIT_CASE_INSENSITIVE = True
 
 
 TINYMCE_DEFAULT_CONFIG = {
+    'width': '100%',
+    'height': '400',
     'plugins': "table, spellchecker, paste, searchreplace",
     'theme': "advanced",
     'cleanup_on_startup': True,
