@@ -10,7 +10,8 @@ from django.contrib.auth.models import Group
 
 
 def dashboard(request):
-    events = Event.objects.all()
+    events = Event.objects.all().order_by('-information__dateTime')[:5]
+
     event_filter = PostFilter(request.GET, queryset=Event.objects.all().order_by('-information__dateTime'))
 
     return render(request, 'account/dashboard.html', {'section': 'dashboard',

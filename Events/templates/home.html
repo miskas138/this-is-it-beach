@@ -20,7 +20,7 @@
         <div class="carousel-caption">
           <h3>{{ event.title }}</h3>
             <div id="carousel-home-caption" ><p>{{ event.description|truncatewords:30|linebreaks }}</p></div>
-            <p><i>{{ event.created }}</i></p>
+            <p>Δημοσιεύτηκε στις: <i>{{ event.created }}</i> ----- από: {{ event.user.username }}</p>
         </div>
       </div>
         {% endfor %}

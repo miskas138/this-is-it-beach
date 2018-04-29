@@ -95,13 +95,23 @@ $(document).ready(function(){
 
         <div class="tab-pane fade" id="information-tab">
             {{ information.media }}
-    {% for field in information %}
+
         <div class="form-group">
-            {{ field.errors }}
-            <label class="control-label col-sm-6">{{ field.label_tag }}</label>
-            <div class="col-sm-2">{{ field }}</div>
+            {{ information.dateTime.errors }}
+            <label class="control-label col-sm-4">{{ information.dateTime.label }}</label>
+            <div class="col-sm-6"> {% render_field  information.dateTime class="form-control" placeholder="Προσθέστε την ημερομηνία και ώρα της εκδήλωσης" %}</div>
         </div>
-{% endfor %}
+
+            <div class="form-group">
+            {{ information.ticket_price.errors }}
+            <label class="control-label col-sm-4">{{ information.ticket_price.label }}</label>
+            <div class="col-sm-6"> {% render_field  information.ticket_price class="form-control" placeholder="Προσθέστε την τιμή εισητηρίου" %}</div>
+        </div>
+         <div class="form-group">
+            {{ information.presale.errors }}
+            <label class="control-label col-sm-4">{{ information.presale.label }}</label>
+            <div class="col-sm-6"> {% render_field  information.presale class="form-control" placeholder="Προσθέστε πληροφορίες προπώλησης" %}</div>
+        </div>
 
 
             </div>
@@ -109,13 +119,44 @@ $(document).ready(function(){
 
      <div class="tab-pane fade" id="location-tab">
 {{ location.media }}
-    {% for field in location %}
+
         <div class="form-group">
-            {{ field.errors }}
-            <label class="control-label col-sm-6">{{ field.label_tag }}</label>
-            <div class="col-sm-2">{{ field }}</div>
+            {{ location.name.errors }}
+            <label class="control-label col-sm-4">Όνομασία χώρου εκδήλωσης</label>
+            <div class="col-sm-6">{{ location.name|add_class:'form-control'|append_attr:"placeholder:Εισάγετε το όνομα του χώρου εκδήλωσης" }}</div>
         </div>
-{% endfor %}
+          <div class="form-group">
+            {{ location.address.errors }}
+            <label class="control-label col-sm-4">Διεύθυνση χώρου εκδήλωσης</label>
+            <div class="col-sm-6">{{ location.address|add_class:'form-control'|append_attr:"placeholder:Εισάγετε τη διεύθυνση του χώρου εκδήλωσης" }}</div>
+        </div>
+          <div class="form-group">
+            {{ location.tel.errors }}
+            <label class="control-label col-sm-4">Τηλέφωνο χώρου εκδήλωσης</label>
+            <div class="col-sm-6">{{ location.tel|add_class:'form-control'|append_attr:"placeholder:Εισάγετε τηλέφωνο του χώρου εκδήλωσης" }}</div>
+        </div>
+         <div class="form-group">
+            {{ location.city.errors }}
+            <label class="control-label col-sm-4">Πόλη εκδήλωσης</label>
+            <div class="col-sm-6">{{ location.city|add_class:'form-control'|append_attr:"placeholder:Εισάγετε την πόλη της εκδήλωσης" }}</div>
+        </div>
+        <div class="form-group">
+            {{ location.site.errors }}
+            <label class="control-label col-sm-4">Ιστοσελίδα χώρου εκδήλωσης</label>
+            <div class="col-sm-6">{{ location.site|add_class:'form-control'|append_attr:"placeholder:Εισάγετε ιστοσελίδα του χώρου εκδήλωσης" }}</div>
+        </div>
+        <div class="form-group">
+            {{ location.email.errors }}
+            <label class="control-label col-sm-4">E-mail χώρου εκδήλωσης</label>
+            <div class="col-sm-6">{{ location.email|add_class:'form-control'|append_attr:"placeholder:Εισάγετε e-mail του χώρου εκδήλωσης" }}</div>
+        </div>
+
+         <div class="form-group">
+             {{ location.position.errors }}
+           <label class="control-label col-sm-4">Τοποθεσία χώρου εκδήλωσης</label>
+           <div class="col-sm-6">{{ location.position|add_class:'form-control'|append_attr:"placeholder:Εισάγετε συντεταγμένες" }}</div>
+       </div>
+
 
 <script>
     $("a[href='#location-tab']").on('shown.bs.tab', function myMap() {

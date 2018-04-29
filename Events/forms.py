@@ -34,6 +34,8 @@ class InformationForm(forms.ModelForm):
     dateTime = forms.DateTimeField(label='Ημερομηνία και ώρα εκδήλωσης',
                                    widget=DateTimeWidget(attrs={'class': 'form-control'}, usel10n=True,
                                                          bootstrap_version=3))
+    ticket_price = forms.IntegerField(label='Τιμή εισητηρίου')
+    presale = forms.CharField(label='Προπώληση')
     class Meta:
         model = Information
         exclude = ('event',)

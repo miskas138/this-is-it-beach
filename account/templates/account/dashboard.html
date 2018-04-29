@@ -18,8 +18,8 @@
         <img src="{{ event.image.url }}" alt="New York" style="width: 100%; height: 700px; object-fit: cover;" >
         <div class="carousel-caption">
           <h3>{{ event.title }}</h3>
-          <p>{{ event.description }}</p>
-            <p><i>{{ event.created }}</i></p>
+          <p>{{ event.description|truncatewords:20|linebreaks }}</p>
+            <p><i>Δημοσιεύτηκε στις {{ event.created }}</i></p>
         </div>
       </div>
         {% endfor %}
@@ -38,9 +38,11 @@
 
 <!-- Container (The Band Section) -->
 <div id="band" class="container text-center">
-  <h3>THE BAND</h3>
-  <p><em>We love music!</em></p>
-  <p>We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <h3>Ιστοχώρος Εκδηλώσεων</h3>
+  <p><em>Αγαπόντας την τέχνη...</em></p>
+  <p>Η ιστοσελίδα έχει δημιουργηθεί ώστε να παρέχει στους χρήστες μία λεπτομερή εικόνα και ενημέρωση για διάφορα είδη εκδηλώσεων, καθώς επίσης να αναδεικνύει και να προωθεί καλλιτέχνες και δρώμενα κάθε είδους.
+  Ο απλός χρήστης μπορεί να χρησιμοποιεί την ιστοσελίδα ώς ατζέντα και να ενημερώνεται για τις καθημερινές δραστηριότητες, και να συμμετέχει διαδραστικά, ανεβάζοντας διάφορα πολυμέσα που αφορούν την εκδήλωση.  Μπορεί επίσης να αξιολογεί τις εκδηλώσεις, καθώς επίσης και τους διοργανωτές τους.
+  </p>
   <br>
   <div class="row">
     <div class="col-sm-4">

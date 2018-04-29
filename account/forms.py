@@ -40,6 +40,7 @@ class AdvancedProfileEditForm(forms.ModelForm):
     city = forms.CharField(label='Πόλη')
     phone_number = forms.IntegerField(label='Τηλέφωνο')
     photo = forms.ImageField(label='Εικόνα προφίλ', widget=forms.FileInput)
+    description = forms.CharField(label="Σύντομη περιγραφή", widget=forms.Textarea)
 
     class Meta:
         model = Advanced_Profile

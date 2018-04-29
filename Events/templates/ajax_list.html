@@ -2,8 +2,8 @@
         <div class="thumbnail">
             <a href="{{ event.get_absolute_url }}"> <img src="{{ event.image.url }}" alt="Paris" style="width: 1200px; height: 300px; object-fit: cover;"></a>
             <p><strong><h3>{{ event.title }}</h3></strong></p>
-          <p>{{ event.information.dateTime.date }}</p>
+          <p>Ημερομηνία εκδήλωσης: {{ event.information.dateTime.date }} ----- Δημοσιεύτηκε από: {{ event.user.username }}</p>
             <p><small><i>{{ event.description|truncatewords:20|linebreaks }}</i></small></p>
-          <button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
+
         </div>{% empty %}<h1>Δεν υπάρχουν ακόμα εκδηλώσεις...</h1>
             {% endfor %}
