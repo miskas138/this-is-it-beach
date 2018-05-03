@@ -40,199 +40,60 @@
 <div id="band" class="container text-center">
   <h3>Ιστοχώρος Εκδηλώσεων</h3>
   <p><em>Αγαπόντας την τέχνη...</em></p>
-  <p>Η ιστοσελίδα έχει δημιουργηθεί ώστε να παρέχει στους χρήστες μία λεπτομερή εικόνα και ενημέρωση για διάφορα είδη εκδηλώσεων, καθώς επίσης να αναδεικνύει και να προωθεί καλλιτέχνες και δρώμενα κάθε είδους.
-  Ο απλός χρήστης μπορεί να χρησιμοποιεί την ιστοσελίδα ώς ατζέντα και να ενημερώνεται για τις καθημερινές δραστηριότητες, και να συμμετέχει διαδραστικά, ανεβάζοντας διάφορα πολυμέσα που αφορούν την εκδήλωση.  Μπορεί επίσης να αξιολογεί τις εκδηλώσεις, καθώς επίσης και τους διοργανωτές τους.
+  <p>Η ιστοσελίδα έχει δημιουργηθεί ώστε να παρέχει στους κοινούς χρήστες μία λεπτομερή εικόνα και ενημέρωση ώς ατζέντα και ευρετήριο για διάφορα είδη εκδηλώσεων που λαμβάνουν χώρα καθημερινά, καθώς επίσης να αναδεικνύει και να προωθεί τους καλλιτέχνες και κάθε είδους πολιτιστικά/πολιτισμικά δρώμενα .
+      Οι χρήστες εγγεγραμένοι ώς διοργανωτές, είναι αυτοί οι οποίοι δημιουργούν τις δημοσιεύσεις στην ιστοσελίδα, δίνοντάς τους την ευκαιρία να αναδείξουν έναν χώρο εκδηλώσεων, καλλιτέχνες, και επιχειρηματικά την προσωπική τους γνωστοποίηση και προώθηση.
   </p>
+    <p></p>
   <br>
   <div class="row">
-    <div class="col-sm-4">
-      <p class="text-center"><strong>Name</strong></p><br>
+    <div class="col-sm-6">
+      <p class="text-center"><strong>ΑΠΛΟΣ ΧΡΗΣΤΗΣ</strong></p><br>
       <a href="#demo" data-toggle="collapse">
-        <img src="bandmember.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
+        <img src="/media/simple-user.png" class="img-circle person" alt="Random Name" width="255" height="255" style="background-color: black; max-width: 80%">
       </a>
       <div id="demo" class="collapse">
-        <p>Guitarist and Lead Vocalist</p>
-        <p>Loves long walks on the beach</p>
-        <p>Member since 1988</p>
+       <p>Ο απλός χρήστης μπορεί να χρησιμοποιεί την ιστοσελίδα ώς ατζέντα και να ενημερώνεται για τις καθημερινές δραστηριότητες,
+     και να συμμετέχει διαδραστικά.  Στην αρχική σελίδα υπάρχουν όλα τα εργαλεία για την υλοποίηση των παραπάνω.
+     Μπορεί επίσης να αξιολογεί τις εκδηλώσεις, καθώς επίσης και τους διοργανωτές τους. </p>
+      <p>Για να δεί ο απλός χρήστης όλες τις δημοσιεύσεις ενός διοργανωτή, θα πρέπει να τον ακολουθήσει,
+      πατόντας το κουμπί "follow" στον προσωπικό του χώρο στην λίστα των διοργανωτών</p>
+      <p>Για να ανεβάσει οπτικο-ακουστικό υλικό, ο χρήστης θα πρέπει να έχει εγγραφεί στην συγκεκριμένη εκδήλωση, πατόντας στο
+      κουμπί "register" στον προσωπικό χώρο στην λίστα των εκδηλώσεων</p>
+      <p>Στον ίδιο χώρο, πατόντας στο κουμπί "Like" μπορεί ο χρήστης να προσθέσει την θετική του ψήφο στην εκδήλωση</p>
+      <p>Ο χρήστης μπορεί τέλος να σχολιάσει είτε κάποιον διοργανωτή, έιτε κάποια εκδήλωση, απλώς πατόντας στον
+      προσωπικό τους χώρο στον σύνδεσμο με τίτλο "σχόλια", και ακολουθόντας τις οδηγίες</p>
+                    <p> <a href="{% url "register" %}"><button class="btn">Δημιουργία λογαριασμού χρήστη</button></a></p>
+
       </div>
     </div>
-    <div class="col-sm-4">
-      <p class="text-center"><strong>Name</strong></p><br>
+    <div class="col-sm-6 bg-1">
+      <p class="text-center"><strong>ΔΙΟΡΓΑΝΩΤΗΣ</strong></p><br>
       <a href="#demo2" data-toggle="collapse">
-        <img src="bandmember.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
+        <img src="/media/advanced-user.png" class="img-circle person" alt="Random Name" width="255" height="255" style="background-color: black; max-width: 80%; margin-bottom: 10px">
       </a>
       <div id="demo2" class="collapse">
-        <p>Drummer</p>
-        <p>Loves drummin'</p>
-        <p>Member since 1988</p>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <p class="text-center"><strong>Name</strong></p><br>
-      <a href="#demo3" data-toggle="collapse">
-        <img src="bandmember.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
-      </a>
-      <div id="demo3" class="collapse">
-        <p>Bass player</p>
-        <p>Loves math</p>
-        <p>Member since 2005</p>
+        <p>Ο χρήστης που εγγράφεται ώς διοργανωτής, έχει την ιδιότητα και την δυνατότητα να συντάσσει και να κοινοποιεί εκδηλώσεις, χρησημοποιόντας
+        τα εργαλεία που του παρέχονται από την διαδικτυακή πλατφόρμα εκδηλώσεων.  </p>
+        <p>Ο κάθε διοργανωτης μετά την εγγραφή του αποκτά τον προσωπικό του χώρο στην ιστοσελίδα, στην οποία εμφανίζονται
+        όλες οι δημοσιεύσεςι του, τα στοιχεία και περιγραφή της διοργανώτριας αρχής, καθώς και μηνύματα που προέρχονται
+        από κοινους χρήστες η/και διοργανωτές.</p>
+        <p>Η διαδραστικότητα του διοργανωτή με τους υπόλοιπους χρήστες παρέχεται με διάφορους τρόπους, οι οποίοι αναφέρονται στην περιγραφή του απλού χρήστη.  Κάθε
+        ενέργεια καταγράφεται ώς στατιστικό δεδομένο και δίνει την δυνατότητα στον διοργανωτή να γνωρίζει την συνολική απήχηση των δημοιεύσεων του (ή του ίδιου του διοργανωτή) στο
+            υπόλοιπο κοινό.</p>
+                    <p> <a href="{% url "advanced_register" %}"><button class="btn">Δημιουργία προφίλ διοργανωτή</button></a></p>
+
       </div>
     </div>
   </div>
 </div>
 
-<!-- Container (TOUR Section) -->
-<div id="tour" class="bg-1">
-  <div class="container">
-    <h3 class="text-center">TOUR DATES</h3>
-    <p class="text-center">Lorem ipsum we'll play you some music.<br> Remember to book your tickets!</p>
-    <ul class="list-group">
-      <li class="list-group-item">September <span class="label label-danger">Sold Out!</span></li>
-      <li class="list-group-item">October <span class="label label-danger">Sold Out!</span></li>
-      <li class="list-group-item">November <span class="badge">3</span></li>
-    </ul>
-
-    <div class="row text-center">
-      <div class="col-sm-4">
-        <div class="thumbnail">
-          <img src="/media/images/2018/01/06/δδδδ.jpg" alt="Paris" style="width: 400px; height: 300px; object-fit: cover;">
-          <p><strong>Paris</strong></p>
-          <p>Friday 27 November 2015</p>
-          <button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="thumbnail">
-          <img src="/media/miskas.jpg" alt="New York" style="width: 400px; height: 300px; object-fit: cover;">
-          <p><strong>New York</strong></p>
-          <p>Saturday 28 November 2015</p>
-          <button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="thumbnail">
-          <img src="/media/advanced_profile_photos/miskas-advance-profile.jpg" alt="San Francisco" style="width: 400px; height: 300px; object-fit: cover;">
-          <p><strong>San Francisco</strong></p>
-          <p>Sunday 29 November 2015</p>
-          <button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">×</button>
-          <h4><span class="glyphicon glyphicon-lock"></span> Tickets</h4>
-        </div>
-        <div class="modal-body">
-          <form role="form">
-            <div class="form-group">
-              <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span> Tickets, $23 per person</label>
-              <input type="number" class="form-control" id="psw" placeholder="How many?">
-            </div>
-            <div class="form-group">
-              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Send To</label>
-              <input type="text" class="form-control" id="usrname" placeholder="Enter email">
-            </div>
-              <button type="submit" class="btn btn-block">Pay
-                <span class="glyphicon glyphicon-ok"></span>
-              </button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
-            <span class="glyphicon glyphicon-remove"></span> Cancel
-          </button>
-          <p>Need <a href="#">help?</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Container (Contact Section) -->
-<div id="contact" class="container text-center">
-  <h3 class="text-center">Contact</h3>
-  <p class="text-center"><em>We love our fans!</em></p>
-
-  <div class="row">
-    <div class="col-md-4">
-      <p>Fan? Drop a note.</p>
-      <p><span class="glyphicon glyphicon-map-marker"></span>Chicago, US</p>
-      <p><span class="glyphicon glyphicon-phone"></span>Phone: +00 1515151515</p>
-      <p><span class="glyphicon glyphicon-envelope"></span>Email: mail@mail.com</p>
-    </div>
-    <div class="col-md-8">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-        </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-        </div>
-      </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
-      <br>
-      <div class="row">
-        <div class="col-md-12 form-group">
-          <button class="btn pull-right" type="submit">Send</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <br>
-  <h3 class="text-center">From The Blog</h3>
-  <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Mike</a></li>
-    <li><a data-toggle="tab" href="#menu1">Chandler</a></li>
-    <li><a data-toggle="tab" href="#menu2">Peter</a></li>
-  </ul>
-
-  <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
-      <h2>Mike Ross, Manager</h2>
-      <p>Man, we've been on the road for some time now. Looking forward to lorem ipsum.</p>
-    </div>
-    <div id="menu1" class="tab-pane fade">
-      <h2>Chandler Bing, Guitarist</h2>
-      <p>Always a pleasure people! Hope you enjoyed it as much as I did. Could I BE.. any more pleased?</p>
-    </div>
-    <div id="menu2" class="tab-pane fade">
-      <h2>Peter Griffin, Bass player</h2>
-      <p>I mean, sometimes I enjoy the show, but other times I enjoy other things.</p>
-    </div>
-  </div>
-</div>
-
-<!-- Add Google Maps -->
-<div id="googleMap"></div>
-<script>
-function myMap() {
-var myCenter = new google.maps.LatLng(41.878114, -87.629798);
-var mapProp = {center:myCenter, zoom:12, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
-var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-var marker = new google.maps.Marker({position:myCenter});
-marker.setMap(map);
-}
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDt3jxm41PYXEQRwTfyzzK2Ngq-nMn3GO8&callback=myMap"></script>
-<!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
 
 <!-- Footer -->
 <footer class="text-center">
   <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a><br><br>
-  <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" data-toggle="tooltip" title="Visit w3schools">www.w3schools.com</a></p>
+  <p>Η ιστοσελίδα σχεδιάστηκε και κατασκευάστηκε απο τον Miskas</p>
 </footer>
 
 

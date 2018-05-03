@@ -17,7 +17,9 @@ import html
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)  # απενεργοποίηση του back button στον browser
 @login_required
-def home_page(request, tag_slug=None, section=None):
+def home_page(request, tag_pk=None, section=None, tag_name=None):
+    tag_list = Tag.objects.all()
+
     pinaks = Calendar.calendarDate()
 
     pinaks2 = Calendar.calendarDate(7)
@@ -34,8 +36,8 @@ def home_page(request, tag_slug=None, section=None):
     if date:
         events = events.filter(information__dateTime__date__exact=date)
     tag = None
-    if tag_slug:
-        tag = get_object_or_404(Tag, slug=tag_slug)
+    if tag_pk:
+        tag = get_object_or_404(Tag, pk=tag_pk)
         events = events.filter(tags__in=[tag])
     if content:
         events_found = set()
@@ -71,7 +73,8 @@ def home_page(request, tag_slug=None, section=None):
                                          'pinaks': pinaks,
                                          'pinaks2': pinaks2,
                                          'pinaks3': pinaks3,
-                                         'pinaks4': pinaks4,})
+                                         'pinaks4': pinaks4,
+                                         'tag_list': tag_list})
 
 
 

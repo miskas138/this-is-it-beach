@@ -4,8 +4,6 @@
   <a href="javascript:void(0)" class="closebtn closebtn-left" onclick="closeNav()"><span class="glyphicon glyphicon-chevron-left"></span></a>
   <a href="{% url 'event_create' %}">Δημιουργία Εκδήλωσης</a>
   <a href="{% url 'organization_charts' %}">Στατιστικά Εκδηλώσεων</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
 </div>
 {% if event %}
     {% if event.user == request.user  %}
@@ -15,9 +13,9 @@
     {% endif %}
 
 
-<h2>Εργαλεία Διοργανωτή</h2>
+<h2 style="letter-spacing: 5px; color: whitesmoke">Εργαλεία Διοργανωτή</h2>
 <p>Επιλέξτε τον σύνδεσμο "Εργαλεία" για δημιουργία νέας εκδήλωσης, προβολή στατιστικών και άλλα"</p>
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Εργαλεία</span>
+<span style="letter-spacing: 5px;font-size:140%;cursor:pointer" onclick="openNav()">&#9776; Εργαλεία</span>
 
 <script>
 function openNav() {
