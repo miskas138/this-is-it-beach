@@ -4,18 +4,19 @@
   <a href="javascript:void(0)" class="closebtn closebtn-left" onclick="closeNav()"><span class="glyphicon glyphicon-chevron-left"></span></a>
   <a href="{% url 'event_create' %}">Δημιουργία Εκδήλωσης</a>
   <a href="{% url 'organization_charts' %}">Στατιστικά Εκδηλώσεων</a>
-</div>
-{% if event %}
+    {% if event %}
     {% if event.user == request.user  %}
    <!--event statistics-->
        <a href="{{ event.get_absolute_statistics_url }}"> <div><span class="glyphicon glyphicon-info-sign"></span>Στατιστικά Εκδήλωσης</div></a>
         {% endif %}
     {% endif %}
+</div>
+
 
 
 <h2 style="letter-spacing: 5px; color: whitesmoke">Εργαλεία Διοργανωτή</h2>
 <p>Επιλέξτε τον σύνδεσμο "Εργαλεία" για δημιουργία νέας εκδήλωσης, προβολή στατιστικών και άλλα"</p>
-<span style="letter-spacing: 5px;font-size:140%;cursor:pointer" onclick="openNav()">&#9776; Εργαλεία</span>
+<span id="sidebar-hover" style="letter-spacing: 5px;font-size:140%;cursor:pointer" onclick="openNav()"><span class="glyphicon glyphicon-cog"></span> Εργαλεία</span>
 
 <script>
 function openNav() {

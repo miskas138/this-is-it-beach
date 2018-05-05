@@ -16,7 +16,7 @@
     <div class="carousel-inner" role="listbox">
       {% for event in carousel_events %}
         <div class="item {% if forloop.counter0 == 0 %}active{% endif %}">
-        <img src="{{ event.image.url }}" alt="New York">
+            <a href="{{ event.get_absolute_url }}"><img src="{{ event.image.url }}" alt="New York"></a>
         <div class="carousel-caption">
           <h3>{{ event.title }}</h3>
             <div id="carousel-home-caption" ><p>{{ event.description|truncatewords:30|linebreaks }}</p></div>
@@ -41,14 +41,14 @@
 <h1 id="lista-ekdiloseon-title" class="text-center"  style="margin: 0;padding-top: 0px;padding-bottom: 3px;color: #d5d5d5 !important;
       background-image: linear-gradient(#000000, #5f5f62); opacity: 0.8;letter-spacing: 10px; font-size: 140%">Λίστα Εκδηλώσεων</h1>
 <div class="row1">
-<div class="container-fluid col-sm-2 text-center" style="background-image: linear-gradient(#000000, #5f5f62); color: #f1f1f1; border-radius: 4px">
+<div class="container-fluid col-sm-2 text-left" style="background-image: linear-gradient(#000000, #5f5f62); color: #f1f1f1; border-radius: 4px">
 {% if request.user|has_group:"advanced_user" %}
 {% include "side_bar.html" %}
     {% else %}<p>Για τους φλώρους απλούς χρήστες δεν έχει πλαινή μπάρα :D</p>
 {% endif %}
 
  <!--tags-->
-     <p>Tags: {% for tag in tag_list %}
+     <p>Ετικέτες: {% for tag in tag_list %}
 <a href="{% url "home_page_by_tag" tag_pk=tag.pk tag_name=tag.name %}" style="color: red">
 {{ tag.name }}
 </a>
@@ -62,7 +62,7 @@
 
 
 
-    <div class="container-fluid text-center col-sm-8 panel panel-default" style="border-radius: 10px; opacity: 0.9">
+    <div class="container-fluid text-center col-sm-8 panel panel-default" style="border-radius: 10px; opacity: 0.9; background: url(/media/ksevrasma-light.png) repeat;">
 
   <ul class="nav nav-tabs">
     <li {% if not section %}class="active"{% endif %}><a href="{% url "home_page" %}">Όλες</a></li>
@@ -77,9 +77,9 @@
         {% if tag %}
 <h2>Εκδηλώσεςις που περιέχουν την ετικέτα "{{ tag.name }}"</h2>
             {% elif "title" in request.get_full_path %}
-            <h3>Αποτελέσματα αναζήτησης</h3>
+            <h2>Αποτελέσματα αναζήτησης</h2>
              {% elif "date" in request.get_full_path %}
-            <h3>Αποτελέσματα αναζήτησης</h3>
+            <h2>Αποτελέσματα αναζήτησης</h2>
             {% elif section == 'ΜΟΥΣΙΚΗ' %}
                 <h2>Προβολή όλων των μουσικών εκδηλώσεων</h2>
                  <p>Σκρολλάρετε προς τα κάτω για να δείτε όλες τις μουσικές εκδηλώσεις!!!</p>

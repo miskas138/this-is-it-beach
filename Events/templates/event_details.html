@@ -33,7 +33,7 @@
 
 
     <!--sidebar-->
-    <div class="container-fluid col-sm-2 text-center" style="background-image: linear-gradient(#000000, #5f5f62); color: #f1f1f1; border-radius: 4px">
+    <div class="container-fluid col-sm-2 text-left" style="background-image: linear-gradient(#000000, #5f5f62); color: #f1f1f1; border-radius: 4px">
 
 
 {% if request.user|has_group:"advanced_user" %}
@@ -149,16 +149,16 @@
 
     <!--like+modal-->
 
-   <p> <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+   <p> <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal">
          {% with total_likes=likes.count  %}
-             <h2 style="padding: 0; margin: 0"><span class="count"><span id="total">{{ total_likes }}</span> like{{ total_likes|pluralize }}</span></h2>
+             <div style="font-size: 100%;letter-spacing: 3px; padding: 0; margin: 0"><span class="count"><span id="total">{{ total_likes }}</span> Θετικές ψήφοι</span></div>
          {% endwith %}</button>
    <label class="label label-success"> <span class="like_glyphicon glyphicon {% if not user_like %}glyphicon-thumbs-up{% else %}glyphicon-thumbs-down{% endif %}"></span>
     <a href="#" data-id="{{ event.id }}" data-action="{% if user_like %}un{% endif %}like" class="like">
         {% if not user_like  %}
-            Like
+            Πρόσθεση θετικής ψήφου
         {% else %}
-            Unlike
+            Ακύρωση θετικής ψήφου
         {% endif %}
     </a>
 </label></p>
@@ -171,7 +171,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title" style="color: black">users like</h4>
+          <h4 class="modal-title" style="color: black">Like χρηστών</h4>
         </div>
         <div class="modal-body">
 
@@ -189,10 +189,10 @@
        </div>
 
 
-            {% empty %}<p style="color: black">nobody likes the post yet</p>
+            {% empty %}<p style="color: black">Δεν υπάρχουν like ακόμα</p>
         {% endfor %}</div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal" style="color: #f6f6f6">Close</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" style="color: #f6f6f6">Κλείσιμο</button>
         </div>
       </div>
 
@@ -203,18 +203,18 @@
     <div>
      <span class="register-count">
             <span class="total-registered">{{ total_registered.count }}</span>
-            registered
-        </span>
+            Συμμετέχοντες
+        </span><br>
     <a href="#" data-id="{{ event.id }}" data-action="{% if user_registered %}un{% endif %}register" class="register">
         {% if not user_registered %}
-            Register
+            Δηλώστε Συμμετοχή
         {% else %}
-            Unregister
+            Ακύρωση συμμετοχής
         {% endif %}
     </a>
     </div>
     <!--tags-->
-     <p>Tags: {% for tag in tags %}
+     <p>Ετικέτες: {% for tag in tags %}
 <a href="{% url "home_page_by_tag" tag_pk=tag.pk tag_name=tag.name  %}">
 {{ tag.name }}
 </a>
@@ -222,7 +222,7 @@
 {% endfor %}</p>
 
 
-    <div class="container-fluid col-sm-2 panel panel-default"><p>similar events: </p><ul>{% for similar_event in similar_events %}<a href="{{ similar_event.get_absolute_url }}"><li>{{ similar_event }}</li></a>{% endfor %}</ul></div>
+    <div class="container-fluid col-sm-2 panel panel-default"><p>Παρόμοιες εκδηλώσεις: </p><ul>{% for similar_event in similar_events %}<a href="{{ similar_event.get_absolute_url }}"><li>{{ similar_event }}</li></a>{% endfor %}</ul></div>
 
 </div>
 
@@ -240,7 +240,7 @@
             if (data['status'] == 'ok'){
                   var previous_action = $('a.like').data('action');
                   $('a.like').data('action', previous_action == 'like' ? 'unlike' : 'like');
-                  $('a.like').text(previous_action == 'like' ? 'Unlike' : 'Like');
+                  $('a.like').text(previous_action == 'like' ? 'Ακύρωση θετικής ψήφου' : 'Πρόσθεση θετικής ψήφου');
                    $(".like_glyphicon").toggleClass("glyphicon-thumbs-up glyphicon-thumbs-down");
 
                   var previous_likes = parseInt($('#total').text());
@@ -261,7 +261,7 @@
             if (data['status'] == 'ok'){
                 var previous_action = $('a.register').data('action');
                 $('a.register').data('action', previous_action == 'register' ? 'unregister' : 'register');
-                $('a.register').text(previous_action == 'register' ? 'Unregister' : 'Register');
+                $('a.register').text(previous_action == 'register' ? 'Ακύρωση συμμετοχής' : 'Δηλώστε Συμμετοχή');
                 var previous_registered = parseInt($('.total-registered').text());
                 $('.total-registered').text(previous_action == 'register' ? previous_registered +1 : previous_registered -1);
             }
