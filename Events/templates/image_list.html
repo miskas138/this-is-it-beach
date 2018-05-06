@@ -5,17 +5,17 @@
 
     <div class='post thumbnail'>
        <div class='date'>
-            <p>published : {{ upload.created }} by {{ upload.user }}</p>
+           <p><i>Δημοσιεύτηκε στις : </i>{{ upload.created }} από τον χρήστη {{ upload.user }}</p>
         </div>
 
 
-  <img src="{{ upload.image.url }}">
+        <a href="{{ upload.image.url }}"><img src="{{ upload.image.url }}"></a>
 
 
  </div>
    {% empty %}
 
-        <p>There are no video uploads yet!!!!</p>
+        <p>Δέν έχουν δημοσιευτεί ακόμα φωτογραφίες για την εκδήλωση</p>
 
 {% endfor %}
 

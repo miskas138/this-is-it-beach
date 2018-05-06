@@ -5,7 +5,7 @@
 
     <div class='post thumbnail'>
        <div class='date'>
-            <p>published : {{ upload.created }} by {{ upload.user }}</p>
+            <p>Δημοσιεύτηκε στις : {{ upload.created }} από τον χρήστη {{ upload.user }}</p>
         </div>
 
 
@@ -19,14 +19,14 @@
 <source
     src="{{ upload.video.url }}"
     type="video/ogg">
-  Your browser doesn't support HTML5 video tag.
+  Ο browser σας δεν επιτρέπει την αναπαραγωγή του video
 </video>
 
 
  </div>
    {% empty %}
 
-        <p>There are no video uploads yet!!!!</p>
+        <p>Δεν έχουν αναρτηθεί video ακόμα</p>
 
 {% endfor %}
 

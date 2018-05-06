@@ -5,14 +5,13 @@
   <a href="{% url 'event_video_uploads' pk=event.pk %}">Ανεβασμένα Video</a>
   <a href="{% url 'event_mp3_uploads' pk=event.pk %}">Mp3</a>
   <a href="{% url 'event_image_uploads' pk=event.pk %}">Φωτογραφίες</a>
-  <a href="#">Contact</a>
+
 </div>
 
 
-<h2 id="sidebar-text" style="color: whitesmoke; letter-spacing: 5px; font-size: 140%">Εργαλεία χρήστη</h2>
-<p class="text-left">Επιλέξτε τον σύνδεσμο "Uploads" για να δείτε ανεβασμένο υλικό(video, mp3, φωτογραφίες) από χρήστες που συμμετείχαν
-    στην προκειμένη εκδήλωση, καθώς και εργαλεία για να ανεβάσετε δικό σας υλικό!!!"</p>
-<span style="letter-spacing: 5px;font-size:140%;cursor:pointer" onclick="openNav2()"><span class="glyphicon glyphicon-upload"></span> Ανεβασμένο υλικό</span>
+<span id="upload-sidebar-hover" style="letter-spacing: 5px;font-size:140%;cursor:pointer" onclick="openNav2()"><span class="glyphicon glyphicon-upload"></span> Πολυμέσα</span>
+<p class="text-left"><i>Επιλέξτε τον σύνδεσμο "Πολυμέσα" για να δείτε ανεβασμένο υλικό(video, mp3, φωτογραφίες) από χρήστες που συμμετείχαν
+    στην προκειμένη εκδήλωση, καθώς και εργαλεία για να ανεβάσετε δικό σας υλικό</i></p>
 
 <script>
 function openNav2() {

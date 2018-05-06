@@ -24,14 +24,14 @@
 </div>
 
 <!--Title-->
-<h2 class="text-center" style="font-family: Montserrat, sans-serif;border: 5px; border-style: groove;margin: 0;padding-top: 0px;padding-bottom: 3px; color: #d5d5d5 !important;
-      background-color: rgb(0,0,0) !important; opacity: 0.8;letter-spacing: 10px;">{{ event.title }} - Uploads</h2>
+<h1 id="lista-ekdiloseon-title" class="text-center"  style="margin: 0;padding-top: 0px;padding-bottom: 3px;color: #d5d5d5 !important;
+      background-image: linear-gradient(#000000, #5f5f62); opacity: 0.8;letter-spacing: 10px; font-size: 140%">{{ event.title }} - Ανεβασμένες φωτογραφίες</h1>
 
 
 
 <div class="row1">
     <!--sidebar-->
-    <div class="container-fluid col-sm-2 text-center" style="background-color: #29292c; color: #dcdcdc; opacity: 0.9; border-radius: 15px">
+    <div class="container col-sm-2 text-left" style="background-image: linear-gradient(#000000, #5f5f62); color: #f1f1f1; border-radius: 4px">
 {% if request.user|has_group:"advanced_user" %}
 {% include "side_bar.html" %}
     {% else %}<p>Για τους φλώρους απλούς χρήστες δεν έχει πλαινή μπάρα :D</p>
@@ -50,7 +50,6 @@
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#home">Φωτογραφίες</a></li>
     <li><a data-toggle="tab" href="#menu1">Ανεβάστε μια φωτογραφία</a></li>
-    <li><a data-toggle="tab" href="#menu2">μονο μαλακιες</a></li>
       <li><a data-toggle="tab" href="#menu3">Σχόλια</a></li>
   </ul>
 </div>
@@ -81,42 +80,18 @@
         {% else %}<h2>Θα πρέπει να είστε εγγεγραμμένος στην εκδήλωση για να ανεβάσεις υλικό.
         </h2><p>Κάνε εγγραφή στην εκδήλωση και ανανέωσε την σελίδα</p>{% endif %}
         </div></div>
-    <div id="menu2" class="tab-pane fade">
-        <div class="col-sm-8 col-sm-offset-2">
-                <h2>Τοποθεσία Εκδήλωσης</h2>
-             <p>Όνομα Τοποθεσίας: {{ event.location.name }}</p>
-            <p>Διεύθυνση: {{ event.location.address }}</p>
-            <p>Τηλέφωνο: {{ event.location.tel }}</p>
-            <p>Πόλη: {{ event.location.city }}</p>
-            <p>Ιστοσελίδα: <a href="{{ event.location.site }}">{{ event.location.site }}</a></p>
-             <p>Ηλεκτρονικό ταχυδρομείο: {{ event.location.email }}</p>
-             <p>Δείτε στον χάρτη: </p>
-            <div id="map" style="width:100%;height:500px"></div>
 
-            <script>
-    $("a[href='#menu2']").on('shown.bs.tab', function myMap() {
-
-
-  var myCenter = new google.maps.LatLng({{ event.location.position }});
-  var mapCanvas = document.getElementById("map");
-  var mapOptions = {center: myCenter, zoom: 10};
-  var map = new google.maps.Map(mapCanvas, mapOptions);
-  var marker = new google.maps.Marker({position:myCenter});
-  marker.setMap(map);
-  google.maps.event.addListener(marker,'click',function() {
-    var infowindow = new google.maps.InfoWindow({
-      content:"{{ event.location.name }}, {{ event.location.address }}"
-    });
-  infowindow.open(map,marker);
-  });
-});
-</script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDt3jxm41PYXEQRwTfyzzK2Ngq-nMn3GO8&callback=myMap"></script>
-        </div>
-    </div>
       <div id="menu3" class="tab-pane fade">
           <div class="col-sm-8 col-sm-offset-2 text-left">
+           {% if new_comment %}
+        <h2>Το σχόλιό σας έχει δημοσιευτεί</h2>
+    {% endif %}
+           <h2>Προσθέστε ένα νέο σχόλιο</h2>
+        <form action="." method="post" style="color: black">
+            {{ comment_form.body }}
+            {% csrf_token %}<br>
+        <input class="btn btn-default" type="submit" value="κοινοποίηση σχολίου">
+        </form>
           {% for comment in comments %}
        <div class="media">
     <div class="media-left media-middle">
@@ -130,107 +105,22 @@
     </div> <div class="text-left" style="overflow-wrap: break-word"><p>{{ comment.body|linebreaks }}</p></div>
        </div>
         {% empty %}
-        <p>There are no comments yet!!!</p>
+       <p>Δεν έχουν αναρτηθεί σχόλια ακόμα</p>
     {% endfor %}
-    {% if new_comment  %}
-        <h2>Your comment has been added!!!</h2>
-    {% endif %}
-         <h2>Add a new comment</h2>
-        <form action="." method="post" style="color: black">
-            {{ comment_form.as_p }}
-            {% csrf_token %}
-        <input class="btn btn-default" type="submit" value="κοινοποίηση σχολίου">
-        </form>
+
+
     </div>
   </div>
   </div></div>
     <!--right column-->
-    <div class="col-sm-2">
-    <!--views-->
-    <button type="button" class="btn btn-primary">Total views <span class="badge">{{ views }}</span></button>
+    <div class="container-fluid col-sm-2 text-left" style="margin: 0">
 
-    <!--like+modal-->
-
-   <p> <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
-         {% with total_likes=likes.count  %}
-             <h2 style="padding: 0; margin: 0"><span class="count"><span id="total">{{ total_likes }}</span> like{{ total_likes|pluralize }}</span></h2>
-         {% endwith %}</button>
-   <label class="label label-success"> <span class="glyphicon {% if not user_like %}glyphicon-thumbs-up{% else %}glyphicon-thumbs-down{% endif %}"></span>
-    <a href="#" data-id="{{ event.id }}" data-action="{% if user_like %}un{% endif %}like" class="like">
-        {% if not user_like  %}
-            Like
-        {% else %}
-            Unlike
-        {% endif %}
-    </a>
-</label></p>
-
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title" style="color: black">users like</h4>
-        </div>
-        <div class="modal-body">
-
-            {% for like in likes %}
-
-
-                <div class="media">
-    <div class="media-left">
-      <img src="{% if like.user.profile %}{{ like.user.profile.photo.url }}{% else %}{{ like.user.advanced_profile.photo.url }}{% endif %}" class="media-object" style="width:45px; height:45px;object-fit: cover">
-    </div>
-    <div class="media-body">
-
-        <p style="color: black">{{ like.user.username }}</p>
-    </div>
-       </div>
-
-
-            {% empty %}<p style="color: black">nobody likes the post yet</p>
-        {% endfor %}</div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal" style="color: #f6f6f6">Close</button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-    <!--register-->
-    <div>
-     <span class="register-count">
-            <span class="total-registered">{{ total_registered.count }}</span>
-            registered
-        </span>
-    <a href="#" data-id="{{ event.id }}" data-action="{% if user_registered %}un{% endif %}register" class="register">
-        {% if not user_registered %}
-            Register
-        {% else %}
-            Unregister
-        {% endif %}
-    </a>
-    </div>
-    <!--tags-->
-     <p>Tags: {% for tag in tags %}
-<a href="{% url "home_page_by_tag" tag.slug %}">
-{{ tag.name }}
-</a>
-{% if not forloop.last %}, {% endif %}
-{% endfor %}</p>
-
-
-    <div class="panel panel-default"><p>similar events: </p><ul>{% for similar_event in similar_events %}<a href="{{ similar_event.get_absolute_url }}"><li>{{ similar_event }}</li></a>{% endfor %}</ul></div>
-
+       {% include "right_column-event-details.html" %}
     </div></div>
 {% endblock %}
 
 {% block domready %}
-     $('a.like').click(function(e){
+    $('a.like').click(function(e){
         e.preventDefault();
         $.post('{% url "like" %}',
             {
@@ -241,8 +131,8 @@
             if (data['status'] == 'ok'){
                   var previous_action = $('a.like').data('action');
                   $('a.like').data('action', previous_action == 'like' ? 'unlike' : 'like');
-                  $('a.like').text(previous_action == 'like' ? 'Unlike' : 'Like');
-                   $(".glyphicon").toggleClass("glyphicon-thumbs-up glyphicon-thumbs-down");
+                  $('a.like').text(previous_action == 'like' ? 'Ακύρωση θετικής ψήφου' : 'Πρόσθεση θετικής ψήφου');
+                   $(".like_glyphicon").toggleClass("glyphicon-thumbs-up glyphicon-thumbs-down");
 
                   var previous_likes = parseInt($('#total').text());
                   $('#total').text(previous_action == 'like' ? previous_likes +1 : previous_likes -1);
@@ -262,7 +152,8 @@
             if (data['status'] == 'ok'){
                 var previous_action = $('a.register').data('action');
                 $('a.register').data('action', previous_action == 'register' ? 'unregister' : 'register');
-                $('a.register').text(previous_action == 'register' ? 'Unregister' : 'Register');
+                $('a.register').text(previous_action == 'register' ? 'Ακύρωση συμμετοχής' : 'Δηλώστε Συμμετοχή');
+                 $(".register-glyphicon").toggleClass("glyphicon-plus-sign glyphicon-minus-sign");
                 var previous_registered = parseInt($('.total-registered').text());
                 $('.total-registered').text(previous_action == 'register' ? previous_registered +1 : previous_registered -1);
             }
