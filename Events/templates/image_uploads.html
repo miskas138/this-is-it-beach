@@ -1,6 +1,7 @@
 {% extends 'account/base.html' %}
 {% load account_tags %}
 {% block content %}
+    {% load widget_tweaks %}
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!--no Indicators -->
@@ -9,7 +10,7 @@
     <div class="carousel-inner" role="listbox">
 
         <div class="item active">
-        <img src="{{ event.image.url }}" alt="New York">
+            <a href="{{ event.get_absolute_url }}"><img src="{{ event.image.url }}"></a>
         <div class="carousel-caption">
 
 
@@ -45,7 +46,7 @@
 
 
 
-    <div class="container-fluid col-sm-8 panel panel-default" style="border-radius: 10px">
+    <div class="container-fluid col-sm-8 panel panel-default" style="border-radius: 10px; background: url(/media/touvlo.png) repeat;">
 <div class="text-center">
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#home">Φωτογραφίες</a></li>
@@ -71,11 +72,13 @@
         <div class="col-sm-8 col-sm-offset-2">
       <h2><span class="glyphicon glyphicon-info-sign"></span>Ανεβάστε φωτογραφίες σε μορφή JPG ή PNG</h2>
         {% if user_registered %}
-    <form action="." method="post" enctype="multipart/form-data">
-    {{ image_form.as_p }}
+    <form action="." method="post" enctype="multipart/form-data" style="margin: 30px">
 
-    {% csrf_token %}
-    <input type="submit" value="Ανέβασέ το!" style="color: black">
+            {{ image_form.errors }}
+            <div class="btn btn-default btn-file" style="width: 90%;max-width: 557px">{% render_field image_form.image class="form-control" %}<div style="font-size: 90%; letter-spacing: 3px;">Επιλέξτε φωτογραφία</div></div>
+
+    {% csrf_token %}<br>
+             <button type="submit" class="btn btn-default" style="width: 90%;"><div style="font-size: 90%; letter-spacing: 3px; ">Ανάρτηση φωτογραφίας</div></button>
     </form>
         {% else %}<h2>Θα πρέπει να είστε εγγεγραμμένος στην εκδήλωση για να ανεβάσεις υλικό.
         </h2><p>Κάνε εγγραφή στην εκδήλωση και ανανέωσε την σελίδα</p>{% endif %}

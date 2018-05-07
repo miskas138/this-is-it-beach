@@ -68,9 +68,9 @@ class VideoUploadForm(forms.ModelForm):
             if (video.name.endswith('mp4') or video.name.endswith('MP4')):
                 return video
             else:
-                raise forms.ValidationError('The given file does not match valid video extensions.')
+                raise forms.ValidationError('Το format του video πρέπει να είναι MP4')
         else:
-            raise forms.ValidationError('You havent selected any file!!!')
+            raise forms.ValidationError('Δεν επιλέξατε αρχείο')
 
     class Meta:
         model = VideoUpload
@@ -84,9 +84,9 @@ class Mp3UploadForm(forms.ModelForm):
             if (mp3.name.endswith('mp3') or mp3.name.endswith('MP3')):
                 return mp3
             else:
-                raise forms.ValidationError('The given file does not match valid mp3 extension.')
+                raise forms.ValidationError('Το μουσικό αρχείο που επιλέξατε δεν είναι mp3')
         else:
-            raise forms.ValidationError('You havent selected any file!!!')
+            raise forms.ValidationError('Δεν έχετε επιλέξει mp3')
 
     class Meta:
         model = Mp3Upload

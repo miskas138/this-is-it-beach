@@ -6,14 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="30dca8e3-21a5-48c9-bbd1-26fa6411c221" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Events/templates/event_details.html" afterPath="$PROJECT_DIR$/Events/templates/event_details.html" />
-      <change beforePath="$PROJECT_DIR$/Events/templates/image_list.html" afterPath="$PROJECT_DIR$/Events/templates/image_list.html" />
+      <change beforePath="$PROJECT_DIR$/Events/forms.py" afterPath="$PROJECT_DIR$/Events/forms.py" />
+      <change beforePath="$PROJECT_DIR$/Events/templates/home.html" afterPath="$PROJECT_DIR$/Events/templates/home.html" />
       <change beforePath="$PROJECT_DIR$/Events/templates/image_uploads.html" afterPath="$PROJECT_DIR$/Events/templates/image_uploads.html" />
-      <change beforePath="$PROJECT_DIR$/Events/templates/mp3_list.html" afterPath="$PROJECT_DIR$/Events/templates/mp3_list.html" />
       <change beforePath="$PROJECT_DIR$/Events/templates/mp3_uploads.html" afterPath="$PROJECT_DIR$/Events/templates/mp3_uploads.html" />
-      <change beforePath="$PROJECT_DIR$/Events/templates/side_bar.html" afterPath="$PROJECT_DIR$/Events/templates/side_bar.html" />
-      <change beforePath="$PROJECT_DIR$/Events/templates/uploads_side_bar.html" afterPath="$PROJECT_DIR$/Events/templates/uploads_side_bar.html" />
-      <change beforePath="$PROJECT_DIR$/Events/templates/video_uploads.html" afterPath="$PROJECT_DIR$/Events/templates/video_uploads.html" />
+      <change beforePath="$PROJECT_DIR$/Events/templates/right_column-event-details.html" afterPath="$PROJECT_DIR$/Events/templates/right_column-event-details.html" />
       <change beforePath="$PROJECT_DIR$/Events/templates/video_uploads_2.html" afterPath="$PROJECT_DIR$/Events/templates/video_uploads_2.html" />
       <change beforePath="$PROJECT_DIR$/account/templates/account/base.html" afterPath="$PROJECT_DIR$/account/templates/account/base.html" />
     </list>
@@ -44,29 +41,132 @@
       <file leaf-file-name="image_uploads.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Events/templates/image_uploads.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="162" column="7" lean-forward="false" selection-start-line="162" selection-start-column="7" selection-end-line="162" selection-end-column="7" />
-              <folding />
+            <state relative-caret-position="204">
+              <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+              <folding>
+                <element signature="e#988#1083#0#HTML" expanded="true" />
+                <element signature="e#1393#1464#0#HTML" expanded="true" />
+                <element signature="e#2410#2430#0#HTML" expanded="true" />
+                <element signature="e#2519#2554#0#HTML" expanded="true" />
+                <element signature="e#2616#2660#0#HTML" expanded="true" />
+                <element signature="e#2778#2797#0#HTML" expanded="true" />
+                <element signature="e#2803#2848#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mp3_uploads.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Events/templates/mp3_uploads.html">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Events/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="163" column="7" lean-forward="false" selection-start-line="163" selection-start-column="7" selection-end-line="163" selection-end-column="7" />
+            <state relative-caret-position="-1678">
+              <caret line="311" column="27" lean-forward="false" selection-start-line="311" selection-start-column="27" selection-end-line="311" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="video_uploads_2.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="video_uploads_2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Events/templates/video_uploads_2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="120" column="20" lean-forward="true" selection-start-line="120" selection-start-column="20" selection-end-line="120" selection-end-column="20" />
+            <state relative-caret-position="204">
+              <caret line="12" column="89" lean-forward="false" selection-start-line="12" selection-start-column="89" selection-end-line="12" selection-end-column="89" />
+              <folding>
+                <element signature="e#1386#1457#0#HTML" expanded="true" />
+                <element signature="e#2413#2433#0#HTML" expanded="true" />
+                <element signature="e#2516#2551#0#HTML" expanded="true" />
+                <element signature="e#2607#2651#0#HTML" expanded="true" />
+                <element signature="e#2764#2783#0#HTML" expanded="true" />
+                <element signature="e#2789#2834#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Events/templates/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="64" column="158" lean-forward="false" selection-start-line="64" selection-start-column="115" selection-end-line="64" selection-end-column="158" />
+              <folding>
+                <element signature="e#2475#2560#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="event_create.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Events/templates/event_create.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1530">
+              <caret line="186" column="29" lean-forward="false" selection-start-line="186" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+              <folding>
+                <element signature="e#1874#1909#0#HTML" expanded="true" />
+                <element signature="e#8382#8400#0#HTML" expanded="true" />
+                <element signature="e#8406#8451#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Events/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="353">
+              <caret line="88" column="63" lean-forward="false" selection-start-line="88" selection-start-column="63" selection-end-line="88" selection-end-column="63" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mp3_uploads.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Events/templates/mp3_uploads.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+              <folding>
+                <element signature="e#979#1074#0#HTML" expanded="true" />
+                <element signature="e#1384#1467#0#HTML" expanded="true" />
+                <element signature="e#2357#2377#0#HTML" expanded="true" />
+                <element signature="e#2464#2499#0#HTML" expanded="true" />
+                <element signature="e#2557#2601#0#HTML" expanded="true" />
+                <element signature="e#2712#2731#0#HTML" expanded="true" />
+                <element signature="e#2737#2782#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mp3_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Events/templates/mp3_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="31" lean-forward="false" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Events/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1647">
+              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="right_column-event-details.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Events/templates/right_column-event-details.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-136">
+              <caret line="23" column="33" lean-forward="false" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -128,22 +228,22 @@
         <option value="$PROJECT_DIR$/account/forms.py" />
         <option value="$PROJECT_DIR$/account/views.py" />
         <option value="$PROJECT_DIR$/Events/templates/ajax_list.html" />
-        <option value="$PROJECT_DIR$/Events/forms.py" />
         <option value="$PROJECT_DIR$/Events/urls.py" />
         <option value="$PROJECT_DIR$/account/templates/account/dashboard.html" />
         <option value="$PROJECT_DIR$/Events/templates/event_create.html" />
-        <option value="$PROJECT_DIR$/Events/templates/home.html" />
-        <option value="$PROJECT_DIR$/account/templates/account/base.html" />
         <option value="$PROJECT_DIR$/Events/views.py" />
         <option value="$PROJECT_DIR$/Events/templates/uploads_side_bar.html" />
         <option value="$PROJECT_DIR$/Events/templates/side_bar.html" />
-        <option value="$PROJECT_DIR$/Events/templates/right_column-event-details.html" />
-        <option value="$PROJECT_DIR$/Events/templates/mp3_list.html" />
         <option value="$PROJECT_DIR$/Events/templates/video_uploads.html" />
         <option value="$PROJECT_DIR$/Events/templates/image_list.html" />
-        <option value="$PROJECT_DIR$/Events/templates/video_uploads_2.html" />
         <option value="$PROJECT_DIR$/Events/templates/event_details.html" />
+        <option value="$PROJECT_DIR$/account/templates/account/base.html" />
+        <option value="$PROJECT_DIR$/Events/templates/home.html" />
+        <option value="$PROJECT_DIR$/Events/templates/right_column-event-details.html" />
+        <option value="$PROJECT_DIR$/Events/forms.py" />
+        <option value="$PROJECT_DIR$/Events/templates/mp3_list.html" />
         <option value="$PROJECT_DIR$/Events/templates/image_uploads.html" />
+        <option value="$PROJECT_DIR$/Events/templates/video_uploads_2.html" />
         <option value="$PROJECT_DIR$/Events/templates/mp3_uploads.html" />
       </list>
     </option>
@@ -189,6 +289,24 @@
             <path>
               <item name="THIS_IS_IT" type="b2602c69:ProjectViewProjectNode" />
               <item name="THIS_IS_IT" type="462c0819:PsiDirectoryNode" />
+              <item name="account" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="THIS_IS_IT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="THIS_IS_IT" type="462c0819:PsiDirectoryNode" />
+              <item name="account" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="THIS_IS_IT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="THIS_IS_IT" type="462c0819:PsiDirectoryNode" />
+              <item name="account" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="account" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="THIS_IS_IT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="THIS_IS_IT" type="462c0819:PsiDirectoryNode" />
               <item name="Events" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -196,12 +314,6 @@
               <item name="THIS_IS_IT" type="462c0819:PsiDirectoryNode" />
               <item name="Events" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="THIS_IS_IT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="THIS_IS_IT" type="462c0819:PsiDirectoryNode" />
-              <item name="Events" type="462c0819:PsiDirectoryNode" />
-              <item name="views.py" type="8704e2dd:PyFileNode" />
             </path>
             <path>
               <item name="THIS_IS_IT" type="b2602c69:ProjectViewProjectNode" />
@@ -305,7 +417,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29863483" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28156996" sideWeight="0.48562783" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26279864" sideWeight="0.49394855" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3547655" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3600605" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -565,14 +677,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Events/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/media/images/2018/05/03/08042011.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -590,7 +694,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2414">
           <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -614,73 +717,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Events/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="64" column="138" lean-forward="false" selection-start-line="64" selection-start-column="116" selection-end-line="64" selection-end-column="167" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/account/templates/account/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="136" column="15" lean-forward="false" selection-start-line="135" selection-start-column="5" selection-end-line="138" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Events/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2929">
-          <caret line="311" column="27" lean-forward="false" selection-start-line="311" selection-start-column="27" selection-end-line="311" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Events/templates/uploads_side_bar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Events/templates/right_column-event-details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-          <folding>
-            <element signature="n#style#0;n#label#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#button#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#button#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#button#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#2;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#3;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#div#3;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#p#0;n#div#1;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Events/templates/mp3_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="40" lean-forward="false" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -688,15 +728,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-103">
           <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Events/templates/image_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="7" column="40" lean-forward="false" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -708,24 +739,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Events/templates/event_create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="45" column="25" lean-forward="true" selection-start-line="43" selection-start-column="6" selection-end-line="47" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Events/templates/side_bar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Events/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -734,35 +747,140 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Events/templates/side_bar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account/templates/account/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="28" column="33" lean-forward="false" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Events/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1647">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Events/templates/right_column-event-details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-136">
+          <caret line="23" column="33" lean-forward="false" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Events/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="64" column="158" lean-forward="false" selection-start-line="64" selection-start-column="115" selection-end-line="64" selection-end-column="158" />
+          <folding>
+            <element signature="e#2475#2560#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Events/templates/event_create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1530">
+          <caret line="186" column="29" lean-forward="false" selection-start-line="186" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+          <folding>
+            <element signature="e#1874#1909#0#HTML" expanded="true" />
+            <element signature="e#8382#8400#0#HTML" expanded="true" />
+            <element signature="e#8406#8451#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Events/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-510">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="353">
+          <caret line="88" column="63" lean-forward="false" selection-start-line="88" selection-start-column="63" selection-end-line="88" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Events/templates/mp3_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="31" lean-forward="false" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Events/templates/image_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="7" column="40" lean-forward="false" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Events/templates/image_uploads.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="162" column="7" lean-forward="false" selection-start-line="162" selection-start-column="7" selection-end-line="162" selection-end-column="7" />
-          <folding />
+        <state relative-caret-position="204">
+          <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+          <folding>
+            <element signature="e#988#1083#0#HTML" expanded="true" />
+            <element signature="e#1393#1464#0#HTML" expanded="true" />
+            <element signature="e#2410#2430#0#HTML" expanded="true" />
+            <element signature="e#2519#2554#0#HTML" expanded="true" />
+            <element signature="e#2616#2660#0#HTML" expanded="true" />
+            <element signature="e#2778#2797#0#HTML" expanded="true" />
+            <element signature="e#2803#2848#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Events/templates/mp3_uploads.html">
+    <entry file="file://$PROJECT_DIR$/Events/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="163" column="7" lean-forward="false" selection-start-line="163" selection-start-column="7" selection-end-line="163" selection-end-column="7" />
+        <state relative-caret-position="-1678">
+          <caret line="311" column="27" lean-forward="false" selection-start-line="311" selection-start-column="27" selection-end-line="311" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Events/templates/video_uploads_2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="120" column="20" lean-forward="true" selection-start-line="120" selection-start-column="20" selection-end-line="120" selection-end-column="20" />
-          <folding />
+        <state relative-caret-position="204">
+          <caret line="12" column="89" lean-forward="false" selection-start-line="12" selection-start-column="89" selection-end-line="12" selection-end-column="89" />
+          <folding>
+            <element signature="e#1386#1457#0#HTML" expanded="true" />
+            <element signature="e#2413#2433#0#HTML" expanded="true" />
+            <element signature="e#2516#2551#0#HTML" expanded="true" />
+            <element signature="e#2607#2651#0#HTML" expanded="true" />
+            <element signature="e#2764#2783#0#HTML" expanded="true" />
+            <element signature="e#2789#2834#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Events/templates/mp3_uploads.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+          <folding>
+            <element signature="e#979#1074#0#HTML" expanded="true" />
+            <element signature="e#1384#1467#0#HTML" expanded="true" />
+            <element signature="e#2357#2377#0#HTML" expanded="true" />
+            <element signature="e#2464#2499#0#HTML" expanded="true" />
+            <element signature="e#2557#2601#0#HTML" expanded="true" />
+            <element signature="e#2712#2731#0#HTML" expanded="true" />
+            <element signature="e#2737#2782#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

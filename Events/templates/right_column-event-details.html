@@ -13,10 +13,10 @@
          {% with total_likes=likes.count  %}
              <div class="text-left" style="font-size: 100%;letter-spacing: 3px; padding-left: 20px;"><span id="total" class="badge">{{ total_likes }}</span> Θετικές ψήφοι</div>
          {% endwith %}</button><br>
-
+<div class="btn btn-default">
    <div class="media" style="margin: 0">
-       <div class="media-left"> <span class="like_glyphicon glyphicon {% if not user_like %}glyphicon-thumbs-up{% else %}glyphicon-thumbs-down{% endif %}" style="font-size: 200%"></span></div>
-     <div class="media-body">  <div class="btn btn-default" style="font-size: 89%; width: 100%">
+       <div class="media-left"> <span class="like_glyphicon glyphicon {% if not user_like %}glyphicon-thumbs-up{% else %}glyphicon-thumbs-down{% endif %}" style="font-size: 130%"></span></div>
+     <div class="media-body">  <div class="text-left" style="font-size: 95%; width: 100%">
     <a href="#" data-id="{{ event.id }}" data-action="{% if user_like %}un{% endif %}like" class="like" style="color: red">
         {% if not user_like  %}
             Πρόσθεση θετικής ψήφου
@@ -24,7 +24,7 @@
             Ακύρωση θετικής ψήφου
         {% endif %}
     </a>
-     </div></div></div>
+     </div></div></div></div>
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
@@ -70,18 +70,18 @@
         {% with total_registered=total_registered.count %}     <div class="text-left" style="font-size: 100%;letter-spacing: 3px; padding-left: 20px;"><span class="badge total-registered">{{ total_registered }}</span> Συμμετέχοντες</div>
         {% endwith %}
          </button><br>
-
+<div class="btn btn-default">
    <div class="media" style="margin: 0">
-       <div class="media-left"> <span class="register-glyphicon glyphicon {% if not user_registered %}glyphicon-plus-sign{% else %}glyphicon-minus-sign{% endif %}" style="font-size: 200%"></span></div>
-     <div class="media-body">  <div class="btn btn-default" style="font-size: 89%; width: 100%">
+       <div class="media-left"> <span class="register-glyphicon glyphicon {% if not user_registered %}glyphicon-plus-sign{% else %}glyphicon-minus-sign{% endif %}" style="font-size: 130%"></span></div>
+     <div class="media-body">  <div class="text-left" style="font-size: 96%; width: 100%">
     <a href="#" data-id="{{ event.id }}" data-action="{% if user_registered %}un{% endif %}register" class="register" style="color: red">
-        {% if not user_registered  %}
+        {% if not user_registered %}
             Δηλώστε συμμετοχή
         {% else %}
             Ακύρωση συμμετοχής
         {% endif %}
     </a>
-     </div></div></div>
+     </div></div></div></div>
 
   <!-- Modal -->
   <div class="modal fade" id="myModalRegister" role="dialog">
@@ -125,7 +125,7 @@
  <!--register modal end-->
 
     <!--tags-->
-     <p>Ετικέτες: {% for tag in tags %}
+<p><b>Ετικέτες: </b>{% for tag in tags %}
 <a href="{% url "home_page_by_tag" tag_pk=tag.pk tag_name=tag.name  %}">
 {{ tag.name }}
 </a>
