@@ -112,8 +112,19 @@ def event_create(request):
 @login_required
 def user_list(request):
     users = User.objects.filter(is_active=True, groups__name='advanced_user')
+    user_carousel = users.order_by('-date_joined')[:6]
     event_filter = PostFilter(request.GET, queryset=Event.objects.all().order_by('-information__dateTime'))
-    return render(request, 'organizers/organizers_list.html', {'users': users, 'filter': event_filter})
+    pinaks = Calendar.calendarDate()
+    pinaks2 = Calendar.calendarDate(7)
+    pinaks3 = Calendar.calendarDate(14)
+    pinaks4 = Calendar.calendarDate(21)
+    return render(request, 'organizers/organizers_list.html', {'users': users,
+                                                               'filter': event_filter,
+                                                               'user_carousel': user_carousel,
+                                                               'pinaks': pinaks,
+                                                               'pinaks2': pinaks2,
+                                                               'pinaks3': pinaks3,
+                                                               'pinaks4': pinaks4,})
 
 
 def event_details(request, pk):

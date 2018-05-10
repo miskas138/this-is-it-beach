@@ -24,7 +24,7 @@
 </div>
 
 <!--Title-->
-<h1 id="lista-ekdiloseon-title" class="text-center"  style="margin: 0;padding-top: 0px;padding-bottom: 3px;color: #d5d5d5 !important;
+<h1 class="text-center"  style="margin: 0;padding-top: 0px;padding-bottom: 3px;color: #d5d5d5 !important;
       background-image: linear-gradient(#000000, #5f5f62); opacity: 0.8;letter-spacing: 10px; font-size: 140%">{{ event.title }}</h1>
 
 
@@ -124,6 +124,19 @@
             {% csrf_token %}<br>
         <input class="btn btn-default" type="submit" value="κοινοποίηση σχολίου">
         </form>
+          {% if new_comment %}
+                <div class="media">
+    <div class="media-left media-middle">
+      <img src="{% if new_comment.user.profile %}{{ new_comment.user.profile.photo.url }}{% else %}{{ new_comment.user.advanced_profile.photo.url }}{% endif %}" class="media-object" style="width:45px; height:45px;object-fit: cover;">
+    </div>
+    <div class="media-body">
+        <h3 class="media-heading text-left" style="margin-bottom: 0px; margin-top: 5px;"><strong>{{ new_comment.user }}</strong><span><small><i> {{ new_comment.created }}</i></small></span> </h3>
+    </div> <div class="text-left" style="overflow-wrap: break-word"><p>{{ new_comment.body|linebreaks }}</p></div>
+       </div>
+          {% endif %}
+
+
+
           {% for comment in comments %}
        <div class="media">
     <div class="media-left media-middle">

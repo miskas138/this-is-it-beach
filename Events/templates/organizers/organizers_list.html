@@ -1,13 +1,11 @@
 {% extends 'account/base.html' %}
 {% load account_tags %}
-
-
 {% block content %}
 
    <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
-        {% for user in users %}
+        {% for user in user_carousel %}
       <li data-target="#myCarousel" data-slide-to="{{ forloop.counter0 }}"
           {% if forloop.counter0 == 0 %}class="active">{% endif %}</li>
 
@@ -16,9 +14,9 @@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-      {% for user in users %}
+      {% for user in user_carousel %}
         <div class="item {% if forloop.counter0 == 0 %}active{% endif %}">
-        <img src="{{ user.advanced_profile.photo.url }}" alt="New York">
+            <a href="{% url 'user_details' user.username %}"> <img src="{{ user.advanced_profile.photo.url }}" alt="New York"></a>
         <div class="carousel-caption">
           <h3>{{ user.get_full_name }}</h3>
           <p>{{ user.username }}</p>
@@ -40,27 +38,85 @@
 </div>
 
 
-<div class="container-fluid text-center">
-  <h3>THE BAND</h3>
-  <p><em>We love music!</em></p>
-  <p>We have created a fictional band website. Lorem ipsum..</p>
-  <br>
-  <div class="row">
+<h1 id="lista-ekdiloseon-title" class="text-center"  style="margin: 0;padding-top: 0px;padding-bottom: 3px;color: #d5d5d5 !important;
+      background-image: linear-gradient(#000000, #5f5f62); opacity: 0.8;letter-spacing: 10px; font-size: 140%">Λίστα διοργανωτών</h1>
+
+  <div class="row1">
   <!--left container-->
-<div class="container-fluid col-sm-2 text-center" style="background-color: #29292c; color: #f1f1f1; border-radius: 15px">
+<div class="container-fluid col-sm-2 text-left" style="background-image: linear-gradient(#000000, #5f5f62); color: #f1f1f1; border-radius: 4px">
 {% if request.user|has_group:"advanced_user" %}
 {% include "side_bar.html" %}
     {% else %}<p>Για τους φλώρους απλούς χρήστες δεν έχει πλαινή μπάρα :D</p>
 {% endif %}
 </div>
   <!--middle container-->
-  <div class="container-fluid col-sm-8 panel panel-default" style="border-radius: 10px;">
-      <div id="organizers-list">
+    <div class="container-fluid text-center col-sm-8 panel panel-default" style="border-radius: 10px; opacity: 0.9; background: url(/media/touvlo.png) repeat;">
+      <div id="organizers-list" class="text-center">
+           <p class="text-center"><em>Σκρολλάρετε προς τα κάτω για να δείτε όλους τους διοργανωτές</em></p><br>
 {% include "organizers/organizers.html" %}
  </div>
  </div>
   <!--right container-->
-  <div class="container-fluid col-sm-2">linvl g btgv etge gerg erge rge rgergr grgrgrsvvdrdrv evrvdrvrvr vvrv</div>
+  <div class="container-fluid col-sm-2">
+      <!--calendar fasi-->
+
+
+   {% include "calendar.html" %}
+
+ <script>
+        function miskaks3(){
+    var month_name = ['Ιανουάριος','Φεβρουάριος','Μάρτιος','Απρίλιος','Μάιος','Ιούνιος','Ιούλιος','Αύγουστος','Σεπτέμβρης','Οκτώβρης','Νοέμβρης','Δεκέμβρης'];
+    month_name=month_name[{{ pinaks.1.month }}-1];
+    return month_name;
+}
+ function miskaks4(){
+    year={{ pinaks.1.year }};
+    return year;
+}
+<!--second calendar tab-->
+   function miskaks5(){
+    var month_name = ['Ιανουάριος','Φεβρουάριος','Μάρτιος','Απρίλιος','Μάιος','Ιούνιος','Ιούλιος','Αύγουστος','Σεπτέμβρης','Οκτώβρης','Νοέμβρης','Δεκέμβρης'];
+    month_name=month_name[{{ pinaks2.1.month }}-1];
+    return month_name;
+}
+ function miskaks6(){
+    year={{ pinaks2.2.year }};
+    return year;
+}
+<!--third calendar tab-->
+           function miskaks7(){
+    var month_name = ['Ιανουάριος','Φεβρουάριος','Μάρτιος','Απρίλιος','Μάιος','Ιούνιος','Ιούλιος','Αύγουστος','Σεπτέμβρης','Οκτώβρης','Νοέμβρης','Δεκέμβρης'];
+    month_name=month_name[{{ pinaks3.3.month }}-1];
+    return month_name;
+}
+ function miskaks8(){
+    year={{ pinaks3.1.year }};
+    return year;
+}
+<!--fourth calendar tab-->
+           function miskaks9(){
+    var month_name = ['Ιανουάριος','Φεβρουάριος','Μάρτιος','Απρίλιος','Μάιος','Ιούνιος','Ιούλιος','Αύγουστος','Σεπτέμβρης','Οκτώβρης','Νοέμβρης','Δεκέμβρης'];
+    month_name=month_name[{{ pinaks4.1.month }}-1];
+    return month_name;
+}
+ function miskaks10(){
+    year={{ pinaks4.1.year }};
+    return year;
+}
+
+     document.getElementById("month").innerHTML = miskaks3();
+     document.getElementById("year").innerHTML = miskaks4();
+
+      document.getElementById("month2").innerHTML = miskaks5();
+     document.getElementById("year2").innerHTML = miskaks6();
+
+      document.getElementById("month3").innerHTML = miskaks7();
+     document.getElementById("year3").innerHTML = miskaks8();
+
+      document.getElementById("month4").innerHTML = miskaks9();
+     document.getElementById("year4").innerHTML = miskaks10();
+    </script>
+  </div>
   </div>
 </div>
 

@@ -3,12 +3,12 @@
 <br><br>
     <div class="row container-fluid" style="margin: 0">
     <div class="col-sm-4 text-center">
-<h1>My views chart</h1>
+<h2 style="height: 60px">Στατιστικά προβολών</h2>
 
 <div id="piechart"></div>
 
 
-    <h2>Views for each event</h2>
+    <h2>Προβολές για κάθε εκδήλωση</h2>
 {% for event in events_views %}
     <div>  <a href="{{ event.get_absolute_url }}"> {{ event.title }}</a>, {{ event.n }}</div>
 {% endfor %}</div>
@@ -16,22 +16,22 @@
 
     <!--likes chart-->
      <div class="col-sm-4 text-center">
-<h1>My likes chart</h1>
+<h2 style="height: 60px">Στατιστικά θετικών ψήφων</h2>
 
 <div id="piechart2"></div>
 
-    <h3>Likes for each event</h3>
+    <h2>Θετικές ψήφοι για κάθε εκδήλωση</h2>
 {% for event in events_likes %}
     <div> <a href="{{ event.get_absolute_url }}">{{ event.title }}</a>, {{ event.n }}</div>
 {% endfor %}</div>
 
      <!--registered chart-->
      <div class="col-sm-4 text-center">
-<h1>My registered chart</h1>
+<h2 style="height: 60px; letter-spacing: 2px">Στατιστικά εγγεγραμμένων χρηστών</h2>
 
 <div id="piechart3"></div>
 
-    <h2>Registered for each event</h2>
+    <h2 style="letter-spacing: 2px">Εγγεγραμμένοι χρήστες για κάθε εκδήλωση</h2>
 {% for event in events_registered %}
     <div> <a href="{{ event.get_absolute_url }}">{{ event.title }}</a>, {{ event.n }}</div>
 {% endfor %}</div></div>
@@ -56,7 +56,7 @@ function drawChart() {
 ]);
 
   // Optional; add a title and set the width and height of the chart
-  var options = { 'is3D':true, 'title':'my total views chart', 'width':'100%', 'height':400,
+  var options = { 'is3D':true, 'title':'Προβολές', 'width':'100%', 'height':400,
       'legend': {'position': 'top', 'maxLines': 8}};
 
   // Display the chart inside the <div> element with id="piechart"
@@ -74,7 +74,7 @@ function drawChart2() {
 ]);
 
   // Optional; add a title and set the width and height of the chart
-  var options2 = { 'is3D':true, 'title':'my total likes chart', 'width':'100%', 'height':400,
+  var options2 = { 'is3D':true, 'title':'Θετικές ψήφοι', 'width':'100%', 'height':400,
       'legend': {'position': 'top', 'maxLines': 8}};
 
   // Display the chart inside the <div> element with id="piechart"
@@ -92,7 +92,7 @@ function drawChart3() {
 ]);
 
   // Optional; add a title and set the width and height of the chart
-  var options3 = { 'is3D':true, 'title':'my total likes chart', 'width':'100%', 'height':400,
+  var options3 = { 'is3D':true, 'title':'Εγγεγραμμένοι χρήστες', 'width':'100%', 'height':400,
       'legend': {'position': 'top', 'maxLines': 8}};
 
   // Display the chart inside the <div> element with id="piechart"

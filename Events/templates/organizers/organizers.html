@@ -1,12 +1,13 @@
 
       {% for user in users %}
-    <div class="col-sm-3" style="margin-bottom: 60px">
+    <div class="col-sm-3" style="margin-bottom: 20px">
 
-      <a href="#demo{{ forloop.counter }}" data-toggle="collapse">
-        <h3 style="height: 40px; max-height: 40px; letter-spacing: 0">{{ user.advanced_profile.organization_name }}</h3><br>
-      </a>
-        <a href="{% url 'user_details' user.username %}"><img src="{{ user.advanced_profile.photo.url }}" class="img-circle person" alt="Random Name" style="width: 150px; height :160px;object-fit: cover;">
+
+        <a href="{% url 'user_details' user.username %}"><img src="{{ user.advanced_profile.photo.url }}" class="img-circle person" alt="Random Name" style="width: 200px; height :210px;object-fit: cover;">
         </a>
+         <a href="#demo{{ forloop.counter }}" data-toggle="collapse">
+        <h3 style="height: 35px; max-height: 40px; letter-spacing: 0">{{ user.advanced_profile.organization_name }}</h3><br>
+      </a>
       <div id="demo{{ forloop.counter }}" class="collapse">
         <p>{{ user.advanced_profile.description }}</p>
 
