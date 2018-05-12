@@ -24,13 +24,13 @@
 </div>
 
 <!--Title-->
-<h2 class="text-center" style="font-family: Montserrat, sans-serif;border: 5px; border-style: groove;margin: 0;padding-top: 0px;padding-bottom: 3px; color: #d5d5d5 !important;
-      background-color: rgb(0,0,0) !important; opacity: 0.8;letter-spacing: 10px;">{{ user.advanced_profile.organization_name }}</h2>
+<h1 id="lista-ekdiloseon-title" class="text-center"  style="margin: 0;padding-top: 0px;padding-bottom: 3px;color: #d5d5d5 !important;
+      background-image: linear-gradient(#000000, #5f5f62); opacity: 0.8;letter-spacing: 10px; font-size: 140%">{{ user.advanced_profile.organization_name }}</h1>
 
 
 
-<p class="row1">
-    <div class="container-fluid col-sm-2 text-center" style="background-color: #29292c; color: #dcdcdc; opacity: 0.9; border-radius: 15px">
+<div class="row1">
+<div class="container-fluid col-sm-2 text-left" style="background-image: linear-gradient(#000000, #5f5f62); color: #f1f1f1; border-radius: 4px">
 {% if request.user|has_group:"advanced_user" %}
 {% include "side_bar.html" %}
     {% else %}<p>Για τους φλώρους απλούς χρήστες δεν έχει πλαινή μπάρα :D</p>
@@ -40,14 +40,14 @@
 
 
 
-    <div class="container-fluid col-sm-8 panel panel-default text-center" style="border-radius: 10px">
-<div class="text-center">
+    <div class="container-fluid text-center col-sm-8 panel panel-default" style="border-radius: 10px; opacity: 0.9; background: url(/media/touvlo.png) repeat;">
+<div>
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#home">Δημοσιευμένες Εκδηλώσεις</a></li>
     <li><a data-toggle="tab" href="#menu1">Πληροφορίες</a></li>
     <li><a data-toggle="tab" href="#menu2">Τοποθεσία</a></li>
       <li><a data-toggle="tab" href="#menu3">Σχόλια</a></li>
-      <li><a data-toggle="tab" href="#menu4">Επικοινωνία</a></li>
+
   </ul>
 </div>
   <div class="tab-content">
@@ -70,26 +70,24 @@
     <div id="menu1" class="tab-pane fade">
         <div class="col-sm-8 col-sm-offset-2">
       <h2><span class="glyphicon glyphicon-info-sign"></span>Πληροφορίες Διοργανωτή</h2>
- <div class="col-md-4">
-       <p><span class="glyphicon glyphicon-information"></span>{{ user.advanced_profile.description }}</p>
-      <p><span class="glyphicon glyphicon-map-marker"></span>{{ user.username }}</p>
-      <p><span class="glyphicon glyphicon-map-marker"></span>{{ user.get_full_name }}</p>
-      <p><span class="glyphicon glyphicon-map-marker"></span>{{ user.date_joined }}</p>
-      <p><span class="glyphicon glyphicon-map-marker"></span>{{ user.advanced_profile.address }}</p>
-      <p><span class="glyphicon glyphicon-map-marker"></span>{{ user.advanced_profile.city }}</p>
-      <p><span class="glyphicon glyphicon-phone"></span>{{ user.advanced_profile.phone_number }}</p>
-      <p><span class="glyphicon glyphicon-envelope"></span>{{ user.email }}</p>
+ <div class="text-left">
+       <p><span class="glyphicon glyphicon-info-sign"></span> Σύντομη περιγραφή διοργανωτή/οργανισμού : {{ user.advanced_profile.description }}</p>
+      <p><span class="glyphicon glyphicon-user"></span> Όνομα χρήστη διοργανωτή : {{ user.username }}</p>
+      <p><span class="glyphicon glyphicon-pushpin"></span> Όνομα και επίθετο διοργανωτή : {{ user.get_full_name }}</p>
+      <p><span class="glyphicon glyphicon-calendar"></span> Ημερομηνία δημιουργίας λογαριασμού : {{ user.date_joined }}</p>
+
+      <p><span class="glyphicon glyphicon-phone"></span> Τηλέφωνο επικοινωνίας : {{ user.advanced_profile.phone_number }}</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> Ηλεκτρονικό ταχυδρομείο : {{ user.email }}</p>
     </div>
 
         </div></div>
     <div id="menu2" class="tab-pane fade">
-        <div class="col-sm-8 col-sm-offset-2">
-                <h2>Τοποθεσία Διωργανωτή</h2>
-             <p>Όνομα Τοποθεσίας: {{ user.advanced_profile.organization_name }}</p>
-            <p>Διεύθυνση: {{ user.advanced_profile.address }}</p>
-            <p>Τηλέφωνο: {{ user.advanced_profile.phone_number }}</p>
-            <p>Πόλη: {{ user.advanced_profile.city }}</p>
-            <p>Ιστοσελίδα: <a href="{{ event.location.site }}">{{ event.location.site }}</a></p>
+        <div class="col-sm-8 col-sm-offset-2 text-left">
+                <h2>Τοποθεσία Διοργανωτή</h2>
+             <p>Όνομα οργανισμού/επιχείρησης: {{ user.advanced_profile.organization_name }}</p>
+            <p><span class="glyphicon glyphicon-road"></span> Διεύθυνση διοργανωτή/οργανισμού : {{ user.advanced_profile.address }}</p>
+            <p><span class="glyphicon glyphicon-map-marker"></span> Πόλη : {{ user.advanced_profile.city }}</p>
+            <p>Ιστοσελίδα: <a href="{{ user.advanced_profile.site }}">{{ user.advanced_profile.site }}</a></p>
              <p>Ηλεκτρονικό ταχυδρομείο: {{ user.email }}</p>
              <p>Δείτε στον χάρτη: </p>
             <div id="map" style="width:100%;height:500px"></div>
@@ -118,6 +116,19 @@
     </div>
       <div id="menu3" class="tab-pane fade">
           <div class="col-sm-8 col-sm-offset-2 text-left">
+          {% if new_comment  %}
+        <h2>Το σχόλιό σας έχει δημοσιευτεί</h2>
+    {% endif %}
+           <h2>Προσθέστε ένα νέο σχόλιο</h2>
+        <form action="." method="post" style="color: black">
+            {{ comment_form.body }}
+            {% csrf_token %}<br>
+        <input class="btn btn-default" type="submit" value="κοινοποίηση σχολίου">
+        </form>
+
+
+
+
           {% for comment in comments %}
        <div class="media">
     <div class="media-left media-middle">
@@ -131,71 +142,37 @@
     </div> <div class="text-left" style="overflow-wrap: break-word"><p>{{ comment.body|linebreaks }}</p></div>
        </div>
         {% empty %}
-        <p>There are no comments yet!!!</p>
+        <p>Δεν έχουν αναρτηθεί σχόλια ακόμα</p>
     {% endfor %}
-    {% if new_comment  %}
-        <h2>Your comment has been added!!!</h2>
-    {% endif %}
-         <h2>Add a new comment</h2>
-        <form action="." method="post" style="color: black">
-            {{ comment_form.as_p }}
-            {% csrf_token %}
-        <input class="btn btn-default" type="submit" value="κοινοποίηση σχολίου">
-        </form>
-    </div>
-  </div>
-  <div id="menu4" class="tab-pane fade">
-        <div class="col-sm-8 col-sm-offset-2">
-      <h2><span class="glyphicon glyphicon-info-sign"></span>Επικοινωνία</h2>
-<div class="row">
-    <div class="col-md-4">
-      <p>Fan? Drop a note.</p>
-      <p><span class="glyphicon glyphicon-map-marker"></span>Chicago, US</p>
-      <p><span class="glyphicon glyphicon-phone"></span>Phone: +00 1515151515</p>
-      <p><span class="glyphicon glyphicon-envelope"></span>Email: mail@mail.com</p>
-    </div>
-    <div class="col-md-8">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-        </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-        </div>
-      </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
-      <br>
-      <div class="row">
-        <div class="col-md-12 form-group">
-          <button class="btn pull-right" type="submit">Send</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
-        </div></div>
-  </div></div>
+
+    </div>
+      </div></div>
+  </div>
     <!--right column-->
 
     <!--like+modal-->
+<div class="container-fluid col-sm-2">
+   <!--like+modal-->
 
-   <p> <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
-         {% with  user.followers.count as total_followers  %}
-             <h2 style="padding: 0; margin: 0"> <span class="count">
-            <span class="total">{{ total_followers }}</span>
-            follower{{ total_followers|pluralize }}
-        </span></h2>
-         {% endwith %}</button>
- <p> <label class="label label-success">
-    <a href="#" data-id="{{ user.id }}" data-action="{% if request.user in user.followers.all %}un{% endif %}follow" class="follow-button">
+    <button type="button" class="btn btn-default text-left" style="width: 100%; padding-left: 0" data-toggle="modal" data-target="#myModal">
+          {% with  user.followers.count as total_followers  %}
+             <div class="text-left" style="font-size: 100%;letter-spacing: 3px; padding-left: 20px;"><span id="total" class="badge" style="background-color: #848484">{{ total_followers }}</span> Ακόλουθοι</div>
+         {% endwith %}</button><br>
+<div class="btn btn-default">
+   <div class="media" style="margin: 0">
+       <div class="media-left"> <span class="follow-glyphicon glyphicon {% if not request.user in user.followers.all %}glyphicon-ok-sign{% else %}glyphicon-remove-sign{% endif %}" style="font-size: 130%"></span></div>
+     <div class="media-body">  <div class="text-left" style="font-size: 95%; width: 100%">
+   <a href="#" data-id="{{ user.id }}" data-action="{% if request.user in user.followers.all %}un{% endif %}follow" class="follow-button">
         {% if request.user not in user.followers.all %}
-            Follow
+            Ακολουθήστε
         {% else %}
-            Unfollow
+            Ακύρωση ακολουθίας
         {% endif %}
     </a>
-  </label></p></p>
+     </div></div></div></div>
 
+  <!-- Modal -->
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -204,7 +181,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title" style="color: black">Followers</h4>
+          <h4 class="modal-title" style="color: black">Ακόλουθοι</h4>
         </div>
         <div class="modal-body">
 
@@ -225,13 +202,16 @@
             {% empty %}<p style="color: black">Κανένας δεν ακολουθεί ακόμα τον χρήστη {{ user.username }}</p>
         {% endfor %}</div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal" style="color: #f6f6f6">Close</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Κλείσιμο</button>
         </div>
       </div>
 
     </div>
   </div>
 
+
+
+</div></div>
 {% endblock %}
 
 {% block domready %}
@@ -252,11 +232,14 @@
                     $('a.follow-button').data('action', previous_action=='follow'?'unfollow':'follow');
 
                 //toggle link text
-                    $('a.follow-button').text(previous_action=='follow'?'Unfollow':'Follow');
+                    $('a.follow-button').text(previous_action=='follow'?'Ακύρωση ακολουθίας':'Ακολουθήστε');
+
+                 //toggle glyphicons
+                   $(".follow-glyphicon").toggleClass("glyphicon-ok-sign glyphicon-remove-sign");
 
                 //update total followers
-                    var previous_followers = parseInt($('span.count .total').text());
-                    $('span.count .total').text(previous_action=='follow'? previous_followers+1: previous_followers-1);
+                    var previous_followers = parseInt($('#total').text());
+                    $('#total').text(previous_action=='follow'? previous_followers+1: previous_followers-1);
 
             }
 

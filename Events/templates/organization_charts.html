@@ -3,12 +3,12 @@
 <br><br>
     <div class="row container-fluid" style="margin: 0">
     <div class="col-sm-4 text-center">
-<h2 style="height: 60px">Στατιστικά προβολών</h2>
+<h2 style="height: 60px;letter-spacing: 4px">Στατιστικά προβολών</h2>
 
 <div id="piechart"></div>
 
 
-    <h2>Προβολές για κάθε εκδήλωση</h2>
+    <h2 style="letter-spacing: 4px">Προβολές για κάθε εκδήλωση</h2>
 {% for event in events_views %}
     <div>  <a href="{{ event.get_absolute_url }}"> {{ event.title }}</a>, {{ event.n }}</div>
 {% endfor %}</div>
@@ -16,22 +16,22 @@
 
     <!--likes chart-->
      <div class="col-sm-4 text-center">
-<h2 style="height: 60px">Στατιστικά θετικών ψήφων</h2>
+<h2 style="height: 60px;letter-spacing: 4px">Στατιστικά θετικών ψήφων</h2>
 
 <div id="piechart2"></div>
 
-    <h2>Θετικές ψήφοι για κάθε εκδήλωση</h2>
+    <h2 style="letter-spacing: 4px">Θετικές ψήφοι για κάθε εκδήλωση</h2>
 {% for event in events_likes %}
     <div> <a href="{{ event.get_absolute_url }}">{{ event.title }}</a>, {{ event.n }}</div>
 {% endfor %}</div>
 
      <!--registered chart-->
      <div class="col-sm-4 text-center">
-<h2 style="height: 60px; letter-spacing: 2px">Στατιστικά εγγεγραμμένων χρηστών</h2>
+<h2 style="height: 60px; letter-spacing: 4px">Στατιστικά εγγεγραμμένων χρηστών</h2>
 
 <div id="piechart3"></div>
 
-    <h2 style="letter-spacing: 2px">Εγγεγραμμένοι χρήστες για κάθε εκδήλωση</h2>
+    <h2 style="letter-spacing: 4px">Εγγεγραμμένοι χρήστες για κάθε εκδήλωση</h2>
 {% for event in events_registered %}
     <div> <a href="{{ event.get_absolute_url }}">{{ event.title }}</a>, {{ event.n }}</div>
 {% endfor %}</div></div>

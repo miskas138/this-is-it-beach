@@ -27,6 +27,7 @@ class Advanced_Profile(models.Model):
     phone_number = models.IntegerField(blank=True, null=True)
     user_type = models.CharField(max_length=15, choices=USER_TYPE_CHOISES, default='ADVANCED_USER')
     position = GeopositionField(blank=True, null=True)
+    site = models.URLField(blank=True, null=True)
     def __str__(self):
-        return 'Advanced Profile for user {}'.format(self.user.username)
+        return 'Προφίλ διοργανωτή {}'.format(self.user.username)
 
