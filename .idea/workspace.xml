@@ -5,33 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30dca8e3-21a5-48c9-bbd1-26fa6411c221" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Events/migrations/0020_event_artist_site.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Events/forms.py" afterPath="$PROJECT_DIR$/Events/forms.py" />
-      <change beforePath="$PROJECT_DIR$/Events/models.py" afterPath="$PROJECT_DIR$/Events/models.py" />
-      <change beforePath="$PROJECT_DIR$/Events/templates/event_create.html" afterPath="$PROJECT_DIR$/Events/templates/event_create.html" />
-      <change beforePath="$PROJECT_DIR$/Events/templates/event_details.html" afterPath="$PROJECT_DIR$/Events/templates/event_details.html" />
-      <change beforePath="$PROJECT_DIR$/Events/templates/event_statistics_details.html" afterPath="$PROJECT_DIR$/Events/templates/event_statistics_details.html" />
-      <change beforePath="$PROJECT_DIR$/Events/templates/image_uploads.html" afterPath="$PROJECT_DIR$/Events/templates/image_uploads.html" />
-      <change beforePath="$PROJECT_DIR$/Events/templates/mp3_uploads.html" afterPath="$PROJECT_DIR$/Events/templates/mp3_uploads.html" />
-      <change beforePath="$PROJECT_DIR$/Events/templates/organizers/hookDetails.html" afterPath="$PROJECT_DIR$/Events/templates/organizers/hookDetails.html" />
-      <change beforePath="$PROJECT_DIR$/Events/templates/right_column-event-details.html" afterPath="$PROJECT_DIR$/Events/templates/right_column-event-details.html" />
-      <change beforePath="$PROJECT_DIR$/Events/templates/video_uploads_2.html" afterPath="$PROJECT_DIR$/Events/templates/video_uploads_2.html" />
-      <change beforePath="$PROJECT_DIR$/account/forms.py" afterPath="$PROJECT_DIR$/account/forms.py" />
-      <change beforePath="$PROJECT_DIR$/account/models.py" afterPath="$PROJECT_DIR$/account/models.py" />
-      <change beforePath="$PROJECT_DIR$/account/templates/account/base.html" afterPath="$PROJECT_DIR$/account/templates/account/base.html" />
-      <change beforePath="$PROJECT_DIR$/account/templates/registration/advanced_register.html" afterPath="$PROJECT_DIR$/account/templates/registration/advanced_register.html" />
-      <change beforePath="$PROJECT_DIR$/account/templates/registration/edit.html" afterPath="$PROJECT_DIR$/account/templates/registration/edit.html" />
-      <change beforePath="$PROJECT_DIR$/account/templates/registration/logged_out.html" afterPath="$PROJECT_DIR$/account/templates/registration/logged_out.html" />
-      <change beforePath="$PROJECT_DIR$/account/templates/registration/login.html" afterPath="$PROJECT_DIR$/account/templates/registration/login.html" />
-      <change beforePath="$PROJECT_DIR$/account/templates/registration/password_change_done.html" afterPath="$PROJECT_DIR$/account/templates/registration/password_change_done.html" />
-      <change beforePath="$PROJECT_DIR$/account/templates/registration/password_change_form.html" afterPath="$PROJECT_DIR$/account/templates/registration/password_change_form.html" />
-      <change beforePath="$PROJECT_DIR$/account/templates/registration/password_reset_complete.html" afterPath="$PROJECT_DIR$/account/templates/registration/password_reset_complete.html" />
-      <change beforePath="$PROJECT_DIR$/account/templates/registration/password_reset_confirm.html" afterPath="$PROJECT_DIR$/account/templates/registration/password_reset_confirm.html" />
-      <change beforePath="$PROJECT_DIR$/account/templates/registration/password_reset_done.html" afterPath="$PROJECT_DIR$/account/templates/registration/password_reset_done.html" />
-      <change beforePath="$PROJECT_DIR$/account/templates/registration/password_reset_email.html" afterPath="$PROJECT_DIR$/account/templates/registration/password_reset_email.html" />
-      <change beforePath="$PROJECT_DIR$/account/templates/registration/password_reset_form.html" afterPath="$PROJECT_DIR$/account/templates/registration/password_reset_form.html" />
-      <change beforePath="$PROJECT_DIR$/account/templates/registration/register.html" afterPath="$PROJECT_DIR$/account/templates/registration/register.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -71,7 +45,7 @@
         <entry file="file://$PROJECT_DIR$/Events/templates/event_details.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="135" column="0" lean-forward="true" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+              <caret line="135" column="0" lean-forward="false" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
               <folding>
                 <element signature="e#5711#5790#0#HTML" expanded="true" />
                 <element signature="e#5842#5864#0#HTML" expanded="true" />
@@ -84,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/Events/templates/video_uploads_2.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="86" column="58" lean-forward="true" selection-start-line="86" selection-start-column="58" selection-end-line="86" selection-end-column="58" />
+              <caret line="86" column="58" lean-forward="false" selection-start-line="86" selection-start-column="58" selection-end-line="86" selection-end-column="58" />
               <folding>
                 <element signature="e#2906#2949#0#HTML" expanded="true" />
                 <element signature="e#4000#4079#0#HTML" expanded="true" />
@@ -98,7 +72,7 @@
         <entry file="file://$PROJECT_DIR$/Events/templates/event_statistics_details.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="20" column="83" lean-forward="true" selection-start-line="20" selection-start-column="83" selection-end-line="20" selection-end-column="83" />
+              <caret line="20" column="83" lean-forward="false" selection-start-line="20" selection-start-column="83" selection-end-line="20" selection-end-column="83" />
               <folding>
                 <element signature="e#189#229#0#HTML" expanded="true" />
               </folding>
@@ -110,7 +84,7 @@
         <entry file="file://$PROJECT_DIR$/account/templates/account/base.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="50">
-              <caret line="444" column="28" lean-forward="true" selection-start-line="444" selection-start-column="28" selection-end-line="444" selection-end-column="28" />
+              <caret line="444" column="28" lean-forward="false" selection-start-line="444" selection-start-column="28" selection-end-line="444" selection-end-column="28" />
               <folding>
                 <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#5;n#ul#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -122,7 +96,7 @@
         <entry file="file://$PROJECT_DIR$/Events/templates/right_column-event-details.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -175,7 +149,7 @@
         <entry file="file://$PROJECT_DIR$/Events/templates/organizers/hookDetails.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="50">
-              <caret line="127" column="0" lean-forward="true" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+              <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
               <folding>
                 <element signature="e#6083#6162#0#HTML" expanded="true" />
                 <element signature="e#6214#6236#0#HTML" expanded="true" />
@@ -268,7 +242,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1" />
     <option name="y" value="1" />
     <option name="width" value="1364" />
@@ -442,15 +416,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28156996" sideWeight="0.51437217" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28156996" sideWeight="0.48562783" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29863483" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26279864" sideWeight="0.49394855" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29863483" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26279864" sideWeight="0.49394855" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38956127" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -837,7 +810,7 @@
     <entry file="file://$PROJECT_DIR$/Events/templates/organizers/hookDetails.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
-          <caret line="127" column="0" lean-forward="true" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+          <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
           <folding>
             <element signature="e#6083#6162#0#HTML" expanded="true" />
             <element signature="e#6214#6236#0#HTML" expanded="true" />
@@ -849,7 +822,7 @@
     <entry file="file://$PROJECT_DIR$/Events/templates/event_details.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="135" column="0" lean-forward="true" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+          <caret line="135" column="0" lean-forward="false" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
           <folding>
             <element signature="e#5711#5790#0#HTML" expanded="true" />
             <element signature="e#5842#5864#0#HTML" expanded="true" />
@@ -893,7 +866,7 @@
     <entry file="file://$PROJECT_DIR$/Events/templates/event_statistics_details.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="20" column="83" lean-forward="true" selection-start-line="20" selection-start-column="83" selection-end-line="20" selection-end-column="83" />
+          <caret line="20" column="83" lean-forward="false" selection-start-line="20" selection-start-column="83" selection-end-line="20" selection-end-column="83" />
           <folding>
             <element signature="e#189#229#0#HTML" expanded="true" />
           </folding>
@@ -903,7 +876,7 @@
     <entry file="file://$PROJECT_DIR$/Events/templates/right_column-event-details.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -915,7 +888,7 @@
     <entry file="file://$PROJECT_DIR$/account/templates/account/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
-          <caret line="444" column="28" lean-forward="true" selection-start-line="444" selection-start-column="28" selection-end-line="444" selection-end-column="28" />
+          <caret line="444" column="28" lean-forward="false" selection-start-line="444" selection-start-column="28" selection-end-line="444" selection-end-column="28" />
           <folding>
             <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#5;n#ul#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
@@ -925,7 +898,7 @@
     <entry file="file://$PROJECT_DIR$/Events/templates/video_uploads_2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="86" column="58" lean-forward="true" selection-start-line="86" selection-start-column="58" selection-end-line="86" selection-end-column="58" />
+          <caret line="86" column="58" lean-forward="false" selection-start-line="86" selection-start-column="58" selection-end-line="86" selection-end-column="58" />
           <folding>
             <element signature="e#2906#2949#0#HTML" expanded="true" />
             <element signature="e#4000#4079#0#HTML" expanded="true" />
