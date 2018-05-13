@@ -3,7 +3,7 @@
 
 {% block content %}
     <div id="login" class="container text-center" style="margin-top: 50px;">
-<div> <h1>Δημιουργία λογαριασμού</h1>
+<div> <h2>Δημιουργία λογαριασμού</h2>
 
     {% if user_form.errors or profile_form.errors %}
         <p>Προέκυψε πρόβλημα κατά την συμπλήρωση της φόρμας</p>
@@ -50,9 +50,6 @@
             <label class="control-label col-sm-5">{{  user_form.password2.label }}</label>
          <div class="col-sm-3"> {% render_field  user_form.password2 class="form-control" placeholder="Εισάγετε ξανά τον κωδικό πρόσβασης" %}</div>
         </div>
-
-
-
 
     {{ profile_form.media }}
 

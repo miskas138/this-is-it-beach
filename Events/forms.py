@@ -13,7 +13,7 @@ class EventCreateForm(forms.ModelForm):
     tags = TagField(label='Ετικέτες', help_text='δημιούργησε tag για την εκδήλωση διαχωρίζοντας με κόμματα, ή επέλεξε από την παρακάτω λίστα',
                     widget=TagWidget(attrs={'class': 'form-control tagman'}))
     section = forms.ChoiceField(label='Κατηγορία', choices=SECTION_CHOISES, widget=forms.Select(attrs={'class':'form-control'}))
-
+    artist_site = forms.URLField(label='Ιστοσελίδα εκδηλωτή')
     def clean_image(self):
         image = self.cleaned_data['image']
         if image:

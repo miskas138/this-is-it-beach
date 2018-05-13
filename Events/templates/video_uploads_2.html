@@ -48,7 +48,7 @@
     <div class="container-fluid col-sm-8 panel panel-default" style="border-radius: 10px; background: url(/media/touvlo.png) repeat;">
 <div class="text-center">
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Videos</a></li>
+    <li class="active"><a data-toggle="tab" href="#home">Ανεβασμένα Video</a></li>
     <li><a data-toggle="tab" href="#menu1">Ανεβάστε ένα Video</a></li>
       <li><a data-toggle="tab" href="#menu3">Σχόλια</a></li>
   </ul>
@@ -80,8 +80,8 @@
     {% csrf_token %}<br>
              <button type="submit" class="btn btn-default" style="width: 90%;"><div style="font-size: 90%; letter-spacing: 3px; ">Ανάρτηση video</div></button>
     </form>
- {% else %}<h2>Θα πρέπει να είστε εγγεγραμμένος στην εκδήλωση για να ανεβάσεις υλικό.
-        </h2><p>Κάνε εγγραφή στην εκδήλωση και ανανέωσε την σελίδα</p>{% endif %}
+ {% else %}    <h2 style="letter-spacing: 2px;font-size: 100%">Θα πρέπει να είστε εγγεγραμμένος στην εκδήλωση για να ανεβάσετε υλικό.</h2>
+<p>Κάνε εγγραφή στην εκδήλωση και ανανέωσε την σελίδα</p>{% endif %}
         </div></div>
  <div id="menu3" class="tab-pane fade">
           <div class="col-sm-8 col-sm-offset-2 text-left">
@@ -100,7 +100,7 @@
       <img src="{% if comment.user.profile %}{{ comment.user.profile.photo.url }}{% else %}{{ comment.user.advanced_profile.photo.url }}{% endif %}" class="media-object" style="width:45px; height:45px;object-fit: cover;">
     </div>
     <div class="media-body">
-        <h3 class="media-heading text-left" style="margin-bottom: 0px; margin-top: 5px;"><strong>{{ comment.user }}</strong><span><small><i> {{ comment.created }}</i></small></span> </h3>
+        <h2 class="media-heading text-left" style="margin-bottom: 0px; margin-top: 9px;font-size: 130%;letter-spacing: 1px"><strong>{{ comment.user }}</strong><span><small><i style="color: #777777"> {{ comment.created }}</i></small></span> </h2>
 
 
 

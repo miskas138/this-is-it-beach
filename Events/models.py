@@ -32,6 +32,7 @@ class Event(models.Model):
     section = models.CharField(max_length=20, choices=SECTION_CHOISES, default='ΜΟΥΣΙΚΗ')
     tags = TaggableManager()
     content = HTMLField(blank=True, null=True)
+    artist_site = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return self.title

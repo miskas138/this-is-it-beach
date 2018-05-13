@@ -41,10 +41,11 @@ class AdvancedProfileEditForm(forms.ModelForm):
     phone_number = forms.IntegerField(label='Τηλέφωνο')
     photo = forms.ImageField(label='Εικόνα προφίλ', widget=forms.FileInput)
     description = forms.CharField(label="Σύντομη περιγραφή", widget=forms.Textarea)
+    site = forms.URLField(label='Ιστοσελίδα οργανισμού/διοργανωτή')
 
     class Meta:
         model = Advanced_Profile
-        fields = ('organization_name', 'description', 'address', 'city', 'phone_number', 'photo', 'position')
+        fields = ('organization_name', 'description', 'address', 'city', 'phone_number', 'photo', 'site', 'position')
 
 
 class UserEditForm(forms.ModelForm):

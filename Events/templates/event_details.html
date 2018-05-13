@@ -74,21 +74,22 @@
     <div id="menu1" class="tab-pane fade">
         <div class="col-sm-8 col-sm-offset-2">
       <h2><span class="glyphicon glyphicon-info-sign"></span>Πληροφορίες Εκδήλωσης</h2>
-      <p><span class="glyphicon glyphicon-calendar"><span class="glyphicon glyphicon-time"></span></span>Ημερομηνία και ώρα Εκδήλωσης: {{ event.information.dateTime }}</p>
+      <p><span class="glyphicon glyphicon-calendar"><span class="glyphicon glyphicon-time"></span></span> Ημερομηνία και ώρα Εκδήλωσης : {{ event.information.dateTime }}</p>
         <p><span class="glyphicon glyphicon-euro"></span> Τιμή εισητηρίου: {{ event.information.ticket_price }}</p>
-        <p><span class="glyphicon glyphicon-shopping-cart"></span>Προπώληση: {{ event.information.presale }}</p>
+        <p><span class="glyphicon glyphicon-shopping-cart"></span> Προπώληση: {{ event.information.presale }}</p>
+             <p><span class="glyphicon glyphicon-modal-window"></span>  Ιστοσελίδα εκδηλωτή : <a href="{{ event.artist_site }}">{{ event.artist_site }}</a></p>
 
         </div></div>
     <div id="menu2" class="tab-pane fade">
         <div class="col-sm-8 col-sm-offset-2">
                 <h2>Τοποθεσία Εκδήλωσης</h2>
-             <p>Όνομα Τοποθεσίας: {{ event.location.name }}</p>
-            <p>Διεύθυνση: {{ event.location.address }}</p>
-            <p>Τηλέφωνο: {{ event.location.tel }}</p>
-            <p>Πόλη: {{ event.location.city }}</p>
-            <p>Ιστοσελίδα: <a href="{{ event.location.site }}">{{ event.location.site }}</a></p>
-             <p>Ηλεκτρονικό ταχυδρομείο: {{ event.location.email }}</p>
-             <p>Δείτε στον χάρτη: </p>
+             <p><span class="glyphicon glyphicon-info-sign"></span> Όνομα Τοποθεσίας : {{ event.location.name }}</p>
+            <p><span class="glyphicon glyphicon-road"></span> Διεύθυνση : {{ event.location.address }}</p>
+            <p><span class="glyphicon glyphicon-phone"></span> Τηλέφωνο : {{ event.location.tel }}</p>
+            <p><span class="glyphicon glyphicon-map-marker"></span> Πόλη : {{ event.location.city }}</p>
+            <p><span class="glyphicon glyphicon-modal-window"></span> Ιστοσελίδα : <a href="{{ event.location.site }}">{{ event.location.site }}</a></p>
+             <p><span class="glyphicon glyphicon-envelope"></span> Ηλεκτρονικό ταχυδρομείο : {{ event.location.email }}</p>
+             <p><span class="glyphicon glyphicon-globe"></span>  Δείτε στον χάρτη : </p>
             <div id="map" style="width:100%;height:500px"></div>
 
             <script>
@@ -124,26 +125,14 @@
             {% csrf_token %}<br>
         <input class="btn btn-default" type="submit" value="κοινοποίηση σχολίου">
         </form>
-          {% if new_comment %}
-                <div class="media">
-    <div class="media-left media-middle">
-      <img src="{% if new_comment.user.profile %}{{ new_comment.user.profile.photo.url }}{% else %}{{ new_comment.user.advanced_profile.photo.url }}{% endif %}" class="media-object" style="width:45px; height:45px;object-fit: cover;">
-    </div>
-    <div class="media-body">
-        <h3 class="media-heading text-left" style="margin-bottom: 0px; margin-top: 5px;"><strong>{{ new_comment.user }}</strong><span><small><i> {{ new_comment.created }}</i></small></span> </h3>
-    </div> <div class="text-left" style="overflow-wrap: break-word"><p>{{ new_comment.body|linebreaks }}</p></div>
-       </div>
-          {% endif %}
 
-
-
-          {% for comment in comments %}
+              {% for comment in comments %}
        <div class="media">
     <div class="media-left media-middle">
       <img src="{% if comment.user.profile %}{{ comment.user.profile.photo.url }}{% else %}{{ comment.user.advanced_profile.photo.url }}{% endif %}" class="media-object" style="width:45px; height:45px;object-fit: cover;">
     </div>
     <div class="media-body">
-        <h3 class="media-heading text-left" style="margin-bottom: 0px; margin-top: 5px;"><strong>{{ comment.user }}</strong><span><small><i> {{ comment.created }}</i></small></span> </h3>
+        <h2 class="media-heading text-left" style="margin-bottom: 0px; margin-top: 9px;font-size: 130%;letter-spacing: 1px"><strong>{{ comment.user }}</strong><span><small><i style="color: #777777"> {{ comment.created }}</i></small></span> </h2>
 
 
 

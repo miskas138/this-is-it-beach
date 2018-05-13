@@ -112,6 +112,11 @@ $(document).ready(function(){
             <label class="control-label col-sm-4">{{ information.presale.label }}</label>
             <div class="col-sm-6"> {% render_field  information.presale class="form-control" placeholder="Προσθέστε πληροφορίες προπώλησης" %}</div>
         </div>
+              <div class="form-group">
+            {{ event.artist_site.errors }}
+           <label class="control-label col-sm-5">{{ event.artist_site.label }}</label>
+            <div class="col-sm-3"> {% render_field  event.artist_site class="form-control" placeholder="Εισάγετε την ιστοσελίδα του εκδηλωτή" %}</div>
+       </div>
 
 
             </div>
@@ -184,7 +189,7 @@ $(document).ready(function(){
     <div class="form-group" style="margin-top: 15px;">
         {% csrf_token %}
         <div class="col-sm-6 col-sm-offset-4">
-             <button type="submit" class="btn btn-default" style="width:100%"><div style="font-size: 90%; letter-spacing: 3px; ">Δημιουργία λογαριασμού</div></button>
+             <button type="submit" class="btn btn-default" style="width:100%"><div style="font-size: 90%; letter-spacing: 3px; ">Δημιουργία εκδήλωσης</div></button>
         </div>
     </div>
 </form>

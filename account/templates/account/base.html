@@ -380,8 +380,8 @@ h2 {
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="{% url 'register_type' %}"><span class="glyphicon glyphicon-user"></span> Δημιουργία</a></li>
-              <li><a href="{% url 'password_change' %}">Αλλαγή συνθηματικού</a></li>
-              <li><a href="{% url "edit" %}">Επεξεργασία προφίλ</a></li>
+              <li><a href="{% url 'password_change' %}"><span class="glyphicon glyphicon-pencil"></span> Αλλαγή συνθηματικού</a></li>
+              <li><a href="{% url "edit" %}"><span class="glyphicon glyphicon-wrench"></span> Επεξεργασία προφίλ</a></li>
           </ul>
         </li>
        {% if request.user.is_authenticated %} <li><!-- Used to open the Modal -->
@@ -395,7 +395,7 @@ h2 {
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4><span class="glyphicon glyphicon-search"></span> Αναζήτηση</h4>
+        <h2 style="color: #c0c0c0;"><span class="glyphicon glyphicon-search"></span> Αναζήτηση</h2>
       </div>
       <div class="modal-body">
         <form type="get" action="{% url "home_page" %}" role="form">
@@ -408,7 +408,7 @@ h2 {
                     {% render_field filter.form.title class="form-control" placeholder="Εισάγετε τίτλο" id='title' %}
                 </div>
                  <div class="form-group">
-                    <label class="control-label" for="genre"><span class="glyphicon glyphicon-asterisk"></span> {{ filter.form.section.label }}</label>
+                    <label class="control-label" for="genre"><span class="glyphicon glyphicon-question-sign"></span> {{ filter.form.section.label }}</label>
                     {% render_field filter.form.section class="form-control" placeholder="Εισάγετε είδος" id='genre' %}
                 </div>
                 <div class="form-group">
@@ -425,7 +425,7 @@ h2 {
                            {% render_field filter.form.dateTime_lte class="form-control" placeholder="Ημερομηνία μέχρι" id='date_lte' %}
                  </div>
                         <div class="form-group">
-                          <label for="location"><span class="glyphicon glyphicon-globe"></span> {{ filter.form.location__city.label }}</label>
+                          <label for="location"><span class="glyphicon glyphicon-map-marker"></span> {{ filter.form.location__city.label }}</label>
                            {% render_field filter.form.location__city class="form-control" placeholder="Εισάγετε περιοχή" id='location' %}
                  </div>
                 <div class="form-group">
@@ -433,11 +433,11 @@ h2 {
                            {% render_field filter.form.description class="form-control" placeholder="Εισάγετε λέξεις κλειδιά" id='description' %}
                  </div>
                 <div class="form-group">
-                          <label for="messages"><span class="glyphicon glyphicon-globe"></span> {{ filter.form.comments__body.label }}</label>
+                          <label for="messages"><span class="glyphicon glyphicon-send"></span> {{ filter.form.comments__body.label }}</label>
                            {% render_field filter.form.comments__body class="form-control" placeholder="Εισάγετε λέξεις κλειδιά" id='messages' %}
                 </div>
                  <div class="form-group">
-                         <label for="content" class="control-label pull-left"><span class="glyphicon glyphicon-globe"></span> Περιεχόμενο</label>
+                         <label for="content" class="control-label pull-left"><span class="glyphicon glyphicon-star"></span> Περιεχόμενο</label>
                           <input type="text" class="form-control" placeholder="Εισάγετε λέξεις κλειδιά" id='content' name="content">
                </div>
 

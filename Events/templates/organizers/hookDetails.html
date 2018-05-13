@@ -71,25 +71,23 @@
         <div class="col-sm-8 col-sm-offset-2">
       <h2><span class="glyphicon glyphicon-info-sign"></span>Πληροφορίες Διοργανωτή</h2>
  <div class="text-left">
-       <p><span class="glyphicon glyphicon-info-sign"></span> Σύντομη περιγραφή διοργανωτή/οργανισμού : {{ user.advanced_profile.description }}</p>
-      <p><span class="glyphicon glyphicon-user"></span> Όνομα χρήστη διοργανωτή : {{ user.username }}</p>
-      <p><span class="glyphicon glyphicon-pushpin"></span> Όνομα και επίθετο διοργανωτή : {{ user.get_full_name }}</p>
-      <p><span class="glyphicon glyphicon-calendar"></span> Ημερομηνία δημιουργίας λογαριασμού : {{ user.date_joined }}</p>
-
-      <p><span class="glyphicon glyphicon-phone"></span> Τηλέφωνο επικοινωνίας : {{ user.advanced_profile.phone_number }}</p>
-      <p><span class="glyphicon glyphicon-envelope"></span> Ηλεκτρονικό ταχυδρομείο : {{ user.email }}</p>
+     <p><span class="glyphicon glyphicon-info-sign"></span><b> Σύντομη περιγραφή διοργανωτή/οργανισμού : </b> {{ user.advanced_profile.description }}</p>
+     <p><span class="glyphicon glyphicon-user"></span><b> Όνομα χρήστη διοργανωτή : </b>{{ user.username }}</p>
+      <p><span class="glyphicon glyphicon-pushpin"></span><b> Όνομα και επίθετο διοργανωτή : </b>{{ user.get_full_name }}</p>
+      <p><span class="glyphicon glyphicon-calendar"></span><b> Ημερομηνία δημιουργίας λογαριασμού : </b>{{ user.date_joined }}</p>
+     <p><span class="glyphicon glyphicon-modal-window"></span><b> Ιστοσελίδα :</b> <a href="{{ user.advanced_profile.site }}">{{ user.advanced_profile.site }}</a></p>
+      <p><span class="glyphicon glyphicon-phone"></span><b> Τηλέφωνο επικοινωνίας : </b>{{ user.advanced_profile.phone_number }}</p>
+      <p><span class="glyphicon glyphicon-envelope"></span><b> Ηλεκτρονικό ταχυδρομείο : </b>{{ user.email }}</p>
     </div>
 
         </div></div>
     <div id="menu2" class="tab-pane fade">
         <div class="col-sm-8 col-sm-offset-2 text-left">
                 <h2>Τοποθεσία Διοργανωτή</h2>
-             <p>Όνομα οργανισμού/επιχείρησης: {{ user.advanced_profile.organization_name }}</p>
-            <p><span class="glyphicon glyphicon-road"></span> Διεύθυνση διοργανωτή/οργανισμού : {{ user.advanced_profile.address }}</p>
-            <p><span class="glyphicon glyphicon-map-marker"></span> Πόλη : {{ user.advanced_profile.city }}</p>
-            <p>Ιστοσελίδα: <a href="{{ user.advanced_profile.site }}">{{ user.advanced_profile.site }}</a></p>
-             <p>Ηλεκτρονικό ταχυδρομείο: {{ user.email }}</p>
-             <p>Δείτε στον χάρτη: </p>
+            <p><span class="glyphicon glyphicon-info-sign"></span><b> Όνομα οργανισμού/επιχείρησης: </b>{{ user.advanced_profile.organization_name }}</p>
+            <p><span class="glyphicon glyphicon-road"></span><b> Διεύθυνση διοργανωτή/οργανισμού : </b>{{ user.advanced_profile.address }}</p>
+            <p><span class="glyphicon glyphicon-map-marker"></span><b> Πόλη : </b>{{ user.advanced_profile.city }}</p>
+            <p><span class="glyphicon glyphicon-globe"></span><b>  Δείτε στον χάρτη : </b></p>
             <div id="map" style="width:100%;height:500px"></div>
 
             <script>
@@ -135,7 +133,7 @@
       <img src="{% if comment.user.profile %}{{ comment.user.profile.photo.url }}{% else %}{{ comment.user.advanced_profile.photo.url }}{% endif %}" class="media-object" style="width:45px; height:45px;object-fit: cover;">
     </div>
     <div class="media-body">
-        <h3 class="media-heading text-left" style="margin-bottom: 0px; margin-top: 5px;"><strong>{{ comment.user }}</strong><span><small><i> {{ comment.created }}</i></small></span> </h3>
+        <h2 class="media-heading text-left" style="margin-bottom: 0px; margin-top: 9px;font-size: 130%;letter-spacing: 1px"><strong>{{ comment.user }}</strong><span><small><i style="color: #777777"> {{ comment.created }}</i></small></span> </h2>
 
 
 

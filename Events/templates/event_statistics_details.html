@@ -7,23 +7,23 @@
 
     <!--likes chart-->
      <div class="col-sm-6 text-center">
-<h1>My likes chart</h1>
+<h2 style="height: 60px;letter-spacing: 4px">Στατιστικά θετικών ψήφων</h2>
 
 <div id="piechart2"></div>
 
-    <h2>Likes for event</h2>
+    <h2 style="letter-spacing: 4px">Θετικές ψήφοι της εκδήλωσης</h2>
 
-    <div>{{ events_likes }} likes in total {{ events_views }} view{{ events_views|pluralize }}</div>
+         <div><b>{{ events_likes }}</b> Θετικές ψήφοι σε σύνολο <b>{{ events_views }}</b> προβολών</div>
 </div>
 
      <!--registered chart-->
      <div class="col-sm-6 text-center">
-<h1>My registered chart</h1>
+<h2 style="height: 60px; letter-spacing: 4px">Στατιστικά εγγεγραμμένων χρηστών</h2>
 
 <div id="piechart3"></div>
 
-    <h2>Registered to the event</h2>
-     <div>{{ events_registered }} users registered in total {{ events_views }} view{{ events_views|pluralize }}</div>
+    <h2 style="letter-spacing: 4px">Εγγεγραμμένοι χρήστες στην εκδήλωση</h2>
+         <div><b>{{ events_registered }}</b> χρήστες έχουν εγγραφεί σε σύνολο <b>{{ events_views }}</b> προβολών</div>
 </div></div>
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -42,7 +42,7 @@ function drawChart2() {
   var data2 = google.visualization.arrayToDataTable([
   ['Task', 'Hours per Day'],
 
-  ['total likes', {{ events_likes }}],
+  ['Σύνολο θετικών ψήφων', {{ events_likes }}],
        ['Επισκέπτες που δεν έχουν βαθμολογήσει', {{ events_views}}-{{ events_likes }}],
 
 ]);
@@ -61,7 +61,7 @@ function drawChart3() {
   var data3 = google.visualization.arrayToDataTable([
   ['Task', 'Hours per Day'],
 
-  ['total registered', {{ events_registered }}],
+  ['Σύνολο εγγεγραμμένων χρηστών', {{ events_registered }}],
    ['Επισκέπτες που δεν έχουν εγγραφεί', {{ events_views}}-{{ events_registered }}],
 ]);
 

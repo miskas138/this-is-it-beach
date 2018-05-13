@@ -6,7 +6,7 @@
 
 {% block content %}
     <div id="login" class="container text-center" style="margin-top: 50px;">
-<div> <h1>Τροποποιήστε τα στοιχεία του λογαριασμού σας</h1>
+<div> <h2>Τροποποιήστε τα στοιχεία του λογαριασμού σας</h2>
 
     {% if user_form.errors or profile_form.errors %}
         <p>Προέκυψε πρόβλημα κατά την συμπλήρωση της φόρμας</p>
@@ -98,6 +98,11 @@
             {{ profile_form.phone_number.errors }}
            <label class="control-label col-sm-5">{{ profile_form.phone_number.label }}</label>
             <div class="col-sm-3"> {% render_field  profile_form.phone_number class="form-control" placeholder="Εισάγετε αριθμό επικοινωνίας" %}</div>
+       </div>
+      <div class="form-group">
+            {{ profile_form.site.errors }}
+           <label class="control-label col-sm-5">{{ profile_form.site.label }}</label>
+            <div class="col-sm-3"> {% render_field  profile_form.site class="form-control" placeholder="Εισάγετε την ιστοσελίδα του οργανισμού" %}</div>
        </div>
         <div class="form-group">{{ profile_form.media }}
              {{ profile_form.position.errors }}
